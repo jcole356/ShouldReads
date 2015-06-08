@@ -3,24 +3,24 @@
 ## New Session
 ![new-session]
 
-## Feed Show (landing page)
-![feed-show]
+## Book Shelves Index (landing page)
+![book-shelves-index]
 
-## Blog Show
-![blog-show]
+## Book Show
+![book-show]
 
-## Post Show
-![post-show]
+## Books Index
+![books-index]
 
-## Post Form
-![post-form]
+## Review Form
+![review-form]
 
-## Search Results
-![search-results]
+## Friendships Index
+![friendships_index]
 
-[new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png
+[new-session]: ./wireframes/log_in.png
+[book-shelves-index]: ./wireframes/book_shelves_index.png
+[book-show]: ./wireframes/book_show.png
+[books-index]: ./wireframes/books_index.png
+[review-form]: ./wireframes/review_form.png
+[friendships_index]: ./wireframes/friendships_index.png
