@@ -2,14 +2,14 @@
 
 ## Rails
 ### Models
-Book
-BookShelf
-BookShelvings
+* Book
+* BookShelf
+* BookShelvings
 
 ### Controllers
-Api::BooksController (create, destroy, index, show)
-Api::BookShelvesController (create, destroy, index, show)
-Api::BookShelvingsController (create, destroy)
+* Api::BooksController (create, destroy, index, show)
+* Api::BookShelvesController (create, destroy, index, show)
+* Api::BookShelvingsController (create, destroy)
 
 ### Views
 * books/show.json.jbuilder
