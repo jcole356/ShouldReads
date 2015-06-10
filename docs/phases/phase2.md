@@ -4,7 +4,7 @@
 ### Models
 * Book
 * BookShelf
-* BookShelvings
+* BookShelving
 
 ### Controllers
 * Api::BooksController (create, destroy, index, show)

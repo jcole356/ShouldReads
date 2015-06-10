@@ -8,16 +8,15 @@
 </head>
 <body>
 
-  <!-- This is temporary to troubleshoot auth -->
-
-  <% if signed_in? %>
-    <%= current_user.username %>
-    <%= button_to "Log Out", session_url, method: :delete %>
-  <% end %>
-
   <%= flash_errors %>
 
 <%= yield %>
+
+<% if signed_in? %>
+  <script type="text/javascript">
+    window.CURRENT_USER_NAME="<%= current_user.username %>"
+  </script>
+<% end %>
 
 </body>
 </html>
