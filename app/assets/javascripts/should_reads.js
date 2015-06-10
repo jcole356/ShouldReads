@@ -5,8 +5,17 @@ window.ShouldReads = {
   Routers: {},
   initialize: function() {
     var router = new ShouldReads.Routers.Router({
-      $rootEl: $('#content')
+      $rootEl: $('#content'),
+      collection: new ShouldReads.Collections.Books()
     });
+
+    // This is breaking everything at this point.
+    var navbar = new ShouldReads.Views.NavBar({
+      router: router,
+      // collection: this.collection
+    });
+
+    $('#nav').html(navbar.render().$el);
 
     Backbone.history.start();
   }

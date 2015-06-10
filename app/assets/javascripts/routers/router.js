@@ -1,7 +1,7 @@
 ShouldReads.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
-    this.books = new ShouldReads.Collections.Books();
+    this.books = options.collection;
   },
 
   routes: {
