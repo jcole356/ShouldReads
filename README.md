@@ -9,8 +9,8 @@ Should Reads is a clone of Good Reads built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
+- [X] Create accounts
+- [X] Create sessions (log in)
 - [ ] View books and book information
 - [ ] Create book shelves
 - [ ] Add books to shelves
