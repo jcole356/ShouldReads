@@ -4,10 +4,16 @@ window.ShouldReads = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    var router = new ShouldReads.Routers.Router({
+      $rootEl: $('#content')
+    });
+
+    Backbone.history.start();
   }
 };
 
-$(document).ready(function(){
-  ShouldReads.initialize();
-});
+
+// Need to determine exactly where this is going to go.
+// $(document).ready(function(){
+//   ShouldReads.initialize();
+// });

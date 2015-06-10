@@ -16,3 +16,33 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ ul {
+   list-style-type: none
+ }
+
+ div.form-container {
+   position: absolute;
+   top: 50%;
+   text-align: center;
+ }
+
+ .book-info {
+   display: block;
+   float: left;
+   height: 200px;
+   width: 600px;
+ }
+
+ .index-image {
+   display: block;
+   float: left;
+ }
+
+ h2.index-title {
+   display: block;
+ }
+
+ h2.index-author {
+   display: block;
+ }

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     )
     if user
       sign_in(user)
-      redirect_to user_url(user)
+      redirect_to root_url
     else
       flash[:errors] = ["Invalid username/password"]
       render :new
