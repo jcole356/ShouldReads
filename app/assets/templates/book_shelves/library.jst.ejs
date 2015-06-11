@@ -1,0 +1,7 @@
+<h3><%= CURRENT_USER_NAME %>'s Bookshelves</h3>
+
+<ul>
+  <% bookShelves.each(function(bookShelf) { %>
+    <li><%= bookShelf.escape('title') %></li>
+  <% }) %>
+</ul>

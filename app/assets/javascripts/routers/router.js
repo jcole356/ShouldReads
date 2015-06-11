@@ -8,12 +8,12 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "index",
     "books/:id": "show",
-    "book_shelves": "bookShelvesIndex"
+    "book_shelves": "bookShelvesLibrary"
   },
 
-  bookShelvesIndex: function() {
+  bookShelvesLibrary: function() {
     this.book_shelves.fetch();
-    var view = new ShouldReads.Views.BookShelvesIndex({
+    var view = new ShouldReads.Views.BookShelvesLibrary({
       collection: this.book_shelves
     });
 

@@ -1,8 +1,9 @@
-ShouldReads.Views.BookShelvesIndex = Backbone.CompositeView.extend({
+ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
 
   template: JST['book_shelves/index'],
 
   initialize: function() {
+    // This is my original listener
     this.listenTo(this.collection, "sync", this.render);
   },
 
