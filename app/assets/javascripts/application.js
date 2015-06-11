@@ -16,6 +16,7 @@
 //= require underscore
 //= require backbone
 //= require should_reads
+//= require composite_view
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

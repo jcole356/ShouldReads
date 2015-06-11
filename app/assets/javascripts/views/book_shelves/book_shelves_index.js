@@ -1,4 +1,4 @@
-ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
+ShouldReads.Views.BookShelvesIndex = Backbone.CompositeView.extend({
 
   template: JST['book_shelves/index'],
 
