@@ -1,6 +1,8 @@
 ShouldReads.Views.BookShow = Backbone.View.extend({
   template: JST['books/show'],
 
+  className: "book-show",
+
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
   },
@@ -10,7 +12,6 @@ ShouldReads.Views.BookShow = Backbone.View.extend({
       book: this.model,
       books: this.collection
     });
-
     this.$el.html(content);
     return this;
   }

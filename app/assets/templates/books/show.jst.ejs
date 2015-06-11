@@ -1,1 +1,15 @@
-<h1>You made it to the show page</h1>
+<div class="show-book-info">
+  <div class="show-image">
+    <img src="<%= book.escape('cover_image_url') %>"
+         alt="Book Cover"
+         height="195"
+         width="128">
+  </div>
+  <h2 class ="show-title"><%= book.escape('title') %></h2>
+  <h3 class ="show-author">by <%= book.escape('author') %></h3>
+  <h4 class ="show-pages"><%= book.escape('number_of_pages') %> Pages</h4>
+  <div class="synopsis">
+    <h3>Synopsis</h3>
+    <p class="synopsis-text"><%= book.escape('synopsis') %></p>
+  </div>
+</div>

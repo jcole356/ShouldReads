@@ -18,8 +18,18 @@
  @import "bootstrap";
 
  ul {
-   list-style-type: none
+   margin: 0px;
+   padding: 0px;
+   list-style-type: none;
  }
+
+/* This is the clear fix don't think I need this here
+.clear:after {
+  content: "";
+  clear: both;
+  display: table;
+ }
+ */
 
  div.form-container {
    position: absolute;
@@ -27,22 +37,57 @@
    text-align: center;
  }
 
- .book-info {
+ .book-index {
+   margin-left: auto;
+   margin-right: auto;
+   width: 800px;
+ }
+
+ .index-book-info {
+   display: block;
+   float: left;
+   height: 200px;
+   width: 600px;
+   margin: 10px 0px 10px 0px;
+ }
+
+ .show-book-info {
+   display: block;
+   float: left;
+   height: 400px;
+   width: 600px;
+   margin-left: 50px;
+ }
+
+ .book-show {
    display: block;
    float: left;
    height: 200px;
    width: 600px;
  }
 
- .index-image {
+ .index-image, .show-image {
    display: block;
    float: left;
+   margin-right: 15px;
  }
 
- h2.index-title {
+
+// These could probably all get grouped together.
+ .index-title {
    display: block;
  }
 
- h2.index-author {
+ .index-author {
    display: block;
+ }
+
+ .show-title, .show-author, .show-pages {
+   display: block;
+ }
+
+ .synopsis {
+   display: block;
+   margin-top: 10px;
+   float: left;
  }

@@ -6,7 +6,7 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "index",
-    "/books/:id": "show"
+    "books/:id": "show"
   },
 
   index: function() {

@@ -3,15 +3,17 @@
 <ul>
 <% books.each(function(book) { %>
   <li>
-    <div class="book-info">
+    <div class="index-book-info">
       <div class="index-image">
         <img src="<%= book.escape('cover_image_url') %>"
              alt="Book Cover"
              height="195"
              width="128">
       </div>
-      <h2 class="index-title"><%= book.escape('title') %></h2>
-      <h2 class="index-author"><%= book.escape('author') %></h2>
+      <a href="#/books/<%= book.id %>">
+        <h3 class="index-title"><%= book.escape('title') %></h3>
+      </a>
+      <h4 class="index-author"><%= book.escape('author') %></h4>
     </div>
   </li>
 <% }) %>

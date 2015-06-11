@@ -2,6 +2,8 @@ ShouldReads.Views.BooksIndex = Backbone.View.extend({
 
   template: JST['books/index'],
 
+  className: "book-index",
+
   initialize: function () {
     this.listenTo(this.collection, "sync add", this.render);
   },

@@ -4,7 +4,7 @@ ShouldReads.Collections.Books = Backbone.Collection.extend({
 
   url: "api/books",
 
-  getOrFetch: function (id) {
+  getOrFetch: function(id) {
     var book = this.get(id);
     var collection = this;
 
@@ -13,7 +13,7 @@ ShouldReads.Collections.Books = Backbone.Collection.extend({
     } else {
       book = new ShouldReads.Models.Book({ id: id});
       book.fetch({
-        success: function () {
+        success: function() {
           collection.add(book);
         }
       });
