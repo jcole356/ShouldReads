@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 u1 = User.create(username: "reader", password: "foobar")
+u2 = User.create(username: "josh", password: "foobar")
 
 b1 = Book.create(title: "Harry Potter and the Half Blood Prince",
                  author: "JK Rowling",
@@ -40,3 +41,5 @@ b2 = Book.create(title: "Slaughterhouse-five",
 #                  number_of_pages: 652)
 
 s1 = BookShelf.create(title: "Read", owner_id: 1)
+s1 = BookShelf.create(title: "To Read", owner_id: 1)
+s1 = BookShelf.create(title: "Currently Reading", owner_id: 1)

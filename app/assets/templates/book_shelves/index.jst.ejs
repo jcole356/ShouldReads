@@ -1,6 +1,7 @@
 <h1>Bookshelves Index</h1>
 
-
-<% bookShelves.each(function(bookShelf) { %>
-  <%= bookShelf.escape('title') %>
-<% }) %>
+<ul>
+  <% bookShelves.each(function(bookShelf) { %>
+    <li><%= bookShelf.escape('title') %></li>
+  <% }) %>
+</ul>
