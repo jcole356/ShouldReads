@@ -24,7 +24,9 @@ class Api::BooksController < ApplicationController
     render :show
   end
 
-  def book_params
-    params.require(:book).permit(:title, :author, :cover_image_url, :synopsis, :number_of_pages)
-  end
+  private
+
+    def book_params
+      params.require(:book).permit(:title, :author, :cover_image_url, :synopsis, :number_of_pages)
+    end
 end

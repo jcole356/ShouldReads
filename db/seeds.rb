@@ -36,3 +36,5 @@ b2 = Book.create(title: "Slaughterhouse-five",
 #                  cover_image_url: "https://books.google.com/books/content?id=Ms8UmQEACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73queu7iJ94OKuwaC2STp5ILPEc9NDuOCWFu_l25UEdXZ0Hjllx54EyZFnFx6xvJWtpntOM2yJaZ2mjiUNaJZczUP-UTUNjV7BII3nr0X8Ee3s6bH88-AP5lP5I30D0DaA6b5R0",
 #                  synopsis: "The war against Voldemort is not going well; even Muggle governments are noticing. Ron scans the obituary pages of the Daily Prophet, looking for familiar names. Dumbledore is absent from Hogwarts for long stretches of time, and the Order of the Phoenix has already suffered losses.",
 #                  number_of_pages: 652)
+
+s1 = BookShelf.create(title: "Read", user_id: 1)
