@@ -17,13 +17,15 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
+ /* Clear default styles for lists */
  ul {
    margin: 0px;
    padding: 0px;
    list-style-type: none;
  }
 
-/* This is the clear fix don't think I need this here
+/* Clear fix, don't need this yet
 .clear:after {
   content: "";
   clear: both;
@@ -31,12 +33,14 @@
  }
  */
 
+/* Log in and sign in form */
  div.form-container {
    position: absolute;
    top: 50%;
    text-align: center;
  }
 
+/* Book index page */
  .book-index {
    margin-left: auto;
    margin-right: auto;
@@ -51,6 +55,13 @@
    margin: 10px 0px 10px 0px;
  }
 
+ .index-image {
+   display: block;
+   float: left;
+   margin-right: 15px;
+ }
+
+/* Book show page */
  .show-book-info {
    display: block;
    float: left;
@@ -66,12 +77,11 @@
    width: 600px;
  }
 
- .index-image, .show-image {
+ .show-image {
    display: block;
    float: left;
    margin-right: 15px;
  }
-
 
 // These could probably all get grouped together.
  .index-title {
