@@ -19,8 +19,8 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     this.addSubview('.shelf-index', view);
   },
 
-  addShelfBooks: function() {
-
+  addShelfBooks: function(view) {
+    this.addSubview('.shelf-books', view);
   },
 
   render: function() {
@@ -37,11 +37,13 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
   selectShelf: function(event) {
     var id = $(event.currentTarget).attr('data-id');
     var shelf = this.collection.get(id);
-
     // Not sure this is where this happens or not.
-    var view = new Backbone.Views.bookShelfBooks({
-      collection: shelf.books
+    var view = new ShouldReads.Views.ShelfBooks({
+      title: shelf.get('title'),
+      collection: shelf.books()
     });
+
+    this.addShelfBooks(view);
   }
 
 });
