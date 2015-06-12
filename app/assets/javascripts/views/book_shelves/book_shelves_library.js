@@ -11,7 +11,7 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     // this.listenTo(this.collection, "add", this.addBook);
   },
 
-  addBook: function(book) {
+  addSubview: function() {
 
   },
 
@@ -27,7 +27,11 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
   selectShelf: function(event) {
     var id = $(event.currentTarget).attr('data-id');
     var shelf = this.collection.get(id);
-    debugger;
+
+    // Not sure this is where this happens or not.
+    var view = new Backbone.Views.bookShelfBooks({
+      collection: shelf.books
+    });
   }
 
 });
