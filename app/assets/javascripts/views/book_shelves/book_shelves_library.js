@@ -8,10 +8,18 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.collection, "sync", this.render);
-    // this.listenTo(this.collection, "add", this.addBook);
+    this.listenTo(this.collection, "sync", this.addIndex);
   },
 
-  addSubview: function() {
+  addIndex: function() {
+    var view = new ShouldReads.Views.BookShelvesIndex({
+      collection: this.collection
+    });
+
+    this.addSubview('.shelf-index', view);
+  },
+
+  addShelfBooks: function() {
 
   },
 
@@ -20,6 +28,8 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
       bookShelves: this.collection
     });
     this.$el.html(content);
+    // render subview 1
+    // render subview 2
 
     return this;
   },

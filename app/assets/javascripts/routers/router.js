@@ -20,13 +20,6 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  // bookShelfBooks: function(id) {
-  //   var view = new Backbone.Views.bookShelfBooks({
-  //     collection: shelf.books
-  //   });
-  //
-  //   this.
-  // },
 
   index: function() {
     var books = new ShouldReads.Collections.Books();
