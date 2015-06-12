@@ -4,6 +4,12 @@ ShouldReads.Collections.Books = Backbone.Collection.extend({
 
   url: "api/books",
 
+  initialize: function(models, options) {
+    if (options) {
+      this.book_shelf = options.book_shelf;
+    }
+  },
+
   getOrFetch: function(id) {
     var book = this.get(id);
     var collection = this;
