@@ -31,9 +31,13 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
 
   show: function(id) {
     var book = this.books.getOrFetch(id);
+    var user = new ShouldReads.Models.User({ id: CURRENT_USER_ID});
+    user.fetch();
+    this.book_shelves.fetch();
     var view = new ShouldReads.Views.BookShow({
       model: book,
-      collection: this.books
+      collection: this.book_shelves,
+      user: user
     });
 
     this._swapView(view);

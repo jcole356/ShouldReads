@@ -12,8 +12,13 @@
     <h3>Synopsis</h3>
     <p class="synopsis-text"><%= book.escape('synopsis') %></p>
   </div>
-</div>
 
-<label for="shelf_choice">Add to Shelf
-<select id="shelf_choice" name="">Shelf One</select>
-</label>
+    <label for="shelf_choice">Add to Shelf
+    <select id="shelf_choice" name="">
+    <% book_shelves.each(function(book_shelf) { %>
+      <option value="<%= book_shelf.id %>"><%= book_shelf.escape('title') %></option>
+    <% }) %>
+    </select>
+    </label>
+    <button class="add-book" type="button" name="button">Add Book!</button>
+</div>

@@ -10,8 +10,11 @@ window.ShouldReads = {
       book_shelves: new ShouldReads.Collections.BookShelves()
     });
 
+    var user = new ShouldReads.Models.User({ id: CURRENT_USER_ID});
+    user.fetch();
     var navbar = new ShouldReads.Views.NavBar({
       router: router,
+      user: user
     });
 
     $('#nav').html(navbar.render().$el);

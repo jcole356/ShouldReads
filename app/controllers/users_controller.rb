@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     end
   end
 
-  # Probably won't want this long term, but it works for now
   def show
     @user = User.find(params[:id])
+    render :show
   end
 
   private
