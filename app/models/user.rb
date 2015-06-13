@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
     primary_key: :id
     )
 
+  has_many :reviews, foreign_key: :author_id
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     return nil unless user && user.valid_password?(password)
