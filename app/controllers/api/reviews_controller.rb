@@ -13,6 +13,12 @@ class Api::ReviewsController < ApplicationController
 
   end
 
+  def index
+    @reviews = Review.all
+
+    render :index
+  end
+
   def show
     @review = Review.find(params[:id])
 

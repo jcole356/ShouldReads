@@ -10,6 +10,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     this.listenTo(this.user, "sync", this.render);
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "sync", this.addInfo);
+    this.listenTo(this.collection, "sync", this.addReviews);
     this.user = options.user;
   },
 
@@ -20,6 +21,16 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     });
 
     this.addSubview('.book-info', view);
+  },
+
+  addReviews: function() {
+    var reviews = new ShouldReads.Collections.Reviews();
+    reviews.fetch();
+    var view = new ShouldReads.Views.BookReviews({
+      collection: reviews
+    });
+
+    this.addSubview('.book-reviews', view);
   },
 
   render: function() {
