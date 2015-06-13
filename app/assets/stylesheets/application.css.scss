@@ -43,7 +43,6 @@
  }
 
  /* Libarary composite view */
-
  .book-title {
    display: block;
    float: left;
@@ -92,6 +91,75 @@
    float: left;
  }
 
+/* Book Show composite view */
+.book-info {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+ .book-show {
+   display: block;
+   float: left;
+   height: 200px;
+   width: 600px;
+ }
+
+ .book-reviews {
+   display: block;
+   float: left;
+   width: 50%;
+   padding-right: 50px;
+ }
+
+ .review-body {
+   display: block;
+   float: left;
+ }
+
+ .review-content {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 100%;
+   height: 150px;
+ }
+
+.review-header {
+  height: 50px;
+  border-bottom: 1px solid;
+  padding: 5px;
+}
+
+ .reviews-header {
+   margin-top: 0px;
+ }
+
+.review-author {
+  display: block;
+  float: left;
+}
+
+.review-title {
+  display: block;
+  float: left;
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
+ .show-book-info {
+   display: block;
+   float: left;
+   height: 400px;
+   width: 600px;
+   margin-left: 50px;
+ }
+
+ .show-image {
+   display: block;
+   float: left;
+   margin-right: 15px;
+ }
+
 
 /* Book index page */
  .book-index {
@@ -114,27 +182,6 @@
    margin-right: 15px;
  }
 
-/* Book show page */
- .show-book-info {
-   display: block;
-   float: left;
-   height: 400px;
-   width: 600px;
-   margin-left: 50px;
- }
-
- .book-show {
-   display: block;
-   float: left;
-   height: 200px;
-   width: 600px;
- }
-
- .show-image {
-   display: block;
-   float: left;
-   margin-right: 15px;
- }
 
 // These could probably all get grouped together.
  .index-title {

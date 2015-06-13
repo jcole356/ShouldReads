@@ -1,7 +1,7 @@
 ShouldReads.Views.BookInfo = Backbone.View.extend({
   template: JST['books/info'],
 
-  className: "book-show",
+  className: "show-book-info",
 
   events: {
     "click .add-book": "addBookToShelf"
