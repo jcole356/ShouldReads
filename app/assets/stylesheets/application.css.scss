@@ -40,6 +40,23 @@
    text-align: center;
  }
 
+ /* Libarary composite view */
+ .library-content {
+   width:auto;
+ }
+
+ .shelf-index {
+   display: block;
+   float: left;
+   width: 50%;
+   margin-left: 20px;
+ }
+
+ .shelf-books {
+   display: block;
+   float: left;
+ }
+
 /* Book index page */
  .book-index {
    margin-left: auto;

@@ -2,6 +2,8 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
 
   template: JST['book_shelves/library'],
 
+  className: "library-content",
+
   events: {
     "click .book-title": "selectShelf"
   },
@@ -38,12 +40,10 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
   selectShelf: function(event) {
     var id = $(event.currentTarget).attr('data-id');
     var shelf = this.collection.get(id);
-    debugger;
-    var books = shelf.books();
-    books.fetch();
+    var shelfBooks = shelf.books();
     var view = new ShouldReads.Views.ShelfBooks({
       title: shelf.get('title'),
-      collection: books
+      collection: shelfBooks
     });
 
     this.addShelfBooks(view);

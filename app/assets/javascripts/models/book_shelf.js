@@ -3,7 +3,7 @@ ShouldReads.Models.BookShelf = Backbone.Model.extend({
 
   books: function() {
     if (!this._books) {
-      this._books = new ShouldReads.Collections.Books([], {book_shelf: this});
+      this._books = new ShouldReads.Collections.Books([], { bookShelf: this });
     }
 
     return this._books;
@@ -11,7 +11,7 @@ ShouldReads.Models.BookShelf = Backbone.Model.extend({
 
   parse: function(response) {
     if (response.books) {
-      this.books().set(response.books, {parse:true});
+      this.books().set(response.books, { parse: true });
       delete response.books;
     }
 

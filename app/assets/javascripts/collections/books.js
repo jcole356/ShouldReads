@@ -6,7 +6,7 @@ ShouldReads.Collections.Books = Backbone.Collection.extend({
 
   initialize: function(models, options) {
     if (options) {
-      this.book_shelf = options.book_shelf;
+      this.bookShelf = options.bookShelf;
     }
   },
 
