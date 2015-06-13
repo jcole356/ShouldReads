@@ -1,22 +1,25 @@
-  <div class="show-image">
-    <img src="<%= book.escape('cover_image_url') %>"
-         alt="Book Cover"
-         height="195"
-         width="128">
-  </div>
-  <h2 class ="show-title"><%= book.escape('title') %></h2>
-  <h3 class ="show-author">by <%= book.escape('author') %></h3>
-  <h4 class ="show-pages"><%= book.escape('number_of_pages') %> Pages</h4>
-  <div class="synopsis">
-    <h3>Synopsis</h3>
-    <p class="synopsis-text"><%= book.escape('synopsis') %></p>
-  </div>
+<div class="show-image">
+  <img src="<%= book.escape('cover_image_url') %>"
+       alt="Book Cover"
+       height="195"
+       width="128">
+</div>
 
-    <label for="shelf_choice">Add to Shelf
-    <select id="shelf_choice" name="">
-    <% book_shelves.each(function(book_shelf) { %>
-      <option value="<%= book_shelf.id %>"><%= book_shelf.escape('title') %></option>
-    <% }) %>
-    </select>
-    </label>
-    <button class="add-book" type="button" name="button">Add Book!</button>
+<h2 class ="show-title"><%= book.escape('title') %></h2>
+<h3 class ="show-author">by <%= book.escape('author') %></h3>
+<h4 class ="show-pages"><%= book.escape('number_of_pages') %> Pages</h4>
+
+<label for="shelf_choice">Add to Shelf
+  <select class="form-control" id="shelf_choice" name="">
+  <% book_shelves.each(function(book_shelf) { %>
+    <option value="<%= book_shelf.id %>"><%= book_shelf.escape('title') %></option>
+  <% }) %>
+  </select>
+</label>
+
+<button class="btn btn-default" type="button" name="button">Add Book!</button>
+
+<div class="synopsis">
+  <h3>Synopsis</h3>
+  <p class="synopsis-text"><%= book.escape('synopsis') %></p>
+</div>
