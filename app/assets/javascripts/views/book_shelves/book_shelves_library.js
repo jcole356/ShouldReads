@@ -1,9 +1,9 @@
 ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
-
   template: JST['book_shelves/library'],
 
   className: "library-content",
 
+  // This is confusing, this should be shelf title... change this later.
   events: {
     "click .book-title": "selectShelf"
   },

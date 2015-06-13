@@ -1,25 +1,16 @@
-ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
-  template: JST['books/show'],
+ShouldReads.Views.BookInfo = Backbone.View.extend({
+  template: JST['books/info'],
+
+  className: "book-show",
 
   events: {
     "click .add-book": "addBookToShelf"
   },
 
   initialize: function(options) {
-    // Do I need this first listener?
     this.listenTo(this.user, "sync", this.render);
     this.listenTo(this.collection, "sync", this.render);
-    this.listenTo(this.collection, "sync", this.addInfo);
     this.user = options.user;
-  },
-
-  addInfo: function() {
-    var view = new ShouldReads.Views.BookInfo({
-      model: this.model,
-      collection: this.collection
-    });
-
-    this.addSubview('.book-info', view);
   },
 
   render: function() {
@@ -31,5 +22,16 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     return this;
   },
+
+  // Need to figure out a way to keep this value
+  addBookToShelf: function(event) {
+    var shelf = $('#shelf_choice').val();
+    var shelving = new ShouldReads.Models.BookShelving();
+    shelving.set({
+      shelf_id: shelf,
+      book_id: this.model.id
+    });
+    shelving.save({});
+  }
 
 });
