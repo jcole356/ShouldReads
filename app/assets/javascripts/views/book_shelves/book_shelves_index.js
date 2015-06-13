@@ -3,7 +3,11 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
   template: JST['book_shelves/index'],
 
   events: {
-    "click .book-title": "selectShelf"
+    // Don't think you should have this event in two places
+    /// May actually be more appropriate here than in the
+    // composite view
+    // "click .book-title": "selectShelf",
+    "click .new-shelf": "addShelf"
   },
 
   initialize: function() {
@@ -17,5 +21,22 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
     this.$el.html(content);
 
     return this;
+  },
+
+  addShelf: function(event) {
+    event.preventDefault();
+    var shelfName = this.$el.find('form').serializeJSON();
+    var that = this;
+    var bookShelf = new ShouldReads.Models.BookShelf();
+    bookShelf.set({
+      title: shelfName.book_shelf.title,
+      owner_id: CURRENT_USER_ID
+    });
+    bookShelf.save({}, {
+      success: function() {
+        that.collection.add(bookShelf);
+        that.collection.fetch();
+      }
+    });
   }
 });

@@ -1,5 +1,5 @@
 class BookShelf < ActiveRecord::Base
-  validates :title, presence: true
+  validates :title, :owner_id, presence: true
 
   belongs_to(
     :user,
@@ -10,9 +10,6 @@ class BookShelf < ActiveRecord::Base
 
   has_many :book_shelvings, foreign_key: :shelf_id
 
-  has_many(
-    :books,
-    through: :book_shelvings,
-    source: :book
-  )
+  has_many :books, through: :book_shelvings, source: :book
+  
 end
