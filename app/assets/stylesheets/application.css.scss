@@ -25,13 +25,15 @@
    list-style-type: none;
  }
 
-/* Clear fix, don't need this yet
+/* Clear fix, don't need this yet */
 .clear:after {
   content: "";
   clear: both;
   display: table;
  }
- */
+
+/* Global styles */
+
 
 /* Log in and sign in form */
  div.form-container {
@@ -41,21 +43,56 @@
  }
 
  /* Libarary composite view */
+
+ .book-title {
+   display: block;
+   float: left;
+   width: 100%;
+
+ }
+
  .library-content {
-   width:auto;
+  //  width:auto;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .new-shelf {
+   margin-bottom: 10px;
  }
 
  .shelf-index {
    display: block;
    float: left;
-   width: 50%;
-   margin-left: 20px;
+   width: 20%;
+   margin-left: 50px;
+   border-right: 2px solid black;
+   height: 100vh;
  }
 
  .shelf-books {
    display: block;
    float: left;
+   margin-left: 20px;
  }
+
+ .shelf-book-info {
+   display: block;
+   float: left;
+   margin-left: 20px;
+   margin-top: 36px;
+ }
+
+ .shelf-book-info-container {
+   margin-bottom: 15px;
+   border-bottom: 1px solid black;
+   padding-bottom: 15px; }
+
+ .shelf-image {
+   display: block;
+   float: left;
+ }
+
 
 /* Book index page */
  .book-index {

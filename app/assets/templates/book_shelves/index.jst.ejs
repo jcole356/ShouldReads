@@ -2,11 +2,11 @@
 
 <ul>
   <% bookShelves.each(function(bookShelf) { %>
-    <li class="book-title" data-id="<%= bookShelf.id %>"><%= bookShelf.escape('title') %></li>
+    <li class="book-title" data-id="<%= bookShelf.id %>"><h4><%= bookShelf.escape('title') %></h4></li>
   <% }) %>
 </ul>
 
-<input type="text" name="book_shelf[title]" value="New Bookshelf Title">
+<input class="new-shelf" type="text" name="book_shelf[title]" value="New Bookshelf Title">
 
 <br>
-<button class="add-book">Add Bookshelf</button>
+<button class="btn btn-default">Add Bookshelf</button>
