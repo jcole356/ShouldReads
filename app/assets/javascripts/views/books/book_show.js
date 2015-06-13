@@ -23,14 +23,16 @@ ShouldReads.Views.BookShow = Backbone.View.extend({
     return this;
   },
 
+  // Need to figure out a way to keep this value
   addBookToShelf: function(event) {
-    $shelf = $('#shelf_choice').val();
+    var shelf = $('#shelf_choice').val();
     var shelving = new ShouldReads.Models.BookShelving();
     shelving.set({
-      shelf_id: $shelf,
+      shelf_id: shelf,
       book_id: this.model.id
     });
     shelving.save({});
+    debugger;
   }
 
 });

@@ -42,6 +42,7 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     var shelf = this.collection.get(id);
     var shelfBooks = shelf.books();
     var view = new ShouldReads.Views.ShelfBooks({
+      id: id, // Probably don't need this anymore either.
       title: shelf.get('title'),
       collection: shelfBooks
     });
