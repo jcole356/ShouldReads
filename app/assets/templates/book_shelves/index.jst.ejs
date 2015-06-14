@@ -5,8 +5,8 @@
     <li class="shelf-title" data-id="<%= bookShelf.id %>"><h4><%= bookShelf.escape('title') %></h4></li>
   <% }) %>
 </ul>
-<form class="">
-  <input type="text" name="book_shelf[title]" placeholder="My New Bookshelf">
+<form>
+  <input class="form-control" type="text" name="book_shelf[title]" placeholder="My New Bookshelf">
   <br>
-  <input type="submit" class="new-shelf" value="Add Shelf">
+  <input type="submit" class="new-shelf btn btn-default" value="Add Shelf">
 </form>

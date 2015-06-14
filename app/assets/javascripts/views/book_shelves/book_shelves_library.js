@@ -54,6 +54,7 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
       bookShelves: this.collection
     });
     this.$el.html(content);
+    // this.attchSubviews();
     return this;
   },
 
