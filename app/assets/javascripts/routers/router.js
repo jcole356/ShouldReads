@@ -2,7 +2,7 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
     this.books = options.books;
-    this.book_shelves = options.book_shelves;
+    this.bookShelves = options.bookShelves;
     this.reviews = options.reviews;
   },
 
@@ -13,9 +13,9 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
   },
 
   bookShelvesLibrary: function() {
-    this.book_shelves.fetch();
+    this.bookShelves.fetch();
     var view = new ShouldReads.Views.BookShelvesLibrary({
-      collection: this.book_shelves
+      collection: this.bookShelves
     });
 
     this._swapView(view);
@@ -34,13 +34,14 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
 
   show: function(id) {
     var book = this.books.getOrFetch(id);
-    var user = new ShouldReads.Models.User({ id: CURRENT_USER_ID});
-    user.fetch();
-    this.book_shelves.fetch();
+    // var user = new ShouldReads.Models.User({ id: CURRENT_USER_ID});
+    // user.fetch();
+    this.bookShelves.fetch();
     var view = new ShouldReads.Views.BookShow({
-      model: book,
-      collection: this.book_shelves,
       // user: user,
+      model: book,
+      collection: this.books,
+      bookShelves: this.bookShelves,
       reviews: this.reviews
     });
 

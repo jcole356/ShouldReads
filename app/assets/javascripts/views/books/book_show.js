@@ -11,17 +11,19 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   initialize: function(options) {
     // Do I need this first listener?
     // this.user = options.user;
-    this.reviews = options.reviews;
     // this.listenTo(this.user, "sync", this.render);
+    this.reviews = options.reviews;
+    this.bookShelves = options.bookShelves;
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "sync", this.addInfo);
     // this.listenTo(this.collection, "sync", this.addReviews);
   },
 
   addInfo: function() {
+    this.bookShelves.fetch();
     var view = new ShouldReads.Views.BookInfo({
       model: this.model,
-      collection: this.collection
+      bookShelves: this.bookShelves
     });
 
     this.addSubview('.book-info', view);
@@ -37,10 +39,10 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   },
 
   addReviews: function() {
-    var reviews = new ShouldReads.Collections.Reviews();
-    reviews.fetch();
+    // var reviews = new ShouldReads.Collections.Reviews();
+    this.reviews.fetch();
     var view = new ShouldReads.Views.BookReviews({
-      collection: reviews,
+      collection: this.reviews,
       model: this.model
     });
 
@@ -50,7 +52,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   render: function() {
     var content = this.template({
       book: this.model,
-      book_shelves: this.collection,
+      bookShelves: this.bookShelves,
       // user: this.user
     });
     this.$el.html(content);
