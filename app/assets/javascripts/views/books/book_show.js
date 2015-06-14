@@ -4,16 +4,19 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   className: "show-container",
 
   events: {
-    "click .add-book": "addBookToShelf"
+    "click .add-book": "addBookToShelf",
+    "click .add-review": "addReview",
+    "click .submit-review": "addReviews"
   },
 
   initialize: function(options) {
     // Do I need this first listener?
+    this.user = options.user;
+    this.reviews = options.reviews;
     this.listenTo(this.user, "sync", this.render);
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "sync", this.addInfo);
     this.listenTo(this.collection, "sync", this.addReviews);
-    this.user = options.user;
   },
 
   addInfo: function() {
@@ -23,6 +26,15 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     });
 
     this.addSubview('.book-info', view);
+  },
+
+  addReview: function() {
+    var view = new ShouldReads.Views.ReviewForm({
+      collection: this.reviews,
+      book: this.model
+    });
+
+    this.addSubview('.form-modal', view);
   },
 
   addReviews: function() {
@@ -43,6 +55,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
       user: this.user
     });
     this.$el.html(content);
+
     return this;
   },
 

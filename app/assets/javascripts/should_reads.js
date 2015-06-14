@@ -7,7 +7,8 @@ window.ShouldReads = {
     var router = new ShouldReads.Routers.Router({
       $rootEl: $('#content'),
       books: new ShouldReads.Collections.Books(),
-      book_shelves: new ShouldReads.Collections.BookShelves()
+      book_shelves: new ShouldReads.Collections.BookShelves(),
+      reviews: new ShouldReads.Collections.BookShelves()
     });
 
     var user = new ShouldReads.Models.User({ id: CURRENT_USER_ID});

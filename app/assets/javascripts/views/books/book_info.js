@@ -9,6 +9,7 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
 
   initialize: function(options) {
     this.listenTo(this.user, "sync", this.render);
+    this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.collection, "sync", this.render);
     this.user = options.user;
   },
@@ -23,7 +24,8 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     return this;
   },
 
-  // Need to figure out a way to keep this value
+  // Need to figure out a way to keep this value for destroying
+  // Bookshelvings.
   addBookToShelf: function(event) {
     var shelf = $('#shelf_choice').val();
     var shelving = new ShouldReads.Models.BookShelving();

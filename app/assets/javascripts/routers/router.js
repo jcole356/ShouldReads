@@ -3,6 +3,7 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
     this.books = options.books;
     this.book_shelves = options.book_shelves;
+    this.reviews = options.reviews;
   },
 
   routes: {
@@ -39,7 +40,8 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
     var view = new ShouldReads.Views.BookShow({
       model: book,
       collection: this.book_shelves,
-      user: user
+      user: user,
+      reviews: this.reviews
     });
 
     this._swapView(view);
