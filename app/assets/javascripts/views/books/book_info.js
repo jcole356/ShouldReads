@@ -29,9 +29,8 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
   // Bookshelvings.
   addBookToShelf: function(event) {
     var shelfID = $('#shelf_choice').val();
-    // This doesn't work.  Would like to come up with something
-    // similar
-    var shelfTitle = $($('#shelf_choice').find('option')[shelfID - 1]).attr('data-title');
+    // This only works for this user because of the id's of his shelves.
+    // var shelfTitle = $($('#shelf_choice').find('option')[shelfID - 1]).attr('data-title');
     var shelving = new ShouldReads.Models.BookShelving();
     var that = this;
     shelving.set({
@@ -40,7 +39,7 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     });
     shelving.save({}, {
       success: function() {
-        var response = that.model.escape('title') + " has been added to " + shelfTitle;
+        var response = that.model.escape('title') + " has been added to your shelf";
         $('.success-response').html(response);
       }
     });
