@@ -10,7 +10,7 @@ ShouldReads.Views.ShelfBooks = Backbone.View.extend({
   // },
 
   initialize: function(options) {
-    this.id = options.id,  // Probably won't need this either
+    this.id = options.id;  // Probably won't need this either
     this.title = options.title;
     this.listenTo(this.collection, "sync", this.render);
   },
@@ -18,8 +18,9 @@ ShouldReads.Views.ShelfBooks = Backbone.View.extend({
   render: function() {
     var content = this.template({
       bookShelfBooks: this.collection,
-      title: this.title,
-      id: this.id // Probably not doing any good.
+      title: this.title
+     // Probably not doing any good.
+    //  id: this.id
     });
     this.$el.html(content);
 

@@ -13,8 +13,9 @@
       <li class="shelf-book-info"><%= book.escape('title') %></li>
       <li class="shelf-book-info">by <%= book.escape('author') %></li>
       <li class="shelf-book-info"><%= book.escape('number_of_pages') %> Pages</li>
+      <li class="shelf-book-info">Avg Rating: <%= book.escape('average_rating') %> of 5</li>
       <li class="shelf-book-info remove-book"
           data-id="<%= book.id %>"
-          data-shelf="<%= id %>">X</li>
+          data-shelf="">X</li>
   </ul>
 <% }) %>

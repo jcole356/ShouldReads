@@ -5,12 +5,14 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
 
   // This is confusing, this should be shelf title... change this later.
   events: {
-    "click .book-title": "selectShelf"
+    "click .shelf-title": "selectShelf"
   },
 
   initialize: function() {
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "sync", this.addIndex);
+    // This may not work quite right...
+    this.listenTo(this.collection, "sync", this.addShelfBooks());
   },
 
   addIndex: function() {
@@ -26,7 +28,25 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     if (oldView) {
       this.removeSubview(".shelf-books", oldView);
     }
-    this.addSubview('.shelf-books', view);
+
+    // Not sure why this doesn't work??  Looks like once the view
+    // finally gets rendered it never gets appended to the composite.
+    if (!view) {
+      var that = this;
+      this.collection.fetch({
+        success: function() {
+          var shelf = that.collection.at(0);
+          var shelfBooks = shelf.books();
+          view = new ShouldReads.Views.ShelfBooks({
+            title: shelf.get('title'),
+            collection: shelfBooks,
+          });
+          that.addSubview('.shelf-books', view);
+        }
+      });
+    } else {
+      this.addSubview('.shelf-books', view);
+    }
   },
 
   render: function() {
@@ -42,7 +62,8 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     var shelf = this.collection.get(id);
     var shelfBooks = shelf.books();
     var view = new ShouldReads.Views.ShelfBooks({
-      id: id, // Probably don't need this anymore either.
+      // Probably don't need this anymore either.
+      // id: id,
       title: shelf.get('title'),
       collection: shelfBooks
     });

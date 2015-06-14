@@ -2,7 +2,7 @@
 
 <ul>
   <% bookShelves.each(function(bookShelf) { %>
-    <li class="book-title" data-id="<%= bookShelf.id %>"><h4><%= bookShelf.escape('title') %></h4></li>
+    <li class="shelf-title" data-id="<%= bookShelf.id %>"><h4><%= bookShelf.escape('title') %></h4></li>
   <% }) %>
 </ul>
 <form class="">

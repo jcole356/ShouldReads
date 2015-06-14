@@ -3,10 +3,6 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
   template: JST['book_shelves/index'],
 
   events: {
-    // Don't think you should have this event in two places
-    /// May actually be more appropriate here than in the
-    // composite view
-    // "click .book-title": "selectShelf",
     "click .new-shelf": "addShelf"
   },
 
