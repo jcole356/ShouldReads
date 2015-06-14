@@ -28,13 +28,22 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
   // Need to figure out a way to keep this value for destroying
   // Bookshelvings.
   addBookToShelf: function(event) {
-    var shelf = $('#shelf_choice').val();
+    var shelfID = $('#shelf_choice').val();
+    // This doesn't work.  Would like to come up with something
+    // similar
+    var shelfTitle = $($('#shelf_choice').find('option')[shelfID - 1]).attr('data-title');
     var shelving = new ShouldReads.Models.BookShelving();
+    var that = this;
     shelving.set({
-      shelf_id: shelf,
+      shelf_id: shelfID,
       book_id: this.model.id
     });
-    shelving.save({});
+    shelving.save({}, {
+      success: function() {
+        var response = that.model.escape('title') + " has been added to " + shelfTitle;
+        $('.success-response').html(response);
+      }
+    });
   }
 
 });
