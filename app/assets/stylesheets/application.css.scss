@@ -110,10 +110,17 @@ div.form-container {
   display: block;
   float: left;
 }
+
+.add-review {
+  display: block;
+  float: left;
+  margin-right: 20px;
+}
+
 .book-info {
-display: block;
-float: left;
-width: auto;
+  display: block;
+  float: left;
+  width: auto;
 }
 
 .book-show {
@@ -219,11 +226,12 @@ width: auto;
  width: inherit;
 }
 
-.success-response {
-  display: block;
+.bg-success {
   float: left;
-  width: inherit;
-  background-color: green;
+  display: block;
+  height: 70px;
+  border-radius: 4px;
+  padding: 24px;
 }
 
 /* Modal formatting */

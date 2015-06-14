@@ -40,7 +40,7 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     shelving.save({}, {
       success: function() {
         var response = that.model.escape('title') + " has been added to your shelf";
-        $('.success-response').html(response);
+        $('.show-info').append($('<div class="bg-success">').html(response));
       }
     });
   }
