@@ -29,7 +29,8 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     var reviews = new ShouldReads.Collections.Reviews();
     reviews.fetch();
     var view = new ShouldReads.Views.BookReviews({
-      collection: reviews
+      collection: reviews,
+      model: this.model
     });
 
     this.addSubview('.book-reviews', view);

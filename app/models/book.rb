@@ -10,6 +10,7 @@ class Book < ActiveRecord::Base
     ratings = []
     reviews.each { |review| ratings << review.rating }
     sum = ratings.inject(0) { |sum, rating| sum + rating }
+    return 0 if count < 1
     return sum / count
   end
 end

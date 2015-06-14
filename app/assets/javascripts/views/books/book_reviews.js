@@ -10,7 +10,7 @@ ShouldReads.Views.BookReviews = Backbone.View.extend({
   render: function() {
     var content = this.template({
       reviews: this.collection,
-      review: this.model
+      book: this.model
     });
     this.$el.html(content);
 
