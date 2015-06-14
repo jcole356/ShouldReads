@@ -4,27 +4,29 @@
        height="195"
        width="128">
 </div>
+<div class="show-info">
+  <h2 class ="show-title"><%= book.escape('title') %></h2>
+  <h3 class ="show-author">by <%= book.escape('author') %></h3>
+  <h4 class ="show-pages"><%= book.escape('number_of_pages') %> Pages</h4>
+  <h4 class ="show-rating">Avg Rating: <%= book.escape('average_rating') %></h4>
+  <button class="btn btn-default add-review" type="button" name="button">Write Review</button>
+</div>
 
-<h2 class ="show-title"><%= book.escape('title') %></h2>
-<h3 class ="show-author">by <%= book.escape('author') %></h3>
-<h4 class ="show-pages"><%= book.escape('number_of_pages') %> Pages</h4>
-<h4 class ="show-rating">Avg Rating: <%= book.escape('average_rating') %></h4>
-
-<label for="shelf_choice">Add to Shelf
+<div class="shelf-choice">
   <select class="form-control" id="shelf_choice">
-  <% bookShelves.each(function(bookShelf) { %>
-    <option value="<%= bookShelf.id %>" data-title="<%= bookShelf.escape('title') %>"><%= bookShelf.escape('title') %></option>
-  <% }) %>
+      <option>Shelf</option>
+    <% bookShelves.each(function(bookShelf) { %>
+      <option value="<%= bookShelf.id %>" data-title="<%= bookShelf.escape('title') %>"><%= bookShelf.escape('title') %></option>
+    <% }) %>
   </select>
-</label>
+  <button class="btn btn-default add-book" type="button" name="button">Add Book!</button>
+  <div class="success-response"></div>
+</div>
 
-<button class="btn btn-default add-book" type="button" name="button">Add Book!</button>
 
-<div class="success-response"></div>
+
 
 <div class="synopsis">
   <h3>Synopsis</h3>
   <p class="synopsis-text"><%= book.escape('synopsis') %></p>
 </div>
-
-<button class="btn btn-default add-review" type="button" name="button">Write Review</button>

@@ -16,6 +16,7 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
   render: function() {
     var content = this.template({
       reviews: this.collection,
+      book: this.book
     });
     this.$el.html(content);
 

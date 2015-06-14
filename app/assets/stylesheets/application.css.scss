@@ -106,6 +106,10 @@ div.form-container {
 }
 
 /* Book Show composite view */
+.add-book {
+  display: block;
+  float: left;
+}
 .book-info {
 display: block;
 float: left;
@@ -138,7 +142,7 @@ width: auto;
 }
 
 .review-header {
-height: 50px;
+  height: 50px;
 }
 
 .reviews-header {
@@ -147,20 +151,33 @@ height: 50px;
 }
 
 .review-author {
-display: block;
-float: left;
+  display: block;
+  float: left;
 }
 
 .review-rating {
-display: block;
-float: left;
-width: 100%;
+  display: block;
+  float: left;
+  width: 100%;
 }
 
 .review-title {
-display: block;
-float: left;
-margin-right: 20px;
+  display: block;
+  float: left;
+  margin-right: 20px;
+}
+
+.shelf-choice {
+  display: block;
+  float: left;
+  width: inherit;
+}
+
+#shelf_choice {
+  display: block;
+  float: left;
+  width: 128px;
+  margin-right: 15px;
 }
 
 .show-book-info {
@@ -169,15 +186,44 @@ margin-right: 20px;
 }
 
 .show-container {
-width: 800px;
-margin-left: auto;
-margin-right: auto;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .show-image {
  display: block;
  float: left;
- margin-right: 15px;
+ width: 150px;
+ height: 200px;
+}
+
+.show-info {
+  display: block;
+  float:left;
+  width: 650px;
+ height: 200px;
+}
+
+.show-rating {
+  display: block;
+  float: left;
+  margin-top: 0px;
+  width: inherit;
+}
+
+.show-title, .show-author, .show-pages {
+ display: block;
+ float: left;
+ margin-top: 0px;
+ width: inherit;
+}
+
+.success-response {
+  display: block;
+  float: left;
+  width: inherit;
+  background-color: green;
 }
 
 /* Modal formatting */
@@ -235,10 +281,6 @@ margin-right: auto;
  display: block;
 }
 
-.show-title, .show-author, .show-pages {
- display: block;
- margin-top: 0px;
-}
 
 .synopsis {
  display: block;
