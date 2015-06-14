@@ -1,5 +1,5 @@
 <div class="m-content">
-  <h3>Review <%= book.escape('title') %></h3>
+  <h3 class="m-review-title">Review <%= book.escape('title') %></h3>
   <form class="">
     <div class="form-group">
       <label for="review-rating">Rating
@@ -15,12 +15,12 @@
 
     <label for="review-title">Title</label>
     <div class="form-group">
-      <input id="review-title" type="text" name="review[title]">
+      <input class="form-control" id="review-title" type="text" name="review[title]">
     </div>
 
     <label for="review-body">Review</label>
     <div class="form-group">
-      <textarea id="review-body" name="review[body]" rows="8" cols="40"></textarea>
+      <textarea class="form-control" id="review-body" name="review[body]" rows="8" cols="40"></textarea>
     </div>
 
     <button type="submit" class="btn btn-submit submit-review">Add Review</button>
