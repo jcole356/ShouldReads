@@ -1,17 +1,20 @@
 <h1><%= title %></h1>
 
 <% bookShelfBooks.each(function(book) { %>
-<ul class="clear shelf-book-info-container">
-    <li class="shelf-image"><img src="<%= book.escape('cover_image_url') %>"
-         alt="Book Cover"
-         height="97"
-         width="64">
-   </li>
-    <li class="shelf-book-info"><%= book.escape('title') %></li>
-    <li class="shelf-book-info">by <%= book.escape('author') %></li>
-    <li class="shelf-book-info"><%= book.escape('number_of_pages') %> Pages</li>
-    <li class="shelf-book-info remove-book"
-        data-id="<%= book.id %>"
-        data-shelf="<%= id %>">X</li>
-</ul>
+  <ul class="clear shelf-book-info-container">
+      <li class="shelf-image">
+        <a href="#/books/<%= book.id %>">
+          <img src="<%= book.escape('cover_image_url') %>"
+             alt="Book Cover"
+             height="97"
+             width="64">
+         </a>
+     </li>
+      <li class="shelf-book-info"><%= book.escape('title') %></li>
+      <li class="shelf-book-info">by <%= book.escape('author') %></li>
+      <li class="shelf-book-info"><%= book.escape('number_of_pages') %> Pages</li>
+      <li class="shelf-book-info remove-book"
+          data-id="<%= book.id %>"
+          data-shelf="<%= id %>">X</li>
+  </ul>
 <% }) %>
