@@ -16,7 +16,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     this.bookShelves = options.bookShelves;
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "sync", this.addInfo);
-    // this.listenTo(this.collection, "sync", this.addReviews);
+    this.listenTo(this.collection, "sync", this.addReviews);
   },
 
   addInfo: function() {

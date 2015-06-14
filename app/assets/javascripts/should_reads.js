@@ -8,7 +8,7 @@ window.ShouldReads = {
       $rootEl: $('#content'),
       books: new ShouldReads.Collections.Books(),
       bookShelves: new ShouldReads.Collections.BookShelves(),
-      reviews: new ShouldReads.Collections.BookShelves()
+      reviews: new ShouldReads.Collections.Reviews()
     });
 
     var user = new ShouldReads.Models.User({ id: CURRENT_USER_ID});
