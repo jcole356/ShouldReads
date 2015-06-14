@@ -5,9 +5,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
 
   events: {
     "click .add-review": "addReview",
-    // This will add the review, but we keep adding the header as
-    // well.  Either need to remove the old views, or make a review a
-    // subview of another composite view.
+    // Seems to be working fine without this.
     // "click .submit-review": "addReviews"
   },
 
@@ -38,7 +36,9 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
       book: this.model
     });
 
-    this.addSubview('.form-modal', view);
+    $('body').prepend(view.render().$el);
+    // I don't think this is necessary
+    // this.addSubview('.form-modal', view);
   },
 
   addReviews: function() {

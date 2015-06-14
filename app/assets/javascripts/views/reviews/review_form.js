@@ -1,6 +1,8 @@
 ShouldReads.Views.ReviewForm = Backbone.View.extend({
   template: JST["reviews/form"],
 
+  className: "m-backdrop",
+
   events: {
     "click .submit-review": "addReview"
   },
@@ -37,6 +39,7 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
       success: function() {
         that.collection.add(review);
         that.collection.fetch();
+        that.remove();
       }
     });
   }

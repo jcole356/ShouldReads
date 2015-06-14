@@ -1,24 +1,26 @@
-<div class="m-backdrop"></div>
 <div class="m-content">
   <form class="">
+    <div class="form-group">
+      <label for="review-rating">Rating
+        <select id="review-rating" class="form-control" name="review[rating]">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </label>
+    </div>
 
-    <label for="review-rating">
-      <select id="review-rating" class="form-control" name="review[rating]">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-    </label>
-
-    <label for="review-title">Title
+    <label for="review-title">Title</label>
+    <div class="form-group">
       <input id="review-title" type="text" name="review[title]">
-    </label>
+    </div>
 
-    <label for="review-body">Review
+    <label for="review-body">Review</label>
+    <div class="form-group">
       <textarea id="review-body" name="review[body]" rows="8" cols="40"></textarea>
-    </label>
+    </div>
 
     <button type="submit" class="btn btn-submit submit-review">Add Review</button>
   </form>
