@@ -18,184 +18,189 @@
  @import "bootstrap";
 
 
- /* Clear default styles for lists */
- ul {
-   margin: 0px;
-   padding: 0px;
-   list-style-type: none;
- }
+/* Clear default styles for lists */
+ul {
+ margin: 0px;
+ padding: 0px;
+ list-style-type: none;
+}
 
 /* Clear fix, don't need this yet */
 .clear:after {
   content: "";
   clear: both;
   display: table;
- }
+}
 
 /* Global styles */
 
 
 /* Log in and sign in form */
- div.form-container {
-   position: absolute;
-   top: 50%;
-   text-align: center;
- }
+div.form-container {
+ position: absolute;
+ top: 50%;
+ text-align: center;
+}
 
- /* Libarary composite view */
- .book-title {
-   display: block;
-   float: left;
-   width: 100%;
+/* Libarary composite view */
+.book-title {
+  display: block;
+  float: left;
+  width: 100%;
+}
 
- }
+.library-content {
+margin-left: auto;
+margin-right: auto;
+}
 
- .library-content {
-  margin-left: auto;
-  margin-right: auto;
- }
+.new-shelf {
+ margin-bottom: 10px;
+}
 
- .new-shelf {
-   margin-bottom: 10px;
- }
+.shelf-index {
+ display: block;
+ float: left;
+ width: 20%;
+ margin-left: 50px;
+ border-right: 2px solid black;
+ height: 100vh;
+}
 
- .shelf-index {
-   display: block;
-   float: left;
-   width: 20%;
-   margin-left: 50px;
-   border-right: 2px solid black;
-   height: 100vh;
- }
+.shelf-books {
+ display: block;
+ float: left;
+ margin-left: 20px;
+}
 
- .shelf-books {
-   display: block;
-   float: left;
-   margin-left: 20px;
- }
+.shelf-book-info {
+ display: block;
+ float: left;
+ margin-left: 20px;
+ margin-top: 36px;
+}
 
- .shelf-book-info {
-   display: block;
-   float: left;
-   margin-left: 20px;
-   margin-top: 36px;
- }
+.shelf-book-info-container {
+ margin-bottom: 15px;
+ border-bottom: 1px solid black;
+ padding-bottom: 15px; }
 
- .shelf-book-info-container {
-   margin-bottom: 15px;
-   border-bottom: 1px solid black;
-   padding-bottom: 15px; }
-
- .shelf-image {
-   display: block;
-   float: left;
- }
+.shelf-image {
+ display: block;
+ float: left;
+}
 
 /* Book Show composite view */
 .book-info {
-  display: block;
-  float: left;
-  width: auto;
+display: block;
+float: left;
+width: auto;
 }
 
- .book-show {
-   display: block;
-   float: left;
-   height: 200px;
-   width: 600px;
- }
+.book-show {
+ display: block;
+ float: left;
+ height: 200px;
+ width: 600px;
+}
 
- .book-reviews {
-   display: block;
-   float: left;
-   width: inherit;
-   border-top: 1px solid;
- }
+.book-reviews {
+ display: block;
+ float: left;
+ width: inherit;
+ border-top: 1px solid;
+}
 
- .review-body {
-   display: block;
-   float: left;
- }
+.review-body {
+ display: block;
+ float: left;
+}
 
- .review-content {
- }
+.review-content {
+}
 
 .review-header {
-  height: 50px;
+height: 50px;
 }
 
 .reviews-header {
   margin-top: 0px;
-  background-color: blue;
+  background-color: lightblue;
 }
 
 .review-author {
-  display: block;
-  float: left;
+display: block;
+float: left;
+}
+
+.review-rating {
+display: block;
+float: left;
+width: 100%;
 }
 
 .review-title {
-  display: block;
-  float: left;
-  margin-left: 5px;
-  margin-right: 20px;
+display: block;
+float: left;
+margin-right: 20px;
 }
 
- .show-book-info {
-   display: block;
-   float: left;
- }
+.show-book-info {
+ display: block;
+ float: left;
+}
 
 .show-container {
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+width: 800px;
+margin-left: auto;
+margin-right: auto;
 }
 
- .show-image {
-   display: block;
-   float: left;
-   margin-right: 15px;
- }
+.show-image {
+ display: block;
+ float: left;
+ margin-right: 15px;
+}
 
 
 /* Book index page */
- .book-index {
-   margin-left: auto;
-   margin-right: auto;
-   width: 800px;
- }
+.book-index {
+ margin-left: auto;
+ margin-right: auto;
+ width: 800px;
+}
 
- .index-book-info {
-   display: block;
-   float: left;
-   height: 200px;
-   width: 600px;
-   margin: 10px 0px 10px 0px;
- }
+.index-book-info {
+ display: block;
+ float: left;
+ height: 200px;
+ width: 600px;
+ margin: 10px 0px 10px 0px;
+}
 
- .index-image {
-   display: block;
-   float: left;
-   margin-right: 15px;
- }
+.index-image {
+ display: block;
+ float: left;
+ margin-right: 15px;
+}
 
 
 // These could probably all get grouped together.
- .index-title {
-   display: block;
- }
+.index-title {
+ display: block;
+}
 
- .index-author {
-   display: block;
- }
+.index-author {
+ display: block;
+}
 
- .show-title, .show-author, .show-pages {
-   display: block;
- }
+.show-title, .show-author, .show-pages {
+ display: block;
+ margin-top: 0px;
+}
 
- .synopsis {
-   display: block;
-   margin-top: 10px;
-   float: left;
- }
+.synopsis {
+ display: block;
+ margin-top: 10px;
+ float: left;
+}

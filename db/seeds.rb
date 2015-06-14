@@ -43,3 +43,10 @@ b4 = Book.create(title: "The Catcher in the Rye",
 s1 = BookShelf.create(title: "Read", owner_id: 1)
 s1 = BookShelf.create(title: "To Read", owner_id: 1)
 s1 = BookShelf.create(title: "Currently Reading", owner_id: 1)
+
+r1 = Review.create(author_id: 1, book_id: 1, rating: 5, title: "Oh Snape, you Ass!",
+                   body: "This is one of my favorite books.  I love that Harry
+                    has gotten so dark.")
+r2 = Review.create(author_id: 1, book_id: 2, rating: 5, title: "So it goes...",
+                   body: "This is one of my favorite books.  Billy Pilgrim is
+                    traveling through time like many of us do from time to time.")
