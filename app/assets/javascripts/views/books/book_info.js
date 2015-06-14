@@ -8,7 +8,7 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
   },
 
   initialize: function(options) {
-    this.listenTo(this.user, "sync", this.render);
+    // this.listenTo(this.user, "sync", this.render);
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.collection, "sync", this.render);
     this.user = options.user;
@@ -18,7 +18,7 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     var content = this.template({
       book: this.model,
       book_shelves: this.collection,
-      user: this.user
+      // user: this.user
     });
     this.$el.html(content);
     return this;

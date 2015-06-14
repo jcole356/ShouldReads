@@ -40,7 +40,7 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
     var view = new ShouldReads.Views.BookShow({
       model: book,
       collection: this.book_shelves,
-      user: user,
+      // user: user,
       reviews: this.reviews
     });
 
