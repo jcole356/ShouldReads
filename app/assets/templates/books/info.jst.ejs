@@ -8,6 +8,7 @@
 <h2 class ="show-title"><%= book.escape('title') %></h2>
 <h3 class ="show-author">by <%= book.escape('author') %></h3>
 <h4 class ="show-pages"><%= book.escape('number_of_pages') %> Pages</h4>
+<h4 class ="show-rating">Avg Rating: <%= book.escape('average_rating') %></h4>
 
 <label for="shelf_choice">Add to Shelf
   <select class="form-control" id="shelf_choice" name="">

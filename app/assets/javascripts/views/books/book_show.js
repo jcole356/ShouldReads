@@ -1,6 +1,8 @@
 ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   template: JST['books/show'],
 
+  className: "show-container",
+
   events: {
     "click .add-book": "addBookToShelf"
   },
