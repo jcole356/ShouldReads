@@ -4,7 +4,10 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   className: "show-container",
 
   events: {
-    // "click .add-review": "addReview",
+    "click .add-review": "addReview",
+    // This will add the review, but we keep adding the header as
+    // well.  Either need to remove the old views, or make a review a
+    // subview of another composite view.
     // "click .submit-review": "addReviews"
   },
 

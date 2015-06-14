@@ -65,6 +65,7 @@ margin-right: auto;
  margin-left: 50px;
  border-right: 2px solid black;
  height: 100vh;
+ min-width: 200px;
 }
 
 .shelf-books {
@@ -88,6 +89,20 @@ margin-right: auto;
 .shelf-image {
  display: block;
  float: left;
+}
+
+.shelf-title {
+  width: 200px;
+  min-width: 200px;
+  margin: 0px;
+  padding: 2px;
+}
+
+.shelf-title:hover {
+  border: 1px solid;
+  cursor: pointer;
+  padding: 0px;
+  margin: 0px;
 }
 
 /* Book Show composite view */
