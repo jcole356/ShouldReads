@@ -3,7 +3,6 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
 
   className: "library-content",
 
-  // This is confusing, this should be shelf title... change this later.
   events: {
     "click .shelf": "selectShelf",
   },
@@ -11,6 +10,8 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
   initialize: function() {
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "sync", this.addIndex);
+    // Want to have the all shelf render by default.
+    this.listenTo(this.collection, "sync", this.addShelfBooks);
   },
 
   addIndex: function() {
