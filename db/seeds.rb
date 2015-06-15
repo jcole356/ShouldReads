@@ -40,9 +40,10 @@ b4 = Book.create(title: "The Catcher in the Rye",
 #                  synopsis: "The war against Voldemort is not going well; even Muggle governments are noticing. Ron scans the obituary pages of the Daily Prophet, looking for familiar names. Dumbledore is absent from Hogwarts for long stretches of time, and the Order of the Phoenix has already suffered losses.",
 #                  number_of_pages: 652)
 
-s1 = BookShelf.create(title: "Read", owner_id: 1)
-s1 = BookShelf.create(title: "To Read", owner_id: 1)
-s1 = BookShelf.create(title: "Currently Reading", owner_id: 1)
+s1 = BookShelf.create(title: "All", owner_id: 1)
+s2 = BookShelf.create(title: "Read", owner_id: 1)
+s3 = BookShelf.create(title: "To Read", owner_id: 1)
+s4 = BookShelf.create(title: "Currently Reading", owner_id: 1)
 
 r1 = Review.create(author_id: 1, book_id: 1, rating: 5, title: "Oh Snape, you Ass!",
                    body: "This is one of my favorite books.  I love that Harry
