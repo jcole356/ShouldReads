@@ -1,20 +1,18 @@
-<h1>Books</h1>
-
 <ul>
 <% books.each(function(book) { %>
   <li>
-    <div class="index-book-info">
-      <div class="index-image">
-        <img src="<%= book.escape('cover_image_url') %>"
-             alt="Book Cover"
-             height="195"
-             width="128">
-      </div>
-      <a href="#/books/<%= book.id %>">
+    <a href="#/books/<%= book.id %>">
+      <div class="index-book-info">
+        <div class="index-image">
+          <img src="<%= book.escape('cover_image_url') %>"
+               alt="Book Cover"
+               height="195"
+               width="128">
+        </div>
         <h3 class="index-title"><%= book.escape('title') %></h3>
-      </a>
-      <h4 class="index-author"><%= book.escape('author') %></h4>
-    </div>
+        <h4 class="index-author"><%= book.escape('author') %></h4>
+      </div>
+    </a>
   </li>
 <% }) %>
 </ul>
