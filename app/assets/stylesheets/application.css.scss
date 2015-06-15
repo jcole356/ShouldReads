@@ -38,10 +38,13 @@ ul {
 
 
 /* Log in and sign in form */
-div.form-container {
- position: absolute;
- top: 50%;
- text-align: center;
+.sign-in {
+  position: relative;
+  top: 100px;
+  text-align: center;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Libarary composite view */
