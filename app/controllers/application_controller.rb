@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+    def add_bookshelf
+      BookShelf.create(owner_id: current_user.id, title: "All")
+    end
+
     def current_user
       @current_user ||= User.find_by_session_token(session[:session_token])
     end
