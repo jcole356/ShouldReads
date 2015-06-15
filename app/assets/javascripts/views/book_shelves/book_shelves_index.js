@@ -3,11 +3,12 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
   template: JST['book_shelves/index'],
 
   events: {
-    "click .new-shelf": "addShelf"
+    "click .new-shelf": "addShelf",
+    "click .shelf-delete": "destroyShelf"
   },
 
   initialize: function() {
-    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "sync remove", this.render);
   },
 
   render: function() {
@@ -34,5 +35,11 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
         that.collection.fetch();
       }
     });
+  },
+
+  destroyShelf: function (event) {
+    var shelfID = $(event.currentTarget).attr('data-id');
+    var shelf = this.collection.get(shelfID);
+    shelf.destroy();
   }
 });

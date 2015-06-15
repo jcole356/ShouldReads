@@ -5,7 +5,7 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
 
   // This is confusing, this should be shelf title... change this later.
   events: {
-    "click .shelf-title": "selectShelf"
+    "click .shelf": "selectShelf"
   },
 
   initialize: function() {
