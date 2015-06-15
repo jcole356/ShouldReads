@@ -1,6 +1,6 @@
-<h3>Bookshelves</h3>
+<h4>bookshelves</h3>
 
-<ul>
+<ul class="clear">
   <% bookShelves.each(function(bookShelf) { %>
     <li class="shelf" data-id="<%= bookShelf.id %>">
       <h4 class="shelf-title"><%= bookShelf.escape('title') %></h4>
@@ -8,9 +8,10 @@
       <a data-id="<%= bookShelf.id %>" class="btn btn-primary btn-xs shelf-delete">&times;</a>
   <% }) %>
 </ul>
-
-<form>
-  <input class="form-control" type="text" name="book_shelf[title]" placeholder="My New Bookshelf">
-  <br>
-  <input type="submit" class="new-shelf btn btn-default" value="Add Shelf">
-</form>
+<div class="form-group add-shelf">
+  <form>
+    <input class="form-control" type="text" name="book_shelf[title]" placeholder="My New Bookshelf">
+    <br>
+    <input type="submit" class="new-shelf btn btn-default btn-xs" value="Add Shelf">
+  </form>
+</div>

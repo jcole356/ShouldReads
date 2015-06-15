@@ -14,7 +14,7 @@
 
 <div class="shelf-choice">
   <select class="form-control" id="shelf_choice">
-      <option>Shelf</option>
+    <option></option>
     <% bookShelves.each(function(bookShelf) { %>
       <option value="<%= bookShelf.id %>" data-title="<%= bookShelf.escape('title') %>"><%= bookShelf.escape('title') %></option>
     <% }) %>

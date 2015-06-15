@@ -45,6 +45,10 @@ div.form-container {
 }
 
 /* Libarary composite view */
+.add-shelf {
+  margin-top: 20px;
+}
+
 .book-title {
   display: block;
   float: left;
@@ -54,20 +58,11 @@ div.form-container {
 .library-content {
   margin-left: auto;
   margin-right: auto;
+  width: 960px;
 }
 
-.new-shelf {
- margin-bottom: 10px;
-}
-
-.shelf-index {
- display: block;
- float: left;
- width: 20%;
- margin-left: 50px;
- border-right: 2px solid black;
- height: 100vh;
- min-width: 200px;
+.library-header {
+  border-bottom: 2px solid;
 }
 
 .shelf-books {
@@ -94,18 +89,31 @@ div.form-container {
    float: left;
  }
 
+.shelf-list {
+
+}
+
 .shelf-image {
  display: block;
  float: left;
 }
 
+.shelf-index {
+ display: block;
+ float: left;
+ width: 20%;
+ border-right: 2px solid black;
+ height: 100vh;
+ min-width: 200px;
+ padding-right: 20px;
+}
+
 .shelf-title {
   display: block;
   float: left;
-  width: 200px;
-  min-width: 200px;
   margin: 0px;
   padding: 2px;
+  width: 150px;
 }
 
 .shelf-title:hover {
@@ -194,6 +202,11 @@ div.form-container {
   display: block;
   float: left;
   width: inherit;
+}
+
+.shelf-delete {
+  display: block;
+  float: right;
 }
 
 #shelf_choice {
