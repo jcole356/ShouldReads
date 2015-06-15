@@ -8,8 +8,6 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
   },
 
   initialize: function(options) {
-    // this.listenTo(this.user, "sync", this.render);
-    // this.user = options.user;
     this.bookShelves = options.bookShelves;
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.bookShelves, "sync", this.render);
@@ -19,7 +17,6 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     var content = this.template({
       book: this.model,
       bookShelves: this.bookShelves,
-      // user: this.user
     });
     this.$el.html(content);
     return this;
@@ -29,8 +26,6 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
   // Bookshelvings.
   addBookToShelf: function(event) {
     var shelfID = $('#shelf_choice').val();
-    // This only works for this user because of the id's of his shelves.
-    // var shelfTitle = $($('#shelf_choice').find('option')[shelfID - 1]).attr('data-title');
     var shelving = new ShouldReads.Models.BookShelving();
     var that = this;
     shelving.set({

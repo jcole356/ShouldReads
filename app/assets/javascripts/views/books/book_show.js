@@ -5,14 +5,9 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
 
   events: {
     "click .add-review": "addReview",
-    // Seems to be working fine without this.
-    // "click .submit-review": "addReviews"
   },
 
   initialize: function(options) {
-    // Do I need this first listener?
-    // this.user = options.user;
-    // this.listenTo(this.user, "sync", this.render);
     this.reviews = options.reviews;
     this.bookShelves = options.bookShelves;
     this.listenTo(this.collection, "sync", this.render);
@@ -37,12 +32,9 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     });
 
     $('body').prepend(view.render().$el);
-    // I don't think this is necessary
-    // this.addSubview('.form-modal', view);
   },
 
   addReviews: function() {
-    // var reviews = new ShouldReads.Collections.Reviews();
     this.reviews.fetch();
     var view = new ShouldReads.Views.BookReviews({
       collection: this.reviews,

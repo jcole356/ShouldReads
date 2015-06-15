@@ -16,6 +16,8 @@
       <li class="shelf-book-info">Avg Rating: <%= book.escape('average_rating') %> of 5</li>
       <li class="shelf-book-info remove-book"
           data-id="<%= book.id %>"
-          data-shelf="">X</li>
+          data-shelf="">
+            <a data-id="" class="btn btn-primary btn-xs shelving-delete">&times;</a>
+      </li>
   </ul>
 <% }) %>

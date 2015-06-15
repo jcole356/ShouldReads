@@ -13,4 +13,15 @@ class Book < ActiveRecord::Base
     return 0 if count < 1
     return sum / count
   end
+
+  def shelving_by_shelf(shelf_id)
+    shelvings = []
+
+    self.book_shelvings.select do |shelving|
+      if shelving.shelf_id == shelf_id
+        shelvings << shelving
+      end
+    end
+    return shelvings
+  end
 end
