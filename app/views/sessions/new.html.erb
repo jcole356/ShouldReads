@@ -1,4 +1,8 @@
 <div class="sign-in">
   <%= render "shared/form", action: :session_new %>
-  <%= button_to "Sign Up", new_user_url, {method: :get, class: "btn btn-primary btn-md btn-block"} %>
+  <div class="form-group">
+    <div class="col-lg-10">
+      <%= button_to "Sign Up", new_user_url, {method: :get, class: "btn btn-primary btn-md btn-block sign-up"} %>
+    </div>
+  </div>
 </div>

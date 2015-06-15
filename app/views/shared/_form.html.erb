@@ -1,7 +1,7 @@
 <% action_url = (action == :session_new) ? session_url : users_url %>
 <% button_text = (action == :session_new) ? "Log In" : "Sign Up" %>
 
-<h1>Should Reads</h1>
+<h1 class="sign-in-title">Should Reads</h1>
 
 <form class="form-horizontal" action="<%= action_url %>" method="post">
   <%= auth_token_input %>
