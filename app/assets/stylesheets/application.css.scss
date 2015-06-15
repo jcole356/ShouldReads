@@ -15,7 +15,9 @@
  */
 
  @import "bootstrap-sprockets";
+ @import "bootswatch/readable/variables";
  @import "bootstrap";
+ @import "bootswatch/readable/bootswatch";
 
 
 /* Clear default styles for lists */
@@ -235,11 +237,6 @@ div.form-container {
 }
 
 /* Modal formatting */
-
-.close {
-
-}
-
 .m-backdrop {
   position: absolute;
   background-color: rgba(170, 169, 176, .5);
@@ -266,9 +263,6 @@ div.form-container {
 
 .m-review-title {
   text-align: center;
-}
-
-.modal {
 }
 
 /* Book index page */
