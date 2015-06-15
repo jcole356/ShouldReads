@@ -5,8 +5,11 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def add_bookshelf
+    def add_book_shelves
       BookShelf.create(owner_id: current_user.id, title: "All")
+      BookShelf.create(owner_id: current_user.id, title: "Read")
+      BookShelf.create(owner_id: current_user.id, title: "To Read")
+      BookShelf.create(owner_id: current_user.id, title: "Currently Reading")
     end
 
     def current_user

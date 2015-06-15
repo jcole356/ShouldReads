@@ -9,7 +9,6 @@ ShouldReads.Views.BooksIndex = Backbone.View.extend({
   },
 
   render: function () {
-    debugger;
     var content = this.template({
       books: this.collection
     });

@@ -11,6 +11,5 @@ class BookShelf < ActiveRecord::Base
   )
 
   has_many :book_shelvings, foreign_key: :shelf_id
-
   has_many :books, through: :book_shelvings, source: :book
 end
