@@ -16,7 +16,9 @@
   <select class="form-control" id="shelf_choice">
     <option></option>
     <% bookShelves.each(function(bookShelf) { %>
-      <option value="<%= bookShelf.id %>" data-title="<%= bookShelf.escape('title') %>"><%= bookShelf.escape('title') %></option>
+      <% if (bookShelf.escape('title') !== "All") { %>
+        <option value="<%= bookShelf.id %>" data-title="<%= bookShelf.escape('title') %>"><%= bookShelf.escape('title') %></option>
+      <% } %>
     <% }) %>
   </select>
   <button class="btn btn-default add-book" type="button" name="button">Add Book!</button>
