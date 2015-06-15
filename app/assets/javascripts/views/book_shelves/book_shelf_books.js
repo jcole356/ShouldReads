@@ -11,10 +11,10 @@ ShouldReads.Views.ShelfBooks = Backbone.View.extend({
   },
 
   initialize: function(options) {
-    this.id = options.id;  // Probably won't need this either
+    // Probably won't need this either
+    // this.id = options.id;
     this.title = options.title;
-    // Suspecting this does nothing.
-    // this.listenTo(this.collection, "sync remove", this.render);
+    this.listenTo(this.collection, "remove", this.render);
   },
 
   render: function() {
@@ -30,13 +30,12 @@ ShouldReads.Views.ShelfBooks = Backbone.View.extend({
 
   // Seems to be working.  Now I should re-render the view.
   removeBook: function(event) {
-    var shelvingID = $(event.currentTarget).attr('data-id');
+    var shelvingID = $(event.currentTarget).attr('data-shelving-id');
     var shelving = new ShouldReads.Models.BookShelving({ id: shelvingID });
-    var that = this;
-    shelving.destroy({
-      success: function() {
-        that.render();
-      }
-    });
+    shelving.destroy();
+
+    var bookId = $(event.currentTarget).attr('data-book-id');
+    var book = this.collection.get(bookId);
+    this.collection.remove(book);
   }
 });

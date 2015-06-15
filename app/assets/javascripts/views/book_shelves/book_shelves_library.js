@@ -6,8 +6,6 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
   // This is confusing, this should be shelf title... change this later.
   events: {
     "click .shelf": "selectShelf",
-    //Can this be done?
-    "click .shelving-delete": "removeBook"
   },
 
   initialize: function() {
@@ -36,7 +34,6 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
       bookShelves: this.collection
     });
     this.$el.html(content);
-    // this.attchSubviews();
     return this;
   },
 
@@ -45,8 +42,6 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     var shelf = this.collection.get(id);
     var shelfBooks = shelf.books();
     var view = new ShouldReads.Views.ShelfBooks({
-      // Probably don't need this anymore either.
-      // id: id,
       title: shelf.get('title'),
       collection: shelfBooks
     });

@@ -22,8 +22,6 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     return this;
   },
 
-  // Need to figure out a way to keep this value for destroying
-  // Bookshelvings.
   addBookToShelf: function(event) {
     var shelfID = $('#shelf_choice').val();
     var shelving = new ShouldReads.Models.BookShelving();
@@ -34,7 +32,7 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     });
     shelving.save({}, {
       success: function() {
-        // May be better off to redirect to the library page.
+        // Need to keep these from accumulating.
         var response = that.model.escape('title') + " has been added to your shelf";
         $('.show-info').append($('<div class="bg-success">').html(response));
       }
