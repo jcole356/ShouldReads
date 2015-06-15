@@ -72,14 +72,15 @@ ul {
  display: block;
  float: left;
  margin-left: 20px;
+ width: 730px;
 }
 
-.shelf-book-info {
- display: block;
- float: left;
- margin-left: 20px;
- margin-top: 36px;
-}
+// .shelf-book-info {
+//  display: block;
+//  float: left;
+//  margin-left: 20px;
+//  margin-top: 36px;
+// }
 
 .shelf-book-info-container {
  margin-bottom: 15px;
@@ -87,10 +88,10 @@ ul {
  padding-bottom: 15px;
  }
 
- .shelf-delete {
-   display: block;
-   float: left;
- }
+.shelf-delete {
+  display: block;
+  float: left;
+}
 
 .shelf-list {
 

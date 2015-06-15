@@ -23,7 +23,6 @@ ShouldReads.Views.ShelfBooks = Backbone.View.extend({
     //  id: this.id
     });
     this.$el.html(content);
-
     return this;
   },
 
