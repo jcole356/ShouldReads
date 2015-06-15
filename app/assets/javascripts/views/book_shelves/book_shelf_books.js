@@ -13,7 +13,8 @@ ShouldReads.Views.ShelfBooks = Backbone.View.extend({
   initialize: function(options) {
     this.id = options.id;  // Probably won't need this either
     this.title = options.title;
-    this.listenTo(this.collection, "sync", this.render);
+    // Suspecting this does nothing.
+    // this.listenTo(this.collection, "sync remove", this.render);
   },
 
   render: function() {
@@ -31,6 +32,11 @@ ShouldReads.Views.ShelfBooks = Backbone.View.extend({
   removeBook: function(event) {
     var shelvingID = $(event.currentTarget).attr('data-id');
     var shelving = new ShouldReads.Models.BookShelving({ id: shelvingID });
-    shelving.destroy();
+    var that = this;
+    shelving.destroy({
+      success: function() {
+        that.render();
+      }
+    });
   }
 });

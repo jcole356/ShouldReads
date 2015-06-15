@@ -34,6 +34,7 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     });
     shelving.save({}, {
       success: function() {
+        // May be better off to redirect to the library page.
         var response = that.model.escape('title') + " has been added to your shelf";
         $('.show-info').append($('<div class="bg-success">').html(response));
       }
