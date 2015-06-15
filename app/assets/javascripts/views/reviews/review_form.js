@@ -4,7 +4,8 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
   className: "m-backdrop",
 
   events: {
-    "click .submit-review": "addReview"
+    "click .submit-review": "addReview",
+    "click .close": "removeForm"
   },
 
   initialize: function(options) {
@@ -43,5 +44,9 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
         that.remove();
       }
     });
+  },
+
+  removeForm: function() {
+    this.remove();
   }
 });
