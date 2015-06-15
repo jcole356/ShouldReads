@@ -39,5 +39,4 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
       }
     });
   }
-
 });

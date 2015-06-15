@@ -9,7 +9,7 @@ class Api::BookShelvesController < ApplicationController
   end
 
   def index
-    @book_shelves = BookShelf.all
+    @book_shelves = current_user.book_shelves.includes(:books)
     render :index
   end
 

@@ -4,6 +4,8 @@ class Book < ActiveRecord::Base
   has_many :reviews
   has_many :book_shelvings
 
+  scope :with_shelving_id, lambda { select("books.*, book_shelvings.id AS shelving_id") }
+
   def average_rating
     reviews = self.reviews
     count = reviews.count

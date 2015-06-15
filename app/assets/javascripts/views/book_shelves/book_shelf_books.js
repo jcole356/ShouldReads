@@ -4,10 +4,11 @@ ShouldReads.Views.ShelfBooks = Backbone.View.extend({
 
   className: "shelf-books-list",
 
-  // Not sure how to do this
-  // events: {
-  //   "click .remove-book": "removeBook"
-  // },
+  // Have the shelving ID in this veiw now.  Should be able to make this
+  // work now.
+  events: {
+    "click .shelving-delete": "removeBook"
+  },
 
   initialize: function(options) {
     this.id = options.id;  // Probably won't need this either
@@ -26,17 +27,10 @@ ShouldReads.Views.ShelfBooks = Backbone.View.extend({
     return this;
   },
 
-  // Need to revisit this on Monday.
-  // removeBook: function(event) {
-  //   var book_id = $(event.currentTarget).attr('data-id');
-  //   var shelf_id = $(event.currentTarget).attr('data-shelf');
-  //   $.ajax({
-  //     url: "api/book_shelvings",
-  //     type: "DELETE",
-  //     data: { shelf_id: shelf_id, book_id: book_id },
-  //     success: function() {
-  //       console.log("something good");
-  //     }
-  //   });
-  // }
+  // Seems to be working.  Now I should re-render the view.
+  removeBook: function(event) {
+    var shelvingID = $(event.currentTarget).attr('data-id');
+    var shelving = new ShouldReads.Models.BookShelving({ id: shelvingID });
+    shelving.destroy();
+  }
 });

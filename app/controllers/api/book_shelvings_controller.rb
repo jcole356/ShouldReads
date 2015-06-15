@@ -16,6 +16,7 @@ class Api::BookShelvingsController < ApplicationController
   def destroy
     @book_shelving = BookShelving.find(params[:id])
     @book_shelving.destroy
+    render json: {}
   end
 
   private
