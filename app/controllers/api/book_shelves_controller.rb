@@ -21,6 +21,7 @@ class Api::BookShelvesController < ApplicationController
   def destroy
     @book_shelf = BookShelf.find(params[:id])
     @book_shelf.destroy
+    render json: {}
   end
 
   private
