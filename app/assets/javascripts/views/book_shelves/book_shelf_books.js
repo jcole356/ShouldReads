@@ -10,13 +10,15 @@ ShouldReads.Views.ShelfBooks = Backbone.View.extend({
 
   initialize: function(options) {
     this.title = options.title;
+    this.shelvings = options.shelvings;
     this.listenTo(this.collection, "remove", this.render);
   },
 
   render: function() {
     var content = this.template({
       bookShelfBooks: this.collection,
-      title: this.title
+      title: this.title,
+      shelvings: this.shelvings
     });
     this.$el.html(content);
     return this;

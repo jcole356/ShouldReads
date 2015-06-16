@@ -38,11 +38,12 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
       }
     });
 
-    var allShelf = this.bookShelves.findWhere({ title: "All" });
-    var allShelving = new ShouldReads.Models.BookShelving();
-    allShelving.save({
-      shelf_id: allShelf.id,
-      book_id: this.model.id
-    });
+    // This doesn't really work, because it keeps seperate shelves.
+    // var allShelf = this.bookShelves.findWhere({ title: "All" });
+    // var allShelving = new ShouldReads.Models.BookShelving();
+    // allShelving.save({
+    //   shelf_id: allShelf.id,
+    //   book_id: this.model.id
+    // });
   }
 });

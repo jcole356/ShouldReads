@@ -1,0 +1,20 @@
+<h1>All</h1>
+
+<table class="shelf-book-info-container">
+<% shelvings.each(function(shelving) { %>
+  <tr>
+      <td class="shelf-image">
+        <a href="#/books/<%= shelving.book().id %>">
+          <img src="<%= shelving.book().escape('cover_image_url') %>"
+             alt="Book Cover"
+             height="97"
+             width="64">
+         </a>
+     </td>
+      <td class="shelf-book-info"><%= shelving.book().escape('title') %></td>
+      <td class="shelf-book-info">by <%= shelving.book().escape('author') %></td>
+      <td class="shelf-book-info"><%= shelving.book().escape('number_of_pages') %> Pages</td>
+      <td class="shelf-book-info">Avg Rating: <%= shelving.book().escape('average_rating') %> of 5</td>
+  </tr>
+<% }) %>
+</table>

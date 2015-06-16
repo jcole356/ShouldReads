@@ -8,9 +8,15 @@ class Api::BookShelvingsController < ApplicationController
     end
   end
 
-  def show
-    @book_shelving = BookShelving.find(params[:id])
-    render :show
+  # Pretty sure this isn't doing anything
+  # def show
+  #   @book_shelving = BookShelving.find(params[:id])
+  #   render :show
+  # end
+
+  def index
+    @book_shelvings = current_user.book_shelvings
+    render :index
   end
 
   def destroy

@@ -4,6 +4,8 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
     this.books = options.books;
     this.bookShelves = options.bookShelves;
     this.reviews = options.reviews;
+    // For the all shelf
+    this.shelvings = options.shelvings;
   },
 
   routes: {
@@ -15,7 +17,8 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
   bookShelvesLibrary: function() {
     this.bookShelves.fetch();
     var view = new ShouldReads.Views.BookShelvesLibrary({
-      collection: this.bookShelves
+      collection: this.bookShelves,
+      shelvings: this.shelvings
     });
 
     this._swapView(view);
