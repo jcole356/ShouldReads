@@ -11,13 +11,16 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     this.shelvings = options.shelvings;
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "sync", this.addIndex);
-    this.listenTo(this.collection, "sync", this.addAllBookShelf);
-
+    this.listenTo(this.collection, "sync remove", this.addAllBookShelf);
     // This defaults back to the old all shelf
     // this.listenTo(this.collection, "sync", this.addShelfBooks());
   },
 
   addAllBookShelf: function () {
+    var oldView = this.subviews(".shelf-books").first();
+    if (oldView) {
+      this.removeSubview(".shelf-books", oldView);
+    }
     this.shelvings.fetch();
     var view = new ShouldReads.Views.AllShelf({
       collection: this.shelvings
@@ -78,12 +81,17 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
   selectShelf: function(event) {
     var id = $(event.currentTarget).attr('data-id');
     var shelf = this.collection.get(id);
-    var shelfBooks = shelf.books();
-    var view = new ShouldReads.Views.ShelfBooks({
-      title: shelf.get('title'),
-      collection: shelfBooks
+    var shelfTitle = shelf.escape('title');
+    if (shelfTitle === "All") {
+      this.addAllBookShelf();
+    } else {
+      var shelfBooks = shelf.books();
+      var view = new ShouldReads.Views.ShelfBooks({
+        title: shelf.get('title'),
+        collection: shelfBooks
     });
 
     this.addShelfBooks(view);
+    }
   }
 });
