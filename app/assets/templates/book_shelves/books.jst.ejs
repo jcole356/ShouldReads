@@ -2,9 +2,8 @@
 
 <table class="shelf-book-info-container">
   <% bookShelfBooks.each(function(book) { %>
-
     <tr>
-        <td class="shelf-image">
+        <td class="shelf-book-info">
           <a href="#/books/<%= book.id %>">
             <img src="<%= book.escape('cover_image_url') %>"
                alt="Book Cover"
@@ -12,7 +11,7 @@
                width="64">
            </a>
        </td>
-        <td class="shelf-book-info"><%= book.escape('title') %></td>
+        <td class="shelf-book-info shelf-book-title"><%= book.escape('title') %></td>
         <td class="shelf-book-info">by <%= book.escape('author') %></td>
         <td class="shelf-book-info"><%= book.escape('number_of_pages') %> Pages</td>
         <td class="shelf-book-info">Avg Rating: <%= book.escape('average_rating') %> of 5</td>

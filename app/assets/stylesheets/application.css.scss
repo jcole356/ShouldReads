@@ -68,29 +68,28 @@ ul {
 }
 
 .shelf-books {
- display: block;
- float: left;
- margin-left: 20px;
- width: 730px;
+  display: block;
+  float: left;
+  margin-left: 20px;
+  width: 730px;
 }
-
-// .shelf-book-info {
-//  display: block;
-//  float: left;
-//  margin-left: 20px;
-//  margin-top: 36px;
-// }
 
 .shelf-books-list {
   width: inherit;
+}
 
+
+/* Shelf book info table */
+.shelf-book-info {
+  padding-bottom: 8px;
 }
 
 .shelf-book-info-container {
- margin-bottom: 15px;
- border-bottom: 1px solid black;
- padding-bottom: 15px;
- width: inherit;
+  width: inherit;
+ }
+
+ .shelf-book-title {
+   width: 200px;
  }
 
 .shelf-delete {
@@ -98,13 +97,7 @@ ul {
   float: left;
 }
 
-.shelf-list {
-
-}
-
 .shelf-image {
- display: block;
- float: left;
 }
 
 .shelf-index {
