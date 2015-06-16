@@ -82,10 +82,16 @@ ul {
 //  margin-top: 36px;
 // }
 
+.shelf-books-list {
+  width: inherit;
+
+}
+
 .shelf-book-info-container {
  margin-bottom: 15px;
  border-bottom: 1px solid black;
  padding-bottom: 15px;
+ width: inherit;
  }
 
 .shelf-delete {

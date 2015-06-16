@@ -17,7 +17,6 @@ ShouldReads.Views.AllShelf = Backbone.View.extend({
     });
     this.$el.html(content);
 
-    debugger;
     return this;
   }
 });
