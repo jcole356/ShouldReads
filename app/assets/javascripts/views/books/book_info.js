@@ -34,7 +34,7 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
       success: function() {
         // Need to keep these from accumulating.
         var response = that.model.escape('title') + " has been added to your shelf";
-        $('.show-info').append($('<div class="bg-success">').html(response));
+        $('.confirmation').html($('<div class="bg-success">').html(response));
       }
     });
   }
