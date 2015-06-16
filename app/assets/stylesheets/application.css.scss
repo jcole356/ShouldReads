@@ -148,7 +148,7 @@ ul {
 .book-info {
   display: block;
   float: left;
-  width: auto;
+  width: inherit;
 }
 
 .book-show {
@@ -188,7 +188,7 @@ ul {
 
 .reviews-header {
   margin-top: 0px;
-  background-color: lightblue;
+  background-color: #4582EC;
 }
 
 .review-author {
@@ -229,6 +229,7 @@ ul {
 .show-book-info {
  display: block;
  float: left;
+ width: inherit;
 }
 
 .show-container {
@@ -269,6 +270,7 @@ ul {
  display: block;
  margin-top: 10px;
  float: left;
+ width: inherit;
 }
 
 /* Modal formatting */
@@ -285,7 +287,7 @@ ul {
 
 .m-content {
   z-index: 200;
-   background-color: lightblue;
+   background-color: #4582EC;
    border: 2px solid black;
    border-radius: 3px;
    height: 600px;

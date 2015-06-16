@@ -8,12 +8,6 @@ class Api::BooksController < ApplicationController
   #   end
   # end
 
-  # def destroy
-  #   @book = Book.find(params[:id])
-  #   @book.destroy!
-  #   render :show
-  # end
-
   def index
     @books = Book.all
     render :index
