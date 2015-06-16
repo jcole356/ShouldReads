@@ -2,7 +2,7 @@
 
 <table class="shelf-book-info-container">
 <% shelvings.each(function(shelving) { %>
-  <tr class="">
+  <tr>
       <td class="shelf-book-info">
         <a href="#/books/<%= shelving.book().id %>">
           <img src="<%= shelving.book().escape('cover_image_url') %>"
