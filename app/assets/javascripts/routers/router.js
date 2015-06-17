@@ -4,7 +4,6 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
     this.books = options.books;
     this.bookShelves = options.bookShelves;
     this.reviews = options.reviews;
-    // For the all shelf
     this.shelvings = options.shelvings;
   },
 

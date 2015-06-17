@@ -1,7 +1,7 @@
 <h2 class="reviews-header">Reviews:</h2>
 
 <% reviews.each(function(review) { %>
-  <% if(review.escape('book_id') === book.id) { %>
+  <% if(review.escape('book_id') == book.id.toString()) { %>
     <div class="review-content">
       <div class="review-header">
         <h4 class="review-title">Title: <%= review.escape('title') %></h4>

@@ -51,7 +51,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
       // user: this.user
     });
     this.$el.html(content);
-
+    this.attachSubviews();
     return this;
   },
 
