@@ -7,7 +7,9 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
   },
 
   events: {
-    "click .sign-out": "signOut"
+    "click .sign-out": "signOut",
+    // Does this make sense?
+    "click .search-btn": "search"
   },
 
   render: function () {
@@ -18,6 +20,11 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
     this.$el.html(content);
 
     return this;
+  },
+
+  search: function (event) {
+    var query = $('.search-request').val();
+    Backbone.history.navigate("search/" + query, { trigger: true });
   },
 
   signOut: function(event) {

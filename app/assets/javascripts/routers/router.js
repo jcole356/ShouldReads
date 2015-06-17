@@ -11,7 +11,8 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "bookShelvesLibrary",
     "books": "index",
-    "books/:id": "show",
+    "books/:title": "show",
+    'search/:query': 'search'
   },
 
   bookShelvesLibrary: function() {
@@ -33,6 +34,23 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(view);
+  },
+
+  search: function (query) {
+    console.log(query);
+    // url: openlibrary.com/api/search
+    // var searchResults = new ShouldReads.Collections.SearchBooks();
+    // serachResults.fetch();
+    var url = "https://www.googleapis.com/books/v1/volumes?q=" + query
+    var searchResults = new ShouldReads.Collections.SearchBooks({
+      url: url
+    });
+    searchResults.fetch();
+    var view = this.ShouldReads.Views.SearchIndex({
+      collection: searchResults
+    });
+
+    debugger;
   },
 
   show: function(id) {

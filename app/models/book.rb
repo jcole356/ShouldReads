@@ -11,12 +11,13 @@ class Book < ActiveRecord::Base
     if @book
       @book
     else
-      self.get_from_api(title)
+      book_params = get_book_from_api(title)
       # Need to determine the conditions on which a book is added to the db
+      create_book!(book_params)
     end
   end
 
-  def self.get_from_api(title)
+  def self.get_book_from_api(title)
     # don't need to join on + or -.  Seems to work ok either way. Not with  RestClient
     query_string = title.scan(/\w+/).join('+')
     query_url = "https://www.googleapis.com/books/v1/volumes?q=#{query_string}"
