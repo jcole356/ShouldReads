@@ -1,5 +1,6 @@
 class Api::BooksController < ApplicationController
   def create
+    title = book_params['title']
     @book = Book.find_by_title(title)
     if @book
       render :show

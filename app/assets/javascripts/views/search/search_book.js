@@ -28,7 +28,6 @@ ShouldReads.Views.SearchBook = Backbone.View.extend({
     // debugger;
     book.save({}, {
       success: function() {
-        console.log("Should have worked!");
       }
     });
   }
