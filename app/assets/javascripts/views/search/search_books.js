@@ -1,7 +1,7 @@
 ShouldReads.Views.SearchIndex = Backbone.CompositeView.extend({
   template: JST['search/results'],
 
-  // className: "book-index",
+  className: "search-index",
 
   // events: {
   //   "click .index-book-info": "addOrRetrieve"

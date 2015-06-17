@@ -1,7 +1,7 @@
 ShouldReads.Views.SearchBook = Backbone.View.extend({
   template: JST['search/result'],
 
-  // className: 'search-book',
+  className: 'search-book-info',
 
   events: {
   },
