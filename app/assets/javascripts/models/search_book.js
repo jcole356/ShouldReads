@@ -25,9 +25,9 @@ ShouldReads.Models.SearchBook = Backbone.Model.extend({
           var author = "Unknown";
         }
         if (response.volumeInfo.imageLinks) {
-          var coverImage = response.volumeInfo.thumbnail;
+          var coverImage = response.volumeInfo.imageLinks.thumbnail;
         } else {
-          var coverImage = "No Image Available";
+          var coverImage = "";
         }
         if (response.volumeInfo.pageCount) {
           var numberOfPages = response.volumeInfo.pageCount;

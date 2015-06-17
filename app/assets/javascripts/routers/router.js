@@ -37,7 +37,6 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
   },
 
   search: function (query) {
-    console.log(query);
     var url = "https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=" + window.GOOGLE_API_KEY;
     var searchResults = new ShouldReads.Collections.SearchBooks({
       url: url
