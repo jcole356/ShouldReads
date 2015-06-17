@@ -11,7 +11,7 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "bookShelvesLibrary",
     "books": "index",
-    "books/:title": "show",
+    "books/:id": "show",
     'search/:query': 'search'
   },
 

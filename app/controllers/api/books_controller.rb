@@ -21,6 +21,7 @@ class Api::BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    # @book = Book.find_by_title(params[:title])
     render :show
   end
 

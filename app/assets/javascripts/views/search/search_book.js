@@ -27,11 +27,7 @@ ShouldReads.Views.SearchBook = Backbone.View.extend({
     });
     book.save({}, {
       success: function() {
-        book.fetch({
-          success: function() {
-            Backbone.history.navigate("");
-          }
-        });
+        Backbone.history.navigate("books/" + book.id, { trigger: true });
       }
     });
   }
