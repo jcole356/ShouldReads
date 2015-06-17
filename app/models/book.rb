@@ -6,17 +6,6 @@ class Book < ActiveRecord::Base
 
   scope :with_shelving_id, lambda { select("books.*, book_shelvings.id AS shelving_id") }
 
-  def self.create_or_retrieve(book_params)
-    title = book_params['title']
-    @book = Book.find_by_title(title)
-    if @book
-      @book
-    else
-      @book = Book.new(book_params)
-      @book
-    end
-  end
-
   # Probably won't use this, maybe for seeding.  Need to add API.
   def self.get_book_from_api(title)
     # don't need to join on + or -.  Seems to work ok either way. Not with  RestClient
@@ -45,6 +34,7 @@ class Book < ActiveRecord::Base
     @book
   end
 
+  # Need to optimize this.
   def average_rating
     reviews = self.reviews
     count = reviews.count

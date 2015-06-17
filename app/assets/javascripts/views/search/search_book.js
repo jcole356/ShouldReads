@@ -23,11 +23,15 @@ ShouldReads.Views.SearchBook = Backbone.View.extend({
       author: attrs.author,
       cover_image_url: attrs.cover_image_url,
       number_of_pages: attrs.number_of_pages,
-      description: attrs.description
+      synopsis: attrs.description
     });
-    // debugger;
     book.save({}, {
       success: function() {
+        book.fetch({
+          success: function() {
+            Backbone.history.navigate("");
+          }
+        });
       }
     });
   }

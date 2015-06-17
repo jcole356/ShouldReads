@@ -12,8 +12,6 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "sync", this.addIndex);
     this.listenTo(this.collection, "sync remove", this.addAllBookShelf);
-    // This defaults back to the old all shelf
-    // this.listenTo(this.collection, "sync", this.addShelfBooks());
   },
 
   addAllBookShelf: function () {
