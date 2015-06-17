@@ -3,10 +3,6 @@ ShouldReads.Views.SearchIndex = Backbone.CompositeView.extend({
 
   className: "search-index",
 
-  // events: {
-  //   "click .index-book-info": "addOrRetrieve"
-  // },
-
   initialize: function() {
     this.listenTo(this.collection, "add", this.addResult);
   },
@@ -31,9 +27,4 @@ ShouldReads.Views.SearchIndex = Backbone.CompositeView.extend({
   renderResults: function() {
     this.collection.each(this.addResult(book).bind(this));
   }
-
-  // addOrRetrieve: function(event) {
-  //   var target = $(event.currentTarget);
-  //   debugger;
-  // }
 });

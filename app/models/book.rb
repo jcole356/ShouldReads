@@ -6,17 +6,18 @@ class Book < ActiveRecord::Base
 
   scope :with_shelving_id, lambda { select("books.*, book_shelvings.id AS shelving_id") }
 
-  def self.create_or_retrieve(title)
+  def self.create_or_retrieve(book_params)
+    title = book_params['title']
     @book = Book.find_by_title(title)
     if @book
       @book
     else
-      book_params = get_book_from_api(title)
-      # Need to determine the conditions on which a book is added to the db
-      create_book!(book_params)
+      @book = Book.new(book_params)
+      @book
     end
   end
 
+  # Probably won't use this, maybe for seeding.  Need to add API.
   def self.get_book_from_api(title)
     # don't need to join on + or -.  Seems to work ok either way. Not with  RestClient
     query_string = title.scan(/\w+/).join('+')

@@ -1,12 +1,17 @@
 class Api::BooksController < ApplicationController
-  # def create
-  #   @book = Book.new(book_params)
-  #   if @book.save
-  #     render :show
-  #   else
-  #     render json: @book.errors, status: :unprocessable_entity
-  #   end
-  # end
+  def create
+    @book = Book.find_by_title(title)
+    if @book
+      render :show
+    else
+      @book = Book.new(book_params)
+      if @book.save
+        render :show
+      else
+        render json: @book.errors, status: :unprocessable_entity
+      end
+    end
+  end
 
   def index
     @books = Book.all
