@@ -4,5 +4,11 @@ ShouldReads.Collections.SearchBooks = Backbone.Collection.extend({
   },
 
   url: this.url,
-  model: ShouldReads.Models.SearchBook
+
+  model: ShouldReads.Models.SearchBook,
+
+  parse: function(response) {
+    return response.items;
+  }
+
 });

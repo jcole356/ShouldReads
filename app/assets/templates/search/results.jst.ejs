@@ -1,0 +1,16 @@
+<ul>
+<% searchBooks.each(function(searchBook) { %>
+  <li>
+    <div class="index-book-info">
+      <div class="index-image">
+        <img src="<%= searchBook.escape('cover_image_url') %>"
+             alt="Book Cover"
+             height="195"
+             width="128">
+      </div>
+      <h3 class="index-title"><%= searchBook.escape('title') %></h3>
+      <h4 class="index-author"><%= searchBook.escape('author') %></h4>
+    </div>
+  </li>
+<% }) %>
+</ul>

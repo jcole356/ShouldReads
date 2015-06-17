@@ -38,28 +38,22 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
 
   search: function (query) {
     console.log(query);
-    // url: openlibrary.com/api/search
-    // var searchResults = new ShouldReads.Collections.SearchBooks();
-    // serachResults.fetch();
-    var url = "https://www.googleapis.com/books/v1/volumes?q=" + query
+    var url = "https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=";
     var searchResults = new ShouldReads.Collections.SearchBooks({
       url: url
     });
     searchResults.fetch();
-    var view = this.ShouldReads.Views.SearchIndex({
+    var view = new ShouldReads.Views.SearchIndex({
       collection: searchResults
     });
 
-    debugger;
+    this._swapView(view);
   },
 
   show: function(id) {
     var book = this.books.getOrFetch(id);
-    // var user = new ShouldReads.Models.User({ id: CURRENT_USER_ID});
-    // user.fetch();
     this.bookShelves.fetch();
     var view = new ShouldReads.Views.BookShow({
-      // user: user,
       model: book,
       collection: this.books,
       bookShelves: this.bookShelves,
