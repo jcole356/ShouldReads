@@ -1,7 +1,12 @@
 <ul>
 <% searchBooks.each(function(searchBook) { %>
   <li>
-    <div class="index-book-info">
+    <div class="index-book-info"
+         data-title="<%= searchBook.escape('title') %>"
+         data-author="<%= searchBook.escape('author') %>"
+         data-image="<%= searchBook.escape('cover_image_url') %>"
+         data-pages="<%= searchBook.escape('number_of_pages') %>"
+         data-desc="<%= searchBook.escape('description') %>">
       <div class="index-image">
         <img src="<%= searchBook.escape('cover_image_url') %>"
              alt="Book Cover"
