@@ -1,14 +1,14 @@
-ShouldReads.Views.SearchIndex = Backbone.View.extend({
+ShouldReads.Views.SearchIndex = Backbone.CompositeView.extend({
   template: JST['search/results'],
 
-  className: "book-index",
+  // className: "book-index",
 
-  events: {
-    "click .index-book-info": "addOrRetrieve"
-  },
+  // events: {
+  //   "click .index-book-info": "addOrRetrieve"
+  // },
 
   initialize: function() {
-    this.listenTo(this.collection, "add", this.render);
+    this.listenTo(this.collection, "add", this.addResult);
   },
 
   render: function() {
@@ -16,11 +16,24 @@ ShouldReads.Views.SearchIndex = Backbone.View.extend({
       searchBooks: this.collection
     });
     this.$el.html(content);
+
     return this;
   },
 
-  addOrRetrieve: function(event) {
-    var target = $(event.currentTarget);
-    debugger;
+  addResult: function(book) {
+    var view = new ShouldReads.Views.SearchBook({
+      model: book
+    });
+
+    this.addSubview('.search-book', view);
+  },
+
+  renderResults: function() {
+    this.collection.each(this.addResult(book).bind(this));
   }
+
+  // addOrRetrieve: function(event) {
+  //   var target = $(event.currentTarget);
+  //   debugger;
+  // }
 });
