@@ -8,14 +8,14 @@
   </div>
 </div>
 
-<form class="form-horizontal" action="<%= action_url %>" method="post">
+<form class="form-horizontal log-in-form" action="<%= action_url %>" method="post">
   <%= auth_token_input %>
   <div class="form-group">
     <div class="col-sm-10 col-sm-offset-1">
       <input
         type="text"
         class="form-control"
-        id="inputEmail3"
+        id="inputUsername"
         placeholder="Username"
         name="user[username]">
     </div>
@@ -25,7 +25,7 @@
       <input
         type="password"
         class="form-control"
-        id="inputPassword3"
+        id="inputPassword"
         placeholder="Password"
         name="user[password]">
     </div>
@@ -47,3 +47,13 @@
     </div>
   </div>
 </form>
+
+<script>
+  $(".guest-button").on("click", function(event) {
+    event.preventDefault();
+    console.log("Here");
+    $("#inputUsername").val("kurt");
+    $("#inputPassword").val("vonnegut");
+    $(".log-in-form").submit();
+  });
+</script>
