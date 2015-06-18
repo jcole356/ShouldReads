@@ -52,6 +52,8 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   // Not sure why this is not returning a valid id.
   deleteReview: function(event) {
     var reviewID = $(event.currentTarget).attr('data-id')
+    var review = this.reviews.get(reviewID);
+    review.destroy();
   },
 
   render: function() {

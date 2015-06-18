@@ -4,7 +4,7 @@ ShouldReads.Views.BookReviews = Backbone.View.extend({
   className: "book-review-content",
 
   initialize: function() {
-    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "sync remove", this.render);
   },
 
   render: function() {
