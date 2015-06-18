@@ -5,6 +5,8 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
 
   events: {
     "click .add-review": "addReview",
+    "click .edit-review": "editReview",
+    "click .delete-review": "deleteReview"
   },
 
   initialize: function(options) {
@@ -25,7 +27,10 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     this.addSubview('.book-info', view);
   },
 
+  // Need to change this to allow for editing reviews as well.
   addReview: function() {
+    // Should probably get or fetch a review here and pass that in
+    // as a model
     var view = new ShouldReads.Views.ReviewForm({
       collection: this.reviews,
       book: this.model
@@ -42,6 +47,11 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     });
 
     this.addSubview('.book-reviews', view);
+  },
+
+  // Not sure why this is not returning a valid id.
+  deleteReview: function(event) {
+    var reviewID = $(event.currentTarget).attr('data-id')
   },
 
   render: function() {
