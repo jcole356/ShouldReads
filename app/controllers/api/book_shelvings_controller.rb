@@ -4,7 +4,7 @@ class Api::BookShelvingsController < ApplicationController
     if @book_shelving.save
       render :show
     else
-      render json: @book_shelf.errors, status: :unprocessable_entity
+      render json: @book_shelving.errors, status: :unprocessable_entity
     end
   end
 
