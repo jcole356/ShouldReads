@@ -285,11 +285,26 @@ ul {
   width: inherit;
 }
 
-.show-title, .show-author, .show-pages {
+.show-title {
+  display: block;
+  float: left;
+  margin: 0px;
+  width: inherit;
+  height: 77px;
+}
+
+.show-author, .show-pages {
  display: block;
  float: left;
- margin-top: 0px;
+ margin-top: 8px;
  width: inherit;
+ }
+
+.show-pages {
+  display: block;
+  float: left;
+  margin-top: 0px;
+  width: inherit;
 }
 
 .synopsis {
