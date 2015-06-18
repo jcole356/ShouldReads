@@ -16,7 +16,8 @@
                   data-id="<%= review.id %>">Delete</button>
           <button class="btn btn-primary btn-xs edit-review"
                   type="button"
-                  name="button">Edit</button>
+                  name="button"
+                  data-id="<%= review.id %>">Edit</button>
         <% } %>
         <h4 class="review-rating">Rating: <%= review.escape('rating') %></h4>
       </div>

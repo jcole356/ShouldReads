@@ -16,12 +16,20 @@
 
     <label for="review-title">Title</label>
     <div class="form-group">
-      <input class="form-control" id="review-title" type="text" name="review[title]">
+      <input class="form-control"
+             id="review-title"
+             type="text"
+             name="review[title]"
+             value="<%= review.escape('title') %>">
     </div>
 
     <label for="review-body">Review</label>
     <div class="form-group">
-      <textarea class="form-control" id="review-body" name="review[body]" rows="8" cols="40"></textarea>
+      <textarea class="form-control"
+                id="review-body"
+                name="review[body]"
+                rows="8"
+                cols="40"><%= review.escape('body') %></textarea>
     </div>
 
     <button type="submit" class="btn btn-submit submit-review">Add Review</button>
