@@ -129,11 +129,6 @@ ul {
   float: left;
 }
 
-.add-review {
-  display: block;
-  float: left;
-  margin-right: 20px;
-}
 
 .bg-success {
   float: left;
@@ -158,6 +153,16 @@ ul {
  width: 600px;
 }
 
+.book-review-content {
+  width: inherit;
+}
+
+.add-review {
+  display: block;
+  float: right;
+  margin: 9px 15px;
+}
+
 .book-reviews {
  display: block;
  float: left;
@@ -166,9 +171,10 @@ ul {
 }
 
 .confirmation {
-  display: block;
-  float: left;
   width: 500px;
+  position: absolute;
+  top: 290px;
+  right: 238px;
 }
 
 .review-body {
@@ -180,15 +186,23 @@ ul {
 }
 
 .review-content {
+  width: inherit;
 }
 
-.review-header {
+.review-title-header {
   height: 50px;
+  width: inherit;
 }
 
 .reviews-header {
-  margin-top: 0px;
+  width: inherit;
   background-color: #4582EC;
+}
+
+.reviews-header-text {
+  margin-top: 0px;
+  display: block;
+  float: left;
 }
 
 .review-author {
@@ -275,7 +289,7 @@ ul {
 
 /* Modal formatting */
 .m-backdrop {
-  position: absolute;
+  position: fixed;
   background-color: rgba(170, 169, 176, .5);
   left: 0px;
   right: 0px;

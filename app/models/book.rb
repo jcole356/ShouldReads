@@ -34,14 +34,11 @@ class Book < ActiveRecord::Base
     @book
   end
 
-  # Need to optimize this.
   def average_rating
-    reviews = self.reviews
-    count = reviews.count
     ratings = []
-    reviews.each { |review| ratings << review.rating }
+    self.reviews.each { |review| ratings << review.rating }
     sum = ratings.inject(0) { |sum, rating| sum + rating }
-    return 0 if count < 1
-    return sum / count
+    return 0 if ratings.count < 1
+    return sum / ratings.count
   end
 end

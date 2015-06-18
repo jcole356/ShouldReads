@@ -9,18 +9,15 @@
       </button>
       <a class="navbar-brand" href="#">ShouldReads</a>
     </div>
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control search-request" placeholder="Search">
+      </div>
+      <input type="submit" class="btn btn-default search-btn">
+    </form>
+    <a class="navbar-brand" href="#">Hello <%= user.escape('username') %></a>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control search-request" placeholder="Search">
-            </div>
-            <input type="submit" class="btn btn-default search-btn">
-          </form>
-        </li>
-        <li><a href="#">Hello <%= user.escape('username') %></a></li>
-        <li><a href="#">Home</a></li>
         <li><a href="">My Books</a></li>
         <li class="sign-out"><a href="#">Log Out</a></li>
       </ul>

@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
-  helper_method :current_user, :signed_in?
+  helper_method :current_user, :signed_in?, :already_reviewed?
 
   private
 
@@ -10,6 +9,12 @@ class ApplicationController < ActionController::Base
       BookShelf.create(owner_id: current_user.id, title: "Read")
       BookShelf.create(owner_id: current_user.id, title: "To Read")
       BookShelf.create(owner_id: current_user.id, title: "Currently Reading")
+    end
+
+    # This is still not going to give you what you need.
+    def already_reviewed?(review)
+      return true if review.author_id == current_user.id
+      return false
     end
 
     def current_user

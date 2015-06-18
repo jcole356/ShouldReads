@@ -1,9 +1,12 @@
-<h2 class="reviews-header">Reviews:</h2>
+<div class="reviews-header clear">
+  <h2 class="reviews-header-text">Reviews:</h2>
+  <button class="btn btn-default btn-xs add-review" type="button" name="button">Write Review</button>
+</div>
 
 <% reviews.each(function(review) { %>
-  <% if(review.escape('book_id') == book.id.toString()) { %>
+  <% if(review.escape('book_id') === book.id.toString()) { %>
     <div class="review-content">
-      <div class="review-header">
+      <div class="review-title-header">
         <h4 class="review-title">Title: <%= review.escape('title') %></h4>
         <h4 class="review-author">Author: <%= review.escape('username') %></h4>
         <h4 class="review-rating">Rating: <%= review.escape('rating') %></h4>
