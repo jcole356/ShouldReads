@@ -12,8 +12,9 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   initialize: function(options) {
     this.reviews = options.reviews;
     this.bookShelves = options.bookShelves;
-    this.listenTo(this.collection, "sync", this.render);
-    this.listenTo(this.collection, "sync", this.addInfo);
+    // Changed both of these to add events.
+    this.listenTo(this.collection, "add", this.render);
+    this.listenTo(this.collection, "add", this.addInfo);
     this.listenTo(this.collection, "sync", this.addReviews);
   },
 
@@ -49,7 +50,6 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     this.addSubview('.book-reviews', view);
   },
 
-  // Not sure why this is not returning a valid id.
   deleteReview: function(event) {
     var reviewID = $(event.currentTarget).attr('data-id')
     var review = this.reviews.get(reviewID);
@@ -60,7 +60,6 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     var content = this.template({
       book: this.model,
       bookShelves: this.bookShelves,
-      // user: this.user
     });
     this.$el.html(content);
     this.attachSubviews();
