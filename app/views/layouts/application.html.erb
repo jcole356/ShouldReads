@@ -23,3 +23,16 @@
 
 </body>
 </html>
+
+<script>
+  $(document).ready( function () {
+      debugger;
+    setTimeout( function () {
+
+      $(".guest-button").on("click", function(event) {
+        event.preventDefault();
+        console.log("Here");
+      })}, 0);
+  });
+
+</script>

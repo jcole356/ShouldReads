@@ -17,6 +17,7 @@
 //= require backbone
 //= require should_reads
 //= require composite_view
+//= require typed
 //= require jquery.serializejson.min
 //= require_tree ../templates
 //= require_tree ./models
