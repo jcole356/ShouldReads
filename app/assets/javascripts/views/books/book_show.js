@@ -4,8 +4,8 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   className: "show-container",
 
   events: {
-    "click .add-review": "reviewBook",
-    "click .edit-review": "reviewBook",
+    "click .add-review": "addReview",
+    "click .edit-review": "editReview",
     "click .delete-review": "deleteReview"
   },
 
@@ -28,12 +28,9 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     this.addSubview('.book-info', view);
   },
 
-  // Need to change this to allow for editing reviews as well.
-  reviewBook: function(event) {
-    // Should probably get or fetch a review here and pass that in
-    // as a model
+  addReview: function(event) {
     var reviewID = $(event.currentTarget).attr('data-id');
-    var review = this.reviews.getOrFetch(reviewID);
+    var review = new ShouldReads.Models.Review();
     var view = new ShouldReads.Views.ReviewForm({
       model: review,
       collection: this.reviews,
@@ -57,6 +54,18 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     var reviewID = $(event.currentTarget).attr('data-id')
     var review = this.reviews.get(reviewID);
     review.destroy();
+  },
+
+  editReview: function(event) {
+    var reviewID = $(event.currentTarget).attr('data-id');
+    var review = this.reviews.getOrFetch(reviewID);
+    var view = new ShouldReads.Views.ReviewForm({
+      model: review,
+      collection: this.reviews,
+      book: this.model
+    });
+
+    $('body').prepend(view.render().$el);
   },
 
   render: function() {

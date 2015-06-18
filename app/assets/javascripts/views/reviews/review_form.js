@@ -11,7 +11,7 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
   initialize: function(options) {
     this.book = options.book;
     // Does this even make sense here?
-    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "sync add", this.render);
   },
 
   render: function() {
@@ -29,18 +29,19 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
     event.preventDefault();
     var attrs = this.$el.find('form').serializeJSON();
     var that = this;
-    var review = new ShouldReads.Models.Review();
+    var review = this.model;
     review.set({
       title: attrs.review.title,
       body: attrs.review.body,
       rating: attrs.review.rating,
       author_id: CURRENT_USER_ID,
-      book_id: this.book.id
+      book_id: this.book.id,
+      id: review.id
     });
 
     review.save({}, {
       success: function() {
-        that.collection.add(review);
+        that.collection.add(review, { merge: true });
         that.collection.fetch();
         that.remove();
       }
