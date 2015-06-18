@@ -11,13 +11,13 @@ Should Reads is a clone of Good Reads built on Rails and Backbone. Users can:
 
 - [X] Create accounts
 - [X] Create sessions (log in)
-- [ ] View books and book information
-- [ ] Create book shelves
-- [ ] Add books to shelves
-- [ ] View book shelves
-- [ ] Create reviews and rate books
-- [ ] Create and respond to friend requests
-- [ ] View reviews by friends
+- [X] View books and book information
+- [X] Create book shelves
+- [X] Add books to shelves
+- [X] View book shelves
+- [X] Create reviews and rate books
+- [X] Incorporate google book API data
+- [ ] Newsfeed
 
 ## Design Docs
 * [View Wireframes][views]
@@ -60,9 +60,9 @@ shown as a subview on the friends index page.
 ### Bonus Features (TBD)
 - [ ] Add comments to reviews
 - [ ] User photos and more in depth profiles
-- [ ] Newsfeed
 - [ ] Typeahead search bar for books
-- [ ] Incorporate google book API data
+- [ ] Create and respond to friend requests
+- [ ] View reviews by friends
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

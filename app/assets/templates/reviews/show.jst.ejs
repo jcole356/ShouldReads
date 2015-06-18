@@ -9,6 +9,10 @@
       <div class="review-title-header">
         <h4 class="review-title">Title: <%= review.escape('title') %></h4>
         <h4 class="review-author">Author: <%= review.escape('username') %></h4>
+        <% if (review.escape('author_id') === CURRENT_USER_ID) { %>
+          <button class="btn btn-danger btn-xs delete-review" type="button" name="button">Delete</button>
+          <button class="btn btn-primary btn-xs edit-review" type="button" name="button">Edit</button>
+        <% } %>
         <h4 class="review-rating">Rating: <%= review.escape('rating') %></h4>
       </div>
         <p class="review-body"><%= review.escape('body') %></p>
