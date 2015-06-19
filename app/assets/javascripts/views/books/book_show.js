@@ -4,7 +4,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   className: "show-container",
 
   events: {
-    "click .add-review": "addReview",
+    "click .add-review": "newReview",
     "click .edit-review": "editReview",
     "click .delete-review": "deleteReview",
   },
@@ -27,7 +27,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     this.addSubview('.book-info', view);
   },
 
-  addReview: function(event) {
+  newReview: function(event) {
     var reviewID = $(event.currentTarget).attr('data-id');
     var review = new ShouldReads.Models.Review();
     var view = new ShouldReads.Views.ReviewForm({
