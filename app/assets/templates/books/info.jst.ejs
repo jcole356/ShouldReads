@@ -9,7 +9,6 @@
   <h3 class ="show-author">by <%= book.escape('author') %></h3>
   <h4 class ="show-pages"><%= book.escape('number_of_pages') %> Pages</h4>
   <h4 class ="show-rating">Avg Rating: <%= book.escape('average_rating') %></h4>
-  <div class="confirmation"></div>
 </div>
 <div class="shelf-choice">
   <select class="form-control" id="shelf_choice">
@@ -21,6 +20,7 @@
     <% }) %>
   </select>
   <button class="btn btn-default add-book" type="button" name="button">Add Book to Shelf!</button>
+  <div class="confirmation"></div>
 </div>
 <div class="write-review">
   <% if (book.escape('already_reviewed?') === "false") { %>

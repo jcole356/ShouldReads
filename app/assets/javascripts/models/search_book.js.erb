@@ -10,9 +10,9 @@ ShouldReads.Models.SearchBook = Backbone.Model.extend({
           var author = "Unknown";
         }
         if (response.volumeInfo.imageLinks) {
+          // Implement more robust solution to this with regex
           var coverImage = response.volumeInfo.imageLinks.thumbnail.replace("http", "https");
         } else {
-          // var coverImage = "assets/old_bible.jpg";
           var coverImage = "<%= asset_path("old_bible.jpg") %>";
         }
         if (response.volumeInfo.pageCount) {
