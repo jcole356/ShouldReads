@@ -3,11 +3,11 @@
 <table class="shelf-book-info-container">
 <% shelvings.each(function(shelving) { %>
   <tr>
-      <td class="shelf-book-info">
+      <td class="shelf-image">
         <a href="#/books/<%= shelving.book().id %>">
           <img src="<%= shelving.book().escape('cover_image_url') %>"
              alt="Book Cover"
-             height="97"
+             height="114"
              width="64">
          </a>
      </td>
