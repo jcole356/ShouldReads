@@ -8,7 +8,6 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
 
   events: {
     "click .sign-out": "signOut",
-    // Does this make sense?
     "click .search-btn": "search"
   },
 
