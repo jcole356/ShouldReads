@@ -10,7 +10,7 @@ ShouldReads.Models.SearchBook = Backbone.Model.extend({
           var author = "Unknown";
         }
         if (response.volumeInfo.imageLinks) {
-          var coverImage = response.volumeInfo.imageLinks.thumbnail;
+          var coverImage = response.volumeInfo.imageLinks.thumbnail.replace("http", "https");
         } else {
           // var coverImage = "assets/old_bible.jpg";
           var coverImage = "<%= asset_path("old_bible.jpg") %>";
