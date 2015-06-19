@@ -2,6 +2,10 @@
 <!-- Probably don't need this conditional anymore -->
 <% button_text = (action == :session_new) ? "Log In" : "Sign Up" %>
 
+<div class="">
+  <%= flash_errors %>
+</div>
+
 <div class="row">
   <div class="">
     <h1 class="sign-in-title">Should Reads</h1>
