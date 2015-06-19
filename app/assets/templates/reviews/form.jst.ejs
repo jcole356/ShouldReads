@@ -2,37 +2,16 @@
   <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <h3 class="m-review-title">Review <%= book.escape('title') %></h3>
   <form>
-    <div class="form-group">
-      <label for="review-rating">Rating
-        <select id="review-rating" class="form-control" name="review[rating]">
-          <option value="1"
-            <% if (review.escape('rating') === "1") { %>
-              selected
-            <% } %>
-          >1</option>
-          <option value="2"
-            <% if (review.escape('rating') === "2") { %>
-              selected
-            <% } %>
-          >2</option>
-          <option value="3"
-            <% if (review.escape('rating') === "3") { %>
-              selected
-            <% } %>
-          >3</option>
-          <option value="4"
-            <% if (review.escape('rating') === "4") { %>
-              selected
-            <% } %>
-          >4</option>
-          <option value="5"
-            <% if (review.escape('rating') === "5") { %>
-              selected
-            <% } %>
-          >5</option>
-        </select>
-      </label>
-    </div>
+    <label for="review_rating">Rating</label>
+      <input id="review-rating"
+             type="number"
+             class="rating"
+             name="review[rating]"
+             min=1
+             max=5
+             step=1
+             data-size="sm" >
+
 
     <label for="review-title">Title</label>
     <div class="form-group">
@@ -55,3 +34,7 @@
     <button type="submit" class="btn btn-submit submit-review">Add Review</button>
   </form>
 </div>
+
+<script type="text/javascript">
+  $('#review-rating').rating();
+</script>
