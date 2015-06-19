@@ -37,7 +37,8 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
         $('.confirmation').html('<%= image_tag "checkmark.png" %>');
       },
       error: function() {
-        $('.confirmation').html('<%= image_tag "checkmark.png" %>').append(response);
+        var response = $('<h4 class="confirmation">').html("Already on shelf");
+        $('.confirmation').html('<%= image_tag "error.png", class: "confirmation" %>').append(response);
       }
     });
   }
