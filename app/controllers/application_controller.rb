@@ -12,9 +12,10 @@ class ApplicationController < ActionController::Base
     end
 
     # This is still not going to give you what you need.
-    def already_reviewed?(review)
-      return true if review.author_id == current_user.id
-      return false
+    def already_reviewed?(reviews)
+      reviews.any? do |review|
+        review.author_id == current_user.id
+      end
     end
 
     def current_user
