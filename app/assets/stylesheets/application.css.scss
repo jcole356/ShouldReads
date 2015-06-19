@@ -102,6 +102,7 @@ ul {
  .shelf-book-title {
    width: 200px;
    padding-right: 5px;
+
  }
 
 .shelf-delete {
@@ -110,6 +111,16 @@ ul {
 }
 
 .shelf-image {
+  height: 136px;
+  width: 77px;
+  margin-bottom: 8px;
+  padding: 10px 10px 10px 11px;
+}
+
+.shelf-image:hover {
+  background-color: rgba(158, 144, 144, 0.16);
+  border: 1px solid;
+  padding-left: 10px;
 }
 
 .shelf-index {
