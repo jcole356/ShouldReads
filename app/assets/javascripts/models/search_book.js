@@ -12,7 +12,7 @@ ShouldReads.Models.SearchBook = Backbone.Model.extend({
         if (response.volumeInfo.imageLinks) {
           var coverImage = response.volumeInfo.imageLinks.thumbnail;
         } else {
-          var coverImage = "";
+          var coverImage = "/assets/old_bible.jpg";
         }
         if (response.volumeInfo.pageCount) {
           var numberOfPages = response.volumeInfo.pageCount;
@@ -24,6 +24,7 @@ ShouldReads.Models.SearchBook = Backbone.Model.extend({
         } else {
           var synopsis = "No Description Available";
         }
+
       this.set({
         title: response.volumeInfo.title,
         author: author,
