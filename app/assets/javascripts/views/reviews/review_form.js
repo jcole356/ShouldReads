@@ -28,7 +28,6 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
   addReview: function(event) {
     event.preventDefault();
     var attrs = this.$el.find('form').serializeJSON();
-    var that = this;
     var review = this.model;
     review.set({
       title: attrs.review.title,
@@ -41,10 +40,11 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
 
     review.save({}, {
       success: function() {
-        that.collection.add(review, { merge: true });
-        that.collection.fetch();
-        that.remove();
-      }
+        this.collection.add(review, { merge: true });
+        this.collection.fetch();
+        this.book.fetch();
+        this.remove();
+      }.bind(this)
     });
   },
 
