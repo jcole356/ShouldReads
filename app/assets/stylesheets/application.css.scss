@@ -37,7 +37,7 @@ ul {
 
 /* Global styles */
 body  {
-  background-color: whitesmoke;
+  // background-color: whitesmoke;
 }
 
 
@@ -63,9 +63,9 @@ body  {
 /* Navbar */
 
 .navbar {
-  background-color: silver;
-  border: 1px solid;
-  border-radius: 0px;
+  background-color: #4582EC;
+  // border: 1px solid;
+  // border-radius: 0px;
 }
 
 /* Libarary composite view */
@@ -242,8 +242,8 @@ body  {
 
 .reviews-header {
   width: inherit;
-  // background-color: #4582EC;
-  background-color: silver;
+  background-color: #4582EC;
+  // background-color: silver;
 }
 
 .reviews-header-text {
@@ -409,8 +409,7 @@ body  {
 }
 
 .index-book-info:hover {
-  // background-color: rgba(158, 144, 144, 0.16);
-  background-color: white;
+  background-color: rgba(158, 144, 144, 0.16);
 }
 
 .index-image {
