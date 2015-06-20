@@ -6,7 +6,7 @@
       <h4 class="shelf-title"><%= bookShelf.escape('title') %></h4>
     </li>
     <% if (bookShelf.escape('title') !== "All") { %>
-      <a data-id="<%= bookShelf.id %>" class="btn btn-primary btn-xs shelf-delete">&times;</a>
+      <a data-id="<%= bookShelf.id %>" class="btn btn-danger btn-xs shelf-delete">&times;</a>
     <% } %>
   <% }) %>
 </ul>

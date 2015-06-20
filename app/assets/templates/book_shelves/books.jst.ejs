@@ -7,7 +7,7 @@
           <a href="#/books/<%= book.id %>">
             <img src="<%= book.escape('cover_image_url') %>"
                alt="Book Cover"
-               height="114"
+               height="97"
                width="64">
            </a>
        </td>
@@ -20,7 +20,7 @@
               <a
                 data-shelving-id="<%= book.escape('shelving_id') %>"
                 data-book-id="<%= book.id %>"
-                class="btn btn-primary btn-xs shelving-delete">&times;</a>
+                class="btn btn-danger btn-xs shelving-delete">&times;</a>
         </td>
     </tr>
   <% }) %>
