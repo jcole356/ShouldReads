@@ -1,37 +1,40 @@
-<div class="m-content">
+<div class="m-content well">
   <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <h3 class="m-review-title">Review <%= book.escape('title') %></h3>
-  <form>
-    <label for="review_rating">Rating</label>
-      <input id="review-rating"
-             type="number"
-             class="rating"
-             name="review[rating]"
-             value="<%= parseInt(review.escape('rating')) %>"
-             min=0
-             max=5
-             step=1.0
-             data-size="sm" >
-
-    <label for="review-title">Title</label>
+  <!-- <h3 class="m-review-title">Review <%= book.escape('title') %></h3> -->
+  <form class="form-horizontal">
+    <legend class="form-group">Review <%= book.escape('title') %></legend>
     <div class="form-group">
-      <input class="form-control"
-             id="review-title"
-             type="text"
-             name="review[title]"
-             value="<%= review.escape('title') %>">
+        <label for="review-rating">Rating</label>
+          <input id="review-rating"
+                 type="number"
+                 class="rating"
+                 name="review[rating]"
+                 value="<%= parseInt(review.escape('rating')) %>"
+                 min=0
+                 max=5
+                 step=1.0
+                 data-size="sm" >
     </div>
 
-    <label for="review-body">Review</label>
     <div class="form-group">
-      <textarea class="form-control"
-                id="review-body"
-                name="review[body]"
-                rows="8"
-                cols="40"><%= review.escape('body') %></textarea>
+        <label for="review-title">Title</label>
+          <input class="form-control"
+                 id="review-title"
+                 type="text"
+                 name="review[title]"
+                 value="<%= review.escape('title') %>">
     </div>
-
-    <button type="submit" class="btn btn-primary submit-review">Submit</button>
+    <div class="form-group">
+          <label for="review-body">Review</label>
+          <textarea class="form-control"
+                    id="review-body"
+                    name="review[body]"
+                    rows="8"
+                    cols="40"><%= review.escape('body') %></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary submit-review form-group">
+      Submit
+    </button>
   </form>
 </div>
 
