@@ -13,7 +13,9 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     this.reviews = options.reviews;
     this.bookShelves = options.bookShelves;
     this.listenTo(this.collection, "add", this.render);
-    this.listenTo(this.collection, "add", this.addInfo);
+    // this.listenTo(this.collection, "add", this.addInfo);
+    // perhaps this will solve the issue of not displaying on occasion.
+    this.addInfo();
     this.addReviews();
   },
 
