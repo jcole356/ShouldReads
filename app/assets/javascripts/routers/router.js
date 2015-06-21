@@ -8,10 +8,10 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "": "bookShelvesLibrary",
+    "mybooks": "bookShelvesLibrary",
     "books/:id": "show",
     "search/:query": "search",
-    "feed": "newsfeed"
+    "": "newsfeed"
   },
 
   bookShelvesLibrary: function() {
