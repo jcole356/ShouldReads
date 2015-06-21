@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: https://shouldreads.herokuapp.com/
+[heroku]: http://shouldreads.net/
 
 ## Minimum Viable Product
 Should Reads is a clone of Good Reads built on Rails and Backbone. Users can:
