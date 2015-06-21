@@ -22,11 +22,5 @@ ShouldReads.Views.SearchIndex = Backbone.CompositeView.extend({
     });
 
     this.addSubview('.search-book', view);
-  },
-
-  //Does this ever even run??
-  // renderResults: function() {
-  //   debugger;
-  //   this.collection.each(this.addResult(book).bind(this));
-  // }
+  }
 });
