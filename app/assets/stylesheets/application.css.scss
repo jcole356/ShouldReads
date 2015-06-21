@@ -168,11 +168,14 @@ body  {
 .feed-book-image {
   display: block;
   float: left;
+  margin-bottom: 5px;
+  width: 70px;
 }
 
 .feed-item {
   border-bottom: 2px solid;
   display: block;
+  width: inherit;
 }
 
 .feed-items {
@@ -191,7 +194,23 @@ body  {
 .feed-review-content {
   display: block;
   float: left;
-  margin-left: 10px;
+  width: 680px;
+}
+
+.feed-review-body {
+  display: block;
+  float: left;
+}
+
+.feed-review-rating {
+  margin-top: 0;
+}
+
+.feed-review-title {
+  display: block;
+  float: left;
+  width: inherit;
+  margin-top: 0;
 }
 
 .newsfeed-header {

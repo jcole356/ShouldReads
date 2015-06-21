@@ -1,6 +1,8 @@
 <div class="feed-review-header">
   <h4><%= review.escape('username') %> reviewed
       <%= review.escape('book_title') %></h4>
+  <% var date = new Date(review.escape('updated_at')) %>
+  <h5><%= date.toDateString() %></h5>
 </div>
 <div class="feed-book-image">
   <a href="#/books/<%= review.escape('book_id') %>">
@@ -11,12 +13,11 @@
  </a>
 </div>
 <div class="feed-review-info">
-  <h4>Rating: <%= review.escape('rating') %> of 5</h4>
-  <% var date = new Date(review.escape('updated_at')) %>
-  <%= date.toDateString() %>
+  <h4 class="feed-review-rating">Rating: <%= review.escape('rating') %> of 5</h4>
 </div>
-<h4><%= review.escape('title') %></h4>
-<blockquote class="feed-review-content">
-  <%= review.escape('body') %>
-</blockquote>
-<br>
+<div class="feed-review-content">
+  <h4 class="feed-review-title"><%= review.escape('title') %></h4>
+  <p class="feed-review-body">
+    <%= review.escape('body') %>
+  </p>
+</div>
