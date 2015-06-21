@@ -12,19 +12,21 @@
 </div>
 <div class="shelf-choice">
   <select class="form-control" id="shelf_choice">
-    <option></option>
     <% bookShelves.each(function(bookShelf) { %>
       <% if (bookShelf.escape('title') !== "All") { %>
-        <option value="<%= bookShelf.id %>" data-title="<%= bookShelf.escape('title') %>"><%= bookShelf.escape('title') %></option>
+        <option value="<%= bookShelf.id %>"
+                data-title="<%= bookShelf.escape('title') %>"><%= bookShelf.escape('title') %></option>
       <% } %>
     <% }) %>
   </select>
-  <button class="btn btn-default add-book" type="button" name="button">Add Book to Shelf!</button>
+  <button class="btn btn-primary add-book" type="button" name="button">Add Book to Shelf!</button>
   <div class="confirmation"></div>
 </div>
 <div class="write-review">
   <% if (book.escape('already_reviewed?') === "false") { %>
-    <button class="btn btn-default btn-xs add-review" type="button" name="button">Write Review</button>
+    <button class="btn btn-primary btn-sm add-review"
+            type="button"
+            name="button">Write Review</button>
   <% } %>
 </div>
 
