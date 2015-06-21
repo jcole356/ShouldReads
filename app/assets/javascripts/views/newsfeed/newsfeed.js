@@ -2,7 +2,7 @@ ShouldReads.Views.Newsfeed = Backbone.CompositeView.extend({
   template: JST['newsfeed/index'],
 
   initialize:function() {
-    this.listenTo(this.collection, "sort", this.renderFeedItems);
+    this.listenTo(this.collection, "sync", this.renderFeedItems);
   },
 
   addFeedItem: function(review) {
