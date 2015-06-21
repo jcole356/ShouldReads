@@ -4,13 +4,14 @@ class Book < ActiveRecord::Base
   has_many :reviews
   has_many :book_shelvings
 
-  scope :with_shelving_id, lambda { select("books.*, book_shelvings.id AS shelving_id") }
+  scope :with_shelving_id,
+    lambda { select("books.*, book_shelvings.id AS shelving_id") }
 
-  # Probably won't use this, maybe for seeding.  Need to add API key.
+  # Use this for seeding.  Need to add API key.
   def self.get_book_from_api(title)
-    # Need to join on + or - for RestClient
     query_string = title.scan(/\w+/).join('+')
-    query_url = "https://www.googleapis.com/books/v1/volumes?q=#{query_string}"
+    query_url = "https://www.googleapis.com/books/v1/volumes?q="\
+      "#{query_string}&key=#{ENV['seed_api_key']}"
     response = RestClient.get "#{query_url}"
     self.parse_response(response)
   end
@@ -24,7 +25,8 @@ class Book < ActiveRecord::Base
     cover_image_url = volume_info['imageLinks']['thumbnail']
     book_params = {
       "title" => title, "author" => author, "synopsis" => synopsis,
-      "number_of_pages" => number_of_pages, "cover_image_url" => cover_image_url
+      "number_of_pages" => number_of_pages,
+      "cover_image_url" => cover_image_url
       }
     return book_params
   end

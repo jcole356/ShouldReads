@@ -42,7 +42,6 @@ body  {
 
 
 /* Log in and sign in form */
-
 .background {
   background-image: image-url("large_library.jpg");
   width: 100%;
@@ -61,7 +60,6 @@ body  {
 }
 
 /* Navbar */
-
 .navbar {
   background-color: #4582EC;
   // border: 1px solid;
@@ -104,7 +102,6 @@ body  {
 /* Shelf book info table */
 .shelf-book-info {
   padding-bottom: 8px;
-
 }
 
 .shelf-book-info-container {
@@ -247,7 +244,7 @@ body  {
 }
 
 .reviews-header-text {
-  margin-top: 0px;
+  margin: 5px;
   display: block;
   float: left;
 }
