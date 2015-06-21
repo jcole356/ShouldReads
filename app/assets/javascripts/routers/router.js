@@ -26,6 +26,7 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
 
   newsfeed: function() {
     this.reviews.fetch();
+    this.reviews.sort();
     var view = new ShouldReads.Views.Newsfeed({
       collection: this.reviews
     });

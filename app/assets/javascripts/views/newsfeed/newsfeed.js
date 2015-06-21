@@ -2,7 +2,7 @@ ShouldReads.Views.Newsfeed = Backbone.CompositeView.extend({
   template: JST['newsfeed/index'],
 
   initialize:function() {
-    this.listenTo(this.collection, "add", this.addFeedItem);
+    this.listenTo(this.collection, "sort", this.renderFeedItems);
   },
 
   addFeedItem: function(review) {
@@ -10,7 +10,7 @@ ShouldReads.Views.Newsfeed = Backbone.CompositeView.extend({
       model: review
     });
 
-    this.addSubview('.feed-items', view)
+    this.addSubview('.feed-items', view);
   },
 
   render: function() {
@@ -20,5 +20,13 @@ ShouldReads.Views.Newsfeed = Backbone.CompositeView.extend({
     this.$el.html(content);
 
     return this;
+  },
+
+  renderFeedItems: function() {
+    var that = this;
+    this.collection.forEach(function(review) {
+      that.addFeedItem(review);
+    });
   }
+
 });
