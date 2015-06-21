@@ -6,9 +6,9 @@ class Book < ActiveRecord::Base
 
   scope :with_shelving_id, lambda { select("books.*, book_shelvings.id AS shelving_id") }
 
-  # Probably won't use this, maybe for seeding.  Need to add API.
+  # Probably won't use this, maybe for seeding.  Need to add API key.
   def self.get_book_from_api(title)
-    # don't need to join on + or -.  Seems to work ok either way. Not with  RestClient
+    # Need to join on + or - for RestClient
     query_string = title.scan(/\w+/).join('+')
     query_url = "https://www.googleapis.com/books/v1/volumes?q=#{query_string}"
     response = RestClient.get "#{query_url}"
@@ -29,9 +29,10 @@ class Book < ActiveRecord::Base
     return book_params
   end
 
-  def self.create_book!(book_params)
+  # For generating seed data
+  def self.create_book_by_title!(title)
+    book_params = self.get_book_from_api(title)
     @book = Book.create(book_params)
-    @book
   end
 
   def average_rating
