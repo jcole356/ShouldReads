@@ -1,0 +1,95 @@
+/* Libarary composite view */
+.add-shelf {
+  margin-top: 20px;
+}
+
+.book-title {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+.library-content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+
+.library-header-container {
+  border-bottom: 2px solid;
+}
+
+.library-header {
+  display: block;
+  float: left;
+}
+
+.shelf-books {
+  display: block;
+  float: left;
+  margin-left: 20px;
+  width: 730px;
+}
+
+.shelf-books-list {
+  width: inherit;
+}
+
+/* Shelf book info table */
+.shelf-book-info {
+  padding-bottom: 8px;
+}
+
+.shelf-book-info-container {
+  width: inherit;
+ }
+
+ .shelf-book-title {
+   width: 200px;
+   padding-left: 12px;
+ }
+
+.shelf-delete {
+  display: block;
+  float: left;
+}
+
+.shelf-image {
+  height: 110px;
+  width: 77px;
+  margin-bottom: 8px;
+  padding: 10px;
+}
+
+.shelf-image:hover {
+  background-color: rgba(158, 144, 144, 0.16);
+  padding-left: 10px;
+}
+
+.shelf-index {
+ display: block;
+ float: left;
+ width: 20%;
+ border-right: 2px solid black;
+ height: 100vh;
+ min-width: 200px;
+ padding-right: 20px;
+}
+
+.shelf-title {
+  display: block;
+  float: left;
+  margin: 0px;
+  padding: 2px;
+  width: 150px;
+}
+
+.shelf-title-header {
+  display: block;
+  float: left;
+}
+
+.shelf-title:hover {
+  background-color: rgba(158, 144, 144, 0.16);
+  cursor: pointer;
+}
