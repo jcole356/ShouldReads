@@ -1,7 +1,7 @@
 ShouldReads.Views.FeedItem = Backbone.View.extend({
   template: JST['newsfeed/item'],
 
-  className: "feed-item",
+  className: "feed-item clear",
 
   // initialize: function() {
   //   this.listenTo(this.)

@@ -1,7 +1,20 @@
-<%= review.escape('username') %>
-rated
-<%= review.escape('book_title') %>
-<%= review.escape('title') %>
-<%= review.escape('body') %>
-on
-<%= Date(review.escape('updated_at')) %>
+<div class="feed-review-header">
+  <h4><%= review.escape('username') %> reviewed
+      <%= review.escape('book_title') %></h4>
+</div>
+<div class="feed-book-image">
+  <img src="<%= review.escape('cover_image_url') %>"
+       alt="Book Cover"
+       height="97"
+       width="64">
+</div>
+<div class="feed-review-info">
+  <h4>Rating: <%= review.escape('rating') %> of 5</h4>
+  <% var date = new Date(review.escape('updated_at')) %>
+  <%= date.toDateString() %>
+</div>
+<h4><%= review.escape('title') %></h4>
+<blockquote class="feed-review-content">
+  <%= review.escape('body') %>
+</blockquote>
+<br>

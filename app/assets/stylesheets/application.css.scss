@@ -163,3 +163,37 @@ body  {
  margin-bottom: 5px;
  color: #4582EC;
 }
+
+/* newsfeed */
+.feed-book-image {
+  display: block;
+  float: left;
+}
+
+.feed-item {
+  border-bottom: 2px solid;
+  display: block;
+}
+
+.feed-items {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feed-review-info {
+  display: block;
+  float: left;
+  margin-left: 10px;
+  width: 200px;
+}
+
+.feed-review-content {
+  display: block;
+  float: left;
+  margin-left: 10px;
+}
+
+.newsfeed-header {
+  border-bottom: 2px solid;
+}
