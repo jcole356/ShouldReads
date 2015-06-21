@@ -26,8 +26,6 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
 
   newsfeed: function() {
     this.reviews.fetch();
-    // With the comparator working I don't think I need this.
-    // this.reviews.sort();
     var view = new ShouldReads.Views.Newsfeed({
       collection: this.reviews
     });
