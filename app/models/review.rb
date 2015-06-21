@@ -4,4 +4,8 @@ class Review < ActiveRecord::Base
 
   belongs_to :user, foreign_key: :author_id
   belongs_to :book
+
+  def book_title
+    self.book.title
+  end
 end
