@@ -10,7 +10,8 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "bookShelvesLibrary",
     "books/:id": "show",
-    'search/:query': 'search'
+    "search/:query": "search",
+    "feed": "newsfeed"
   },
 
   bookShelvesLibrary: function() {
@@ -18,6 +19,15 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
     var view = new ShouldReads.Views.BookShelvesLibrary({
       collection: this.bookShelves,
       shelvings: this.shelvings
+    });
+
+    this._swapView(view);
+  },
+
+  newsfeed: function() {
+    this.reviews.fetch();
+    var view = new ShouldReads.Views.Newsfeed({
+      collection: this.reviews
     });
 
     this._swapView(view);
