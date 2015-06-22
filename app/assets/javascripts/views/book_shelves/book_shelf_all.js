@@ -1,19 +1,13 @@
 ShouldReads.Views.AllShelf = Backbone.View.extend({
-
   template: JST['book_shelves/all'],
 
   className: "shelf-books-list",
 
-  events: {
-  },
-
   initialize: function(options) {
-    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "sync remove", this.render);
   },
 
-  // Attempting to make a default for new users.
   render: function() {
-    // debugger;
     if (this.collection.length === 0) {
       var content = $('<h3 class="empty-bookshelf">').html(
         "You don't have any books yet."

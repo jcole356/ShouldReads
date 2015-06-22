@@ -4,7 +4,7 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
   className: "library-content",
 
   events: {
-    "click .shelf": "selectShelf",
+    "click .shelf": "selectShelf"
   },
 
   initialize: function(options) {
@@ -43,7 +43,6 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
       this.addSubview('.shelf-books', view);
     } else {
       var that = this;
-      // Adding for the all shelf
       var shelvings = new ShouldReads.Collections.BookShelvings();
       shelvings.fetch();
       this.collection.fetch({
@@ -66,7 +65,6 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
       bookShelves: this.collection
     });
     this.$el.html(content);
-    // Will this work here.  Seems to.
     this.addAllBookShelf();
     this.addIndex();
     this.attachSubviews();
