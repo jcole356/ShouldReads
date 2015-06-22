@@ -12,7 +12,9 @@
   </div>
 </div>
 
-<form class="form-horizontal log-in-form" action="<%= action_url %>" method="post">
+<form class="form-horizontal log-in-form"
+      action="<%= action_url %>"
+      method="post">
   <%= auth_token_input %>
   <div class="form-group">
     <div class="col-sm-10 col-sm-offset-1">
@@ -39,14 +41,20 @@
       <% if button_text == "Log In" %>
         <button
           type="submit"
-          class="btn btn-primary btn-md btn-block log-in-button">Log In</button>
+          class="btn btn-primary btn-md btn-block log-in-button">
+            Log In
+        </button>
         <button
           type="submit"
-          class="btn btn-primary btn-md btn-block guest-button">Guest Log In</button>
+          class="btn btn-primary btn-md btn-block guest-button">
+            Guest Log In
+        </button>
       <% else %>
         <button
           type="submit"
-          class="btn btn-primary btn-md btn-block sign-up-button">Sign Up</button>
+          class="btn btn-primary btn-md btn-block sign-up-button">
+            Sign Up
+        </button>
       <% end %>
     </div>
   </div>

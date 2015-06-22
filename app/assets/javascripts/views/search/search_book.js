@@ -1,10 +1,8 @@
 ShouldReads.Views.SearchBook = Backbone.View.extend({
   template: JST['search/result'],
 
-  className: 'search-book-info',
-
   events: {
-    "click .index-book-info": "addOrRetrieve"
+    "click .search-book-info": "addOrRetrieve"
   },
 
   render: function() {
@@ -27,7 +25,10 @@ ShouldReads.Views.SearchBook = Backbone.View.extend({
     });
     book.save({}, {
       success: function() {
-        Backbone.history.navigate("books/" + book.id, { trigger: true });
+        Backbone.history.navigate(
+          "books/" + book.id,
+          { trigger: true }
+        );
       }
     });
   }

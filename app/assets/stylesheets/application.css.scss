@@ -14,6 +14,8 @@
  *= require_self
  *= require book_show
  *= require library
+ *= require newsfeed
+ *= require search_results
  *= require star-rating
  */
 
@@ -30,18 +32,12 @@ ul {
  list-style-type: none;
 }
 
-/* Clear fix, don't need this yet */
+/* Clear fix */
 .clear:after {
   content: "";
   clear: both;
   display: table;
 }
-
-/* Global styles */
-body  {
-  // background-color: whitesmoke;
-}
-
 
 /* Log in and sign in form */
 .background {
@@ -90,9 +86,7 @@ body  {
 
 .m-content {
   z-index: 200;
-  // background-color: white;
   border: 2px solid black;
-  // border-radius: 3px;
   height: 85%;
   width: 600px;
   margin-top: 50px;
@@ -105,114 +99,4 @@ body  {
 
 .m-review-title {
   text-align: center;
-}
-
-/* Book index page */
-.book-index {
- margin-left: auto;
- margin-right: auto;
- width: 800px;
-}
-
-.index-book-info {
- display: block;
- float: left;
- height: 195px;
- width: 800px;
- margin-left: auto;
- margin-right: auto;
- margin-bottom: 5px;
-}
-
-.index-book-info:hover {
-  background-color: rgba(158, 144, 144, 0.16);
-}
-
-.index-image {
- display: block;
- float: left;
- width: 150px
-}
-
-.index-title {
- display: block;
- float: left;
- width: 650px;
-}
-
-.index-author {
- display: block;
- float: left;
-}
-
-/* Search Results Index View */
-
-.search-index {
- margin-left: auto;
- margin-right: auto;
- width: 800px;
-}
-
-.search-book-info {
- display: block;
- float: left;
- height: 195px;
- width: 800px;
- margin-left: auto;
- margin-right: auto;
- margin-bottom: 5px;
- color: #4582EC;
-}
-
-/* newsfeed */
-.feed-book-image {
-  display: block;
-  float: left;
-  margin-bottom: 5px;
-  width: 70px;
-}
-
-.feed-item {
-  border-bottom: 2px solid;
-  display: block;
-  width: inherit;
-}
-
-.feed-items {
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.feed-review-info {
-  display: block;
-  float: left;
-  margin-left: 10px;
-  width: 200px;
-}
-
-.feed-review-content {
-  display: block;
-  float: left;
-  width: 680px;
-}
-
-.feed-review-body {
-  display: block;
-  float: left;
-}
-
-.feed-review-rating {
-  margin-top: 0;
-}
-
-.feed-review-title {
-  display: block;
-  float: left;
-  width: inherit;
-  margin-top: 0;
-}
-
-.newsfeed-header {
-  border-bottom: 2px solid;
 }
