@@ -53,7 +53,7 @@ r4 = Review.create(author_id: 2, book_id: 4, rating: 5,
 r5 = Review.create(author_id: 2, book_id: 5, rating: 5,
   title: "Made me Cry",
   body: "Harry no... it can't be over!  What am I going to do with all
-  of  my time now? Write 6 books a year instead of 5.")
+  of  my time now? Write 6 books a year instead of 5?")
 r6 = Review.create(author_id: 2, book_id: 6, rating: 1,
   title: "What a hack!",
   body: "I liked this book the first time I wrote... I mean read it when
