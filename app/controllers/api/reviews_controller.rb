@@ -1,9 +1,9 @@
 class Api::ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
-
+    
     if @review.save
-      render :show
+      render :index
     else
       render json: @review.errors, status: :unprocessable_entity
     end
@@ -11,21 +11,14 @@ class Api::ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all
-
     render :index
-  end
-
-  def show
-    @review = Review.find(params[:id])
-
-    render :show
   end
 
   def update
     @review = Review.find(params[:id])
 
     if @review.update(review_params)
-      render :show
+      render :index
     else
       render json: @review.errors, status: :unprocessable_entity
     end
