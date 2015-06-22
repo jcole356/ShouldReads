@@ -9,9 +9,7 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
 
   initialize: function(options) {
     this.shelvings = options.shelvings;
-    this.listenTo(this.collection, "sync", this.render);
-    this.listenTo(this.collection, "sync", this.addIndex);
-    this.listenTo(this.collection, "sync remove", this.addAllBookShelf);
+    this.listenTo(this.collection, "reset", this.render);
   },
 
   addAllBookShelf: function () {
@@ -29,10 +27,6 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
   },
 
   addIndex: function() {
-    var oldView = this.subviews(".shelf-index").first();
-    if (oldView) {
-      this.removeSubview(".shelf-index", oldView);
-    }
     var view = new ShouldReads.Views.BookShelvesIndex({
       collection: this.collection
     });
@@ -72,6 +66,8 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
       bookShelves: this.collection
     });
     this.$el.html(content);
+    // Will this work here.  Seems to.
+    this.addAllBookShelf();
     this.addIndex();
     this.attachSubviews();
     return this;
