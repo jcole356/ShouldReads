@@ -9,7 +9,6 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
 
   initialize: function(options) {
     this.bookShelves = options.bookShelves;
-    // Not sure why book info occasionally fails to render
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.bookShelves, "sync", this.render);
   },
