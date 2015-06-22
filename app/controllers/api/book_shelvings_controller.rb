@@ -8,12 +8,6 @@ class Api::BookShelvingsController < ApplicationController
     end
   end
 
-  # Pretty sure this isn't doing anything
-  # def show
-  #   @book_shelving = BookShelving.find(params[:id])
-  #   render :show
-  # end
-
   def index
     @book_shelvings = current_user.book_shelvings
     render :index
