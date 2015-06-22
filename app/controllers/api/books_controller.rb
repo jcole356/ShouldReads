@@ -14,11 +14,6 @@ class Api::BooksController < ApplicationController
     end
   end
 
-  def index
-    @books = Book.all
-    render :index
-  end
-
   def show
     @book = Book.find(params[:id])
     render :show

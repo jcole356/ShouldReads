@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   namespace :api, defaults: {format: :json}  do
-    resources :books, only: [:create, :destroy, :index, :show]
+    resources :books, only: [:create, :destroy, :show]
     resources :book_shelves, only: [:create, :index, :show, :destroy]
     resources :book_shelvings, only: [:create, :show, :index, :destroy]
     resources :reviews, only: [:create, :index, :destroy, :update]
