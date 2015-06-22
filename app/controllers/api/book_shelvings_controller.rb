@@ -13,6 +13,11 @@ class Api::BookShelvingsController < ApplicationController
     render :index
   end
 
+  def show
+    @book_shelving = BookShelving.find(params[:id])
+    render :show
+  end
+
   def destroy
     @book_shelving = BookShelving.find(params[:id])
     @book_shelving.destroy
