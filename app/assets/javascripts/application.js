@@ -19,6 +19,7 @@
 //= require composite_view
 //= require typed
 //= require jquery.serializejson.min
+//= require jquery.joyride-2.1
 //= require star-rating.min.js
 //= require_tree ../templates
 //= require_tree ./models
