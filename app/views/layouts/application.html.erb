@@ -8,6 +8,22 @@
   <script type="text/javascript">
     window.GOOGLE_API_KEY = "<%= ENV['google_api_key'] %>"
   </script>
+
+  <script>
+    $(window).load(function() {
+      $("#joyRideTipContent").joyride({
+        autoStart : true,
+            postStepCallback : function (index, tip) {
+            if (index == 2) {
+              $(this).joyride('set_li', false, 1);
+            }
+          },
+        modal:true,
+        expose: true
+      });
+    });
+  </script>
+
 </head>
 <body>
 
