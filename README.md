@@ -5,7 +5,8 @@
 [heroku]: http://shouldreads.net/
 
 ## Minimum Viable Product
-Should Reads is a clone of Good Reads built on Rails and Backbone. Users can:
+ShouldReads is an app inspired by Goodreads built on Rails and Backbone.
+Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
@@ -17,6 +18,7 @@ Should Reads is a clone of Good Reads built on Rails and Backbone. Users can:
 - [X] View book shelves
 - [X] Create reviews and rate books
 - [X] Incorporate google book API data
+- [X] Search for books
 - [X] Newsfeed
 
 ## Design Docs
