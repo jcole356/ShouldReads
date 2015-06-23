@@ -1,7 +1,9 @@
 class Api::ReviewsController < ApplicationController
+  before_action :require_signed_in!
+
   def create
     @review = Review.new(review_params)
-    
+
     if @review.save
       render :index
     else

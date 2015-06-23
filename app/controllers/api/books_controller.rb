@@ -1,4 +1,6 @@
 class Api::BooksController < ApplicationController
+  before_action :require_signed_in!
+
   def create
     title = book_params['title']
     @book = Book.find_by_title(title)
@@ -22,6 +24,7 @@ class Api::BooksController < ApplicationController
   private
 
     def book_params
-      params.require(:book).permit(:title, :author, :cover_image_url, :synopsis, :number_of_pages)
+      params.require(:book).permit(:title, :author, :cover_image_url,
+        :synopsis, :number_of_pages)
     end
 end

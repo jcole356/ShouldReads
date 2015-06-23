@@ -10,7 +10,6 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
 
   initialize: function(options) {
     this.book = options.book;
-    // Does this even make sense here?
     this.listenTo(this.collection, "sync add", this.render);
   },
 

@@ -32,5 +32,4 @@ ShouldReads.Views.SearchBook = Backbone.View.extend({
       }
     });
   }
-
 });

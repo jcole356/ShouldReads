@@ -28,5 +28,4 @@ ShouldReads.Views.Newsfeed = Backbone.CompositeView.extend({
       that.addFeedItem(review);
     });
   }
-
 });

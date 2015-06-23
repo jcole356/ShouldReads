@@ -1,4 +1,6 @@
 class Api::BookShelvesController < ApplicationController
+  before_action :require_signed_in!
+
   def create
     @book_shelf = BookShelf.new(book_shelf_params)
     if @book_shelf.save

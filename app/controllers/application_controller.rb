@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
       BookShelf.create(owner_id: current_user.id, title: "Currently Reading")
     end
 
-    # This is still not going to give you what you need.
     def already_reviewed?(reviews)
       reviews.any? do |review|
         review.author_id == current_user.id

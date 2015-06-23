@@ -10,5 +10,4 @@ ShouldReads.Collections.SearchBooks = Backbone.Collection.extend({
   parse: function(response) {
     return response.items;
   }
-
 });

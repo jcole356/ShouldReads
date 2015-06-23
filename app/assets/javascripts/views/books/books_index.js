@@ -1,5 +1,4 @@
 ShouldReads.Views.BooksIndex = Backbone.View.extend({
-
   template: JST['books/index'],
 
   className: "book-index",
@@ -15,5 +14,4 @@ ShouldReads.Views.BooksIndex = Backbone.View.extend({
     this.$el.html(content);
     return this;
   }
-
 });

@@ -1,7 +1,11 @@
 <div class="m-content well">
-  <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <button type="button" class="close" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
   <form class="form-horizontal">
-    <legend class="form-group">Review <%= book.escape('title') %></legend>
+    <legend class="form-group">
+      Review <%= book.escape('title') %>
+    </legend>
     <div class="form-group">
         <label for="review-rating">Rating</label>
           <input id="review-rating"
@@ -31,7 +35,8 @@
                     rows="8"
                     cols="40"><%= review.escape('body') %></textarea>
     </div>
-    <button type="submit" class="btn btn-primary submit-review form-group">
+    <button type="submit"
+            class="btn btn-primary submit-review form-group">
       Submit
     </button>
   </form>
