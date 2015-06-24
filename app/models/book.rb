@@ -7,7 +7,7 @@ class Book < ActiveRecord::Base
   scope :with_shelving_id,
     lambda { select("books.*, book_shelvings.id AS shelving_id") }
 
-  # Use this for seeding.  Need to add API key.
+  # Use this for seeding
   def self.get_book_from_api(title)
     query_string = title.scan(/\w+/).join('+')
     query_url = "https://www.googleapis.com/books/v1/volumes?q="\
@@ -16,6 +16,7 @@ class Book < ActiveRecord::Base
     self.parse_response(response)
   end
 
+  # Parses data from API
   def self.parse_response(response)
     volume_info = JSON.parse(response)['items'][0]['volumeInfo']
     title = volume_info['title']
@@ -28,7 +29,8 @@ class Book < ActiveRecord::Base
       "number_of_pages" => number_of_pages,
       "cover_image_url" => cover_image_url
       }
-    return book_params
+
+    book_params
   end
 
   # For generating seed data
@@ -41,6 +43,7 @@ class Book < ActiveRecord::Base
     ratings = []
     self.reviews.each { |review| ratings << review.rating }
     sum = ratings.inject(0) { |sum, rating| sum + rating }
+
     return 0 if ratings.count < 1
     return sum / ratings.count
   end
