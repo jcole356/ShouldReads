@@ -23,6 +23,7 @@ or currently reading.
 * Edit and delete your own book reviews
 * Create and destroy bookshelves used for organizing books
 * Add and remove books to bookshelves to sort by category
+* View newsfeed to see what other users are saying about books
 
 By accessing the Google Books API, users can access a huge library of
 book for use on the site.  In addition to accessing the API, this
