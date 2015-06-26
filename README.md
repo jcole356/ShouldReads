@@ -1,72 +1,30 @@
 # Should Reads
 
-[Heroku link][heroku]
+[Live link][project]
 
-[heroku]: http://shouldreads.net/
+[project]: http://shouldreads.net/
 
-## Minimum Viable Product
+## Description
 ShouldReads is an app inspired by Goodreads built on Rails and Backbone.
-Users can:
+Users can search for books and book information.  Book information
+includes title, author, number of pages, and a summary.  Users can also
+rate and review books.  The review information is then available to all
+users globally on the newsfeed or on the specific books show page.
 
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
+Users are allowed to create bookshelves and add or remove books from
+bookshelves in order to sort them by categories such as read, to read,
+or currently reading.
 
-- [X] Create accounts
-- [X] Create sessions (log in)
-- [X] View books and book information
-- [X] Create book shelves
-- [X] Add books to shelves
-- [X] View book shelves
-- [X] Create reviews and rate books
-- [X] Incorporate google book API data
-- [X] Search for books
-- [X] Newsfeed
+## Main Functionality
 
-## Design Docs
-* [View Wireframes][views]
-* [DB schema][schema]
+* Custom authentication using BCrypt to store hashed passwords
+* Search for books by accessing the Google Books API
+* Rate and Review books
+* Edit and delete your own book reviews
+* Create and destroy bookshelves used for organizing books
+* Add and remove books to bookshelves to sort by category
 
-[views]: ./docs/views.md
-[schema]: ./docs/schema.md
-
-## Implementation Timeline
-
-### Phase 1: User Authentication (~1 day)
-I will implement user authentication in Rails based on the practices
-learned at App Academy. The most important part of this phase will
-be pushing the app to Heroku and ensuring that everything works before
-moving on to phase 2.
-
-[Details][phase-one]
-
-### Phase 2: Viewing Books and Shelves (~2 days)
-I will add API routes to serve book information, then add Backbone
-models and collections that fetch data from those routes. By the end of this
-phase, users will be able to view book information and add books to shelves.
-
-[Details][phase-two]
-
-### Phase 3: Creating and Editing Reviews (~2 days)
-I will create forms for adding reviews.  Users will be able to rate
-books and write reviews. Reviews will be displayed on each books show page.
-Eventually reviews will be accessible by friends.
-
-[Details][phase-three]
-
-### Phase 4: Adding Friends (~2 days)
-I will setup a system for handling friends and friend requests. Friends will
-be allowed to view  other friends shelves and reviews. Reviews will be
-shown as a subview on the friends index page.
-
-[Details][phase-four]
-
-### Bonus Features (TBD)
-- [ ] Add comments to reviews
-- [ ] User photos and more in depth profiles
-- [ ] Typeahead search bar for books
-- [ ] Create and respond to friend requests
-- [ ] View reviews by friends
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
+By accessing the Google Books API, users can access a huge library of
+book for use on the site.  In addition to accessing the API, this
+required writing a custom Backbone.js Model#parse method to parse the
+JSON response from the API.
