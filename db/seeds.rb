@@ -61,5 +61,5 @@ r6 = Review.create(author_id: 2, book_id: 6, rating: 1,
   \"It\" for not making me suffer through early Ben Affleck stumbling
   through painful movie dialogue.")
 r7 = Review.create(author_id: 2, book_id: 3, rating: 5,
-  title: "Best Apocolyptic Novel Ever?",
+  title: "Best Apocalyptic Novel Ever?",
   body: "Yeah that's right... I said it.  1,100+ pages of awesome!")
