@@ -17,7 +17,10 @@
 </div>
 <div class="feed-review-info">
   <h4 class="feed-review-rating">
-    Rating: <%= review.escape('rating') %> of 5
+    Rating:
+    <span style="font-weight:normal">
+      <%= review.escape('rating') %> of 5
+    </span>
   </h4>
 </div>
 <div class="feed-review-content">
