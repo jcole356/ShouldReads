@@ -2,19 +2,20 @@
 <!-- Probably don't need this conditional anymore -->
 <% button_text = (action == :session_new) ? "Log In" : "Sign Up" %>
 
-<div class="">
+<div>
   <%= flash_errors %>
 </div>
 
 <div class="row">
-  <div class="">
+  <div>
     <h1 class="sign-in-title">ShouldReads</h1>
   </div>
 </div>
 
-<form class="form-horizontal log-in-form"
-      action="<%= action_url %>"
-      method="post">
+<form
+  class="form-horizontal log-in-form"
+  action="<%= action_url %>"
+  method="post">
   <%= auth_token_input %>
   <div class="form-group">
     <div class="col-sm-10 col-sm-offset-1">
