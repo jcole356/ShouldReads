@@ -50,7 +50,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   },
 
   deleteReview: function(event) {
-    var reviewID = $(event.currentTarget).attr('data-id')
+    var reviewID = $(event.currentTarget).attr('data-id');
     var review = this.reviews.get(reviewID);
     review.destroy({
       success: function () { this.model.fetch() }.bind(this)
