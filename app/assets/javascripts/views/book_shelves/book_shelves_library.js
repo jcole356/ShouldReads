@@ -20,7 +20,8 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     }
     this.shelvings.fetch();
     var view = new ShouldReads.Views.AllShelf({
-      collection: this.shelvings
+      collection: this.shelvings,
+      bookShelves: this.collection
     });
 
     this.addSubview('.shelf-books', view);

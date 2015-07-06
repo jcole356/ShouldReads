@@ -10,6 +10,6 @@ class BookShelf < ActiveRecord::Base
     primary_key: :id
   )
 
-  has_many :book_shelvings, foreign_key: :shelf_id
+  has_many :book_shelvings, foreign_key: :shelf_id, dependent: :destroy
   has_many :books, through: :book_shelvings, source: :book
 end
