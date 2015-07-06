@@ -5,9 +5,12 @@ ShouldReads.Views.AllShelf = Backbone.View.extend({
 
   initialize: function(options) {
     this.bookShelves = options.bookShelves;
-    this.bookShelves.fetch();
     this.listenTo(this.collection, "sync remove", this.render);
-    this.listenTo(this.bookShelves, "remove", this.render);
+    this.listenTo(this.bookShelves, "remove", this.fetchBookShelvings);
+  },
+
+  fetchBookShelvings: function() {
+    this.collection.fetch();
   },
 
   render: function() {
@@ -24,7 +27,6 @@ ShouldReads.Views.AllShelf = Backbone.View.extend({
       });
     }
     this.$el.html(content);
-    debugger;
     return this;
   }
 });
