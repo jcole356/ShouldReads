@@ -15,7 +15,6 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
   },
 
   addAllBookShelf: function () {
-    $(".shelf-title-header").html(": All");
     var oldView = this.subviews(".shelf-books").first();
     if (oldView) {
       this.removeSubview(".shelf-books", oldView);
