@@ -30,12 +30,3 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
     return this;
   }
 });
-
-// if (this.collection.length === 0) {
-//   var content = $('<h3 class="empty-bookshelf">').html(
-//     "You don't have any books yet."
-//     );
-//   content.append('<br><br>').append(
-//     "Try searching for books to add to your shelves."
-//   );
-// }
