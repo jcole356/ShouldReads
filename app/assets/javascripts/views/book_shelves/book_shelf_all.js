@@ -5,8 +5,7 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
 
   initialize: function(options) {
     this.bookShelves = options.bookShelves;
-    this.listenTo(this.collection, "sync remove", this.render);
-    this.listenTo(this.bookShelves, "remove", this.fetchBookShelvings);
+    this.listenTo(this.collection, "sync", this.render);
   },
 
   addBookShelvings: function () {
@@ -32,6 +31,7 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
         shelvings: this.collection
       });
     }
+    debugger;
     this.$el.html(content);
     this.addBookShelvings();
     this.attachSubviews();
