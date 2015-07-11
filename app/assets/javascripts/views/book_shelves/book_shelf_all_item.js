@@ -1,6 +1,8 @@
 ShouldReads.Views.AllItem = Backbone.CompositeView.extend({
   template: JST['book_shelves/all_item'],
 
+  tagName: 'tr',
+
   className: "book-shelf-row",
 
   initialize: function () {
