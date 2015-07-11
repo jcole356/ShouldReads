@@ -4,12 +4,14 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
   className: "library-content",
 
   events: {
-    "click .shelf": "selectShelf"
+    "click .shelf": "selectShelf",
+    // "click .shelf-delete": "destroyShelvings"
   },
 
   initialize: function(options) {
     this.shelvings = options.shelvings;
     this.listenTo(this.collection, "reset", this.render);
+    // this.listenTo(this.collection, "remove", this.destroyShelvings);
   },
 
   addAllBookShelf: function () {
@@ -29,7 +31,8 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
 
   addIndex: function() {
     var view = new ShouldReads.Views.BookShelvesIndex({
-      collection: this.collection
+      collection: this.collection,
+      shelvings: this.shelvings
     });
 
     this.addSubview('.shelf-index', view);
@@ -60,6 +63,15 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
       });
     }
   },
+
+  // No reference to the shelf here
+  // destroyShelvings: function () {
+  //   shelf.books().each(function(book) {
+  //     var shelving = this.shelvings.get(book.attributes.shelving_id);
+  //     debugger;
+  //     shelving.destroy();
+  //   }.bind(this));
+  // },
 
   render: function() {
     var content = this.template({
