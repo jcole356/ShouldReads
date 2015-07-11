@@ -15,7 +15,6 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
   },
 
   bookShelvesLibrary: function() {
-    debugger;
     this.bookShelves.fetch();
     this.shelvings.fetch();
     var view = new ShouldReads.Views.BookShelvesLibrary({
