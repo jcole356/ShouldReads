@@ -9,6 +9,7 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
   },
 
   addBookShelvings: function () {
+    debugger;
     this.collection.each(function(shelving) {
       var view = new ShouldReads.Views.AllItem({
         model: shelving
@@ -31,7 +32,6 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
         shelvings: this.collection
       });
     }
-    debugger;
     this.$el.html(content);
     this.addBookShelvings();
     this.attachSubviews();
