@@ -1,32 +1,32 @@
-ShouldReads.Views.AllShelf = Backbone.View.extend({
+ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
   template: JST['book_shelves/all'],
 
   className: "shelf-books-list",
 
   initialize: function(options) {
     this.bookShelves = options.bookShelves;
-    this.listenTo(this.collection, "sync remove", this.render);
-    this.listenTo(this.bookShelves, "remove", this.fetchBookShelvings);
+    this.listenTo(this.collection, "add", this.addBookShelvingView);
+    this.collection.each(this.addBookShelvingView.bind(this));
+    this.listenTo(this.collection, "remove", this.removeBookShelvingView);
   },
 
-  fetchBookShelvings: function() {
-    this.collection.fetch();
+  addBookShelvingView: function (shelving) {
+    var view = new ShouldReads.Views.AllItem({
+      model: shelving
+    });
+    this.addSubview('.shelf-book-info-container', view);
+  },
+
+  removeBookShelvingView: function (shelving) {
+    this.removeModelSubview('.shelf-book-info-container', shelving);
   },
 
   render: function() {
-    if (this.collection.length === 0) {
-      var content = $('<h3 class="empty-bookshelf">').html(
-        "You don't have any books yet."
-        );
-      content.append('<br><br>').append(
-        "Try searching for books to add to your shelves."
-      );
-    } else {
-      var content = this.template({
-        shelvings: this.collection
-      });
-    }
+    var content = this.template({
+      shelvings: this.collection
+    });
     this.$el.html(content);
+    this.attachSubviews();
     return this;
   }
 });
