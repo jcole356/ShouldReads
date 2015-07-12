@@ -25,7 +25,7 @@ ShouldReads.Views.ShelfBooks = Backbone.View.extend({
 
   removeBook: function(event) {
     var shelvingID = $(event.currentTarget).attr('data-shelving-id');
-    var shelving = new ShouldReads.Models.BookShelving({ id: shelvingID });
+    var shelving = this.shelvings.get({id: shelvingID});
     shelving.destroy();
 
     var bookId = $(event.currentTarget).attr('data-book-id');
