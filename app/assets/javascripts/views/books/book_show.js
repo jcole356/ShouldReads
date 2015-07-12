@@ -18,7 +18,6 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   },
 
   addInfo: function() {
-    this.bookShelves.fetch();
     var view = new ShouldReads.Views.BookInfo({
       model: this.model,
       bookShelves: this.bookShelves
