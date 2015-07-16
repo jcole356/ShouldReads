@@ -6,7 +6,7 @@
 
 ![screenshot]
 
-[screenshot]: app/assets/shouldreads_demo.gif
+[screenshot]: app/assets/images/shouldreads_demo.gif
 
 ## Description
 ShouldReads is an app inspired by Goodreads built on Rails and Backbone.
