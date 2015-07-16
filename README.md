@@ -4,6 +4,10 @@
 
 [project]: http://shouldreads.net/
 
+![screenshot]
+
+[screenshot]: app/assets/shouldreads_demo.gif
+
 ## Description
 ShouldReads is an app inspired by Goodreads built on Rails and Backbone.
 Users can search for books and book information.  Book information
