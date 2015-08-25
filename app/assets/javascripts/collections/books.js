@@ -1,13 +1,8 @@
 ShouldReads.Collections.Books = Backbone.Collection.extend({
   model: ShouldReads.Models.Book,
 
-  // url: "api/books",
-
   comparator: function (book) {
-    return book.escape('title');
-    // var dateString = book.get('');
-    // var date = new Date(dateString);
-    // return -date.getTime();
+    return -book.escape('shelving_id');
   },
 
   initialize: function (models, options) {
