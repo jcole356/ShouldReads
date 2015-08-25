@@ -44,7 +44,7 @@ class Book < ActiveRecord::Base
     self.reviews.each { |review| ratings << review.rating }
     sum = ratings.inject(0) { |sum, rating| sum + rating }
 
-    return 0 if ratings.count < 1
-    return sum / ratings.count
+    return 0 if ratings.empty?
+    sum / ratings.count
   end
 end
