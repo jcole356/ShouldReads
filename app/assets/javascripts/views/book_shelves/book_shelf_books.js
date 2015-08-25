@@ -29,11 +29,7 @@ ShouldReads.Views.ShelfBooks = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    var content = this.template({
-      // bookShelfBooks: this.collection,
-      // title: this.title,
-      // shelvings: this.shelvings
-    });
+    var content = this.template();
     this.$el.html(content);
     return this;
   },
