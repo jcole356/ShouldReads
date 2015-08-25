@@ -1,0 +1,29 @@
+<td class="shelf-image">
+  <a href="#/books/<%= book.id %>">
+    <img src="<%= book.escape('cover_image_url') %>"
+       alt="Book Cover"
+       height="97"
+       width="64">
+   </a>
+</td>
+<td class="shelf-book-info shelf-book-title">
+  <%= book.escape('title') %>
+</td>
+<td class="shelf-book-info">
+  by <%= book.escape('author') %>
+</td>
+<td class="shelf-book-info">
+  <%= book.escape('number_of_pages') %> Pages
+</td>
+<td class="shelf-book-info">
+  Avg Rating:
+  <br>
+  <%= book.escape('average_rating') %> of 5
+</td>
+<td class="shelf-book-info remove-book" data-shelf="">
+  <a
+    data-shelving-id="<%= book.escape('shelving_id') %>"
+    data-book-id="<%= book.id %>"
+    class="btn btn-danger btn-xs shelving-delete">&times;
+  </a>
+</td>

@@ -23,7 +23,7 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
 
   render: function() {
     var content = this.template({
-      shelvings: this.collection
+      // shelvings: this.collection
     });
     this.$el.html(content);
     this.attachSubviews();
