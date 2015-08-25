@@ -6,8 +6,7 @@ ShouldReads.Collections.BookShelves = Backbone.Collection.extend({
   getOrFetch: function(id) {
     var book_shelf = this.get(id);
     var collection = this;
-
-    if (book) {
+    if (book_shelf) {
       book_shelf.fetch();
     } else {
       book_shelf = new ShouldReads.Models.BookShelf({ id: id});
