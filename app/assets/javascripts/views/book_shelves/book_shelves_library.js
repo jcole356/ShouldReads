@@ -36,8 +36,6 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     this.addSubview('.shelf-index', view);
   },
 
-  // Do I really need this giant conditional?  Why would this get
-  // called without selecting a shelf?
   addShelfBooks: function(view) {
     if (view) {
       var oldView = this.subviews(".shelf-books").first();

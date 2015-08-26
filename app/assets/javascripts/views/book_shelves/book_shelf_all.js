@@ -10,12 +10,10 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "remove", this.removeBookShelvingView);
   },
 
-  // This is no longer returning books in the correct order.
   addBookShelvingView: function (shelving) {
     var view = new ShouldReads.Views.AllItem({
       model: shelving
     });
-    // this.addSubview('.shelf-book-info-container', view);
     this.addSubview('.shelf-book-info-container', view, true);
   },
 
