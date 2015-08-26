@@ -25,9 +25,7 @@
 </div>
 <div class="feed-review-content">
   <h4 class="feed-review-title"><%= review.escape('title') %></h4>
-  <p class="feed-review-body">
-    <%= review.escape('body') %>
-  </p>
+  <p class="feed-review-body"><%= review.escape('body') %></p>
 </div>
 <% var date = new Date(review.escape('updated_at')) %>
 <h5 class="feed-review-date"><%= date.toDateString() %></h5>
