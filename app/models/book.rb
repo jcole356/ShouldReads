@@ -42,7 +42,7 @@ class Book < ActiveRecord::Base
   def average_rating
     ratings = []
     self.reviews.each { |review| ratings << review.rating }
-    sum = ratings.inject(0) { |sum, rating| sum + rating }
+    sum = ratings.inject(:+)
 
     return 0 if ratings.empty?
     sum / ratings.count
