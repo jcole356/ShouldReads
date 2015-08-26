@@ -3,7 +3,7 @@ ShouldReads.Collections.Reviews = Backbone.Collection.extend({
 
   model: ShouldReads.Models.Review,
 
-  comparator: function(review) {
+  comparator: function (review) {
     var dateString = review.get('updated_at');
     var date = new Date(dateString);
     return -date.getTime();

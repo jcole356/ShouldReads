@@ -8,12 +8,12 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
     "click .shelf-delete": "destroyShelf"
   },
 
-  initialize: function(options) {
+  initialize: function (options) {
     this.shelvings = options.shelvings;
     this.listenTo(this.collection, "add remove", this.render);
   },
 
-  render: function() {
+  render: function () {
     var content = this.template({
       bookShelves: this.collection
     });
@@ -22,7 +22,7 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
     return this;
   },
 
-  addShelf: function(event) {
+  addShelf: function (event) {
     event.preventDefault();
     var shelfName = this.$el.find('form').serializeJSON();
     var that = this;
@@ -32,9 +32,8 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
       owner_id: CURRENT_USER_ID
     });
     bookShelf.save({}, {
-      success: function() {
+      success: function () {
         that.collection.add(bookShelf);
-        that.collection.fetch();
       }
     });
   },
@@ -43,7 +42,7 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
     var shelfID = $(event.currentTarget).attr('data-id');
     var shelf = this.collection.get(shelfID);
     // Remove the shelvings from the collection first
-    shelf.books().each(function(book) {
+    shelf.books().each(function (book) {
       var shelving = this.shelvings.get(book.attributes.shelving_id);
       shelving.destroy();
     }.bind(this));

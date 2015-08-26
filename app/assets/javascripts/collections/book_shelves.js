@@ -3,7 +3,13 @@ ShouldReads.Collections.BookShelves = Backbone.Collection.extend({
 
   url: "api/book_shelves",
 
-  getOrFetch: function(id) {
+  comparator: function (book_shelf) {
+    var dateString = book_shelf.get('created_at');
+    var date = new Date(dateString);
+    return date.getTime();
+  },
+
+  getOrFetch: function (id) {
     var book_shelf = this.get(id);
     var collection = this;
     if (book_shelf) {
@@ -11,7 +17,7 @@ ShouldReads.Collections.BookShelves = Backbone.Collection.extend({
     } else {
       book_shelf = new ShouldReads.Models.BookShelf({ id: id});
       book_shelf.fetch({
-        success: function() {
+        success: function () {
           collection.add(book_shelf);
         }
       });
