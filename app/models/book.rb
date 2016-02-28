@@ -47,4 +47,9 @@ class Book < ActiveRecord::Base
     return 0 if ratings.empty?
     sum / ratings.count
   end
+
+  # Using this for the review query.  Not sure if it will work as intended
+  def book_title
+    self.title
+  end
 end
