@@ -48,7 +48,7 @@ class Book < ActiveRecord::Base
     sum / ratings.count
   end
 
-  # Using this for the review query.  Not sure if it will work as intended
+  # Using this for the review query.
   def book_title
     self.title
   end
