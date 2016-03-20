@@ -39,9 +39,11 @@ class Book < ActiveRecord::Base
     @book = Book.create(book_params)
   end
 
+  # Need to get rid of this n+1 query
   def average_rating
     ratings = []
-    self.reviews.each { |review| ratings << review.rating }
+    reviews = self.reviews
+    reviews.each { |review| ratings << review.rating }
     sum = ratings.inject(:+)
 
     return 0 if ratings.empty?

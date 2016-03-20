@@ -5,7 +5,7 @@ class Api::ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     if @review.save
-      render :index
+      render json: {}
     else
       render json: @review.errors, status: :unprocessable_entity
     end
@@ -16,11 +16,19 @@ class Api::ReviewsController < ApplicationController
     render :index
   end
 
+  # May not need this one after all.  Probs just show.
+  def edit
+  end
+
+  def show
+    render json: {}
+  end
+
   def update
     @review = Review.find(params[:id])
 
     if @review.update(review_params)
-      render :index
+      render json: {}
     else
       render json: @review.errors, status: :unprocessable_entity
     end
