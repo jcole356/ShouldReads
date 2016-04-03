@@ -39,7 +39,6 @@ class Book < ActiveRecord::Base
     @book = Book.create(book_params)
   end
 
-  # Need to get rid of this n+1 query
   def average_rating
     ratings = []
     reviews = self.reviews
