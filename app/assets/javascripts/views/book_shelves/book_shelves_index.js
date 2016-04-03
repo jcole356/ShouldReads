@@ -30,7 +30,6 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
       title: shelfName,
       owner_id: CURRENT_USER_ID
     });
-    // Could and probably should just do this in previous step
     bookShelf.save({}, {
       success: function (model) {
         self.collection.add(model);
