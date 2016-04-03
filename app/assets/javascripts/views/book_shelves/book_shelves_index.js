@@ -24,16 +24,16 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
 
   addShelf: function (event) {
     event.preventDefault();
-    var shelfName = this.$el.find('form').serializeJSON();
-    var that = this;
-    var bookShelf = new ShouldReads.Models.BookShelf();
-    bookShelf.set({
-      title: shelfName.book_shelf.title,
+    var shelfName = this.$el.find('form').serializeJSON().book_shelf.title;
+    var self = this;
+    var bookShelf = new ShouldReads.Models.BookShelf({
+      title: shelfName,
       owner_id: CURRENT_USER_ID
     });
+    // Could and probably should just do this in previous step
     bookShelf.save({}, {
-      success: function () {
-        that.collection.add(bookShelf);
+      success: function (model) {
+        self.collection.add(model);
       }
     });
   },
@@ -43,7 +43,7 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
     var shelf = this.collection.get(shelfID);
     // Remove the shelvings from the collection first
     shelf.books().each(function (book) {
-      var shelving = this.shelvings.get(book.attributes.shelving_id);
+      var shelving = this.shelvings.get(book.get('shelving_id'));
       shelving.destroy();
     }.bind(this));
     shelf.destroy();

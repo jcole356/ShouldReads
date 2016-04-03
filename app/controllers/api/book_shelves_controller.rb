@@ -4,7 +4,7 @@ class Api::BookShelvesController < ApplicationController
   def create
     @book_shelf = BookShelf.new(book_shelf_params)
     if @book_shelf.save
-      render :index
+      render :show
     else
       render json: @book_shelf.errors, status: :unprocessable_entity
     end
