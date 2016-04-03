@@ -5,14 +5,16 @@ ShouldReads.Views.ModalSearch = Backbone.View.extend({
 
   events: {
     "keydown .search_field": "typeOrClearModal"
-    // "click": "clearModal"
+  },
+
+  initialize: function(options) {
+    this.searchValue = options.searchValue;
   },
 
   clearModal: function(event, searchStr, searchRequest) {
-    window.clearTimeout();
     searchRequest.val(searchStr);
-    // Also need to submit the search
-    // Need to trigger submit on the navbar.
+    $('.search-btn').click();
+
     this.remove();
   },
 
@@ -20,6 +22,7 @@ ShouldReads.Views.ModalSearch = Backbone.View.extend({
     var content = this.template({
     });
     this.$el.html(content);
+    this.$el.find('.search_field').val(this.searchValue);
 
     return this;
   },

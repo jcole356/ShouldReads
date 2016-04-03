@@ -10,13 +10,21 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
     "click .sign-out": "signOut",
     "click .search-btn": "search",
     "click .search-request": "openModal",
+    "keydown .search-request": "swapFocus",
     "submit": "search"
   },
 
   openModal: function () {
-    var modal = new ShouldReads.Views.ModalSearch();
+    var searchValue = $('.search-request').val();
+    var modal = new ShouldReads.Views.ModalSearch({
+      searchValue: searchValue
+    });
 
     $('body').prepend(modal.render().$el);
+  },
+
+  swapFocus: function() {
+    $('.search_field')[0].focus();
   },
 
   render: function () {
