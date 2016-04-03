@@ -28,12 +28,14 @@ ShouldReads.Views.ModalSearch = Backbone.View.extend({
   },
 
   typeOrClearModal: function(event) {
-    if (event && event.keyCode === 13) {
+    var searchRequest = $('.search-request');
+    if (event.keyCode === 13) {
       var searchStr = $('.search_field').val();
-      var searchRequest = $('.search-request');
       this.clearModal(event, searchStr, searchRequest);
-
-      return;
+    } else if (event.keyCode === 9 || event.keyCode === 27) {
+      this.clearModal(event, "", searchRequest);
     }
+
+    return;
   },
 });
