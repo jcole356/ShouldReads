@@ -1,0 +1,23 @@
+/* Modal Search Bar Stlyes */
+
+.modal_search {
+  position: fixed;
+  vertical-align: middle;
+  width: 100%;
+  background-color: black;
+  height: 200px;
+  top:  200px;
+  color: white;
+  padding-left: 100px;
+}
+
+.search_field_container {
+  padding: 10px;
+}
+
+.search_field {
+  height: 180px;
+  width: 100%;
+  font-size: 7em;
+  font-family: "Raleway";
+}

@@ -16,6 +16,7 @@
  *= require library
  *= require newsfeed
  *= require search_results
+ *= require modal_search
  *= require joyride-2.1
  *= require star-rating
  */
@@ -87,6 +88,7 @@ ul {
   bottom: 0px;
   z-index: 100;
   height: 100vh;
+  width: inherit;
 }
 
 .m-content {

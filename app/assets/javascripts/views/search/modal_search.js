@@ -4,15 +4,15 @@ ShouldReads.Views.ModalSearch = Backbone.View.extend({
   className: "m-backdrop",
 
   events: {
-    "keydown": "clearModal"
+    "keydown .search_field": "clearModal"
     // "click .search-request": "expandSearch",
     // "click .close": "condenseSearch"
   },
 
   initialize: function(options) {
-    window.setTimeout(function() {
-      this.clearModal();
-    }, 4000);
+    // window.setTimeout(function() {
+    //   this.clearModal();
+    // }.bind(this), 4000);
   },
 
   clearModal: function(event) {
