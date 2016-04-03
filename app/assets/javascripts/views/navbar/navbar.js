@@ -9,7 +9,8 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
   events: {
     "click .sign-out": "signOut",
     "click .search-btn": "search",
-    "click .search-request": "openModal"
+    "click .search-request": "openModal",
+    "submit": "search"
   },
 
   openModal: function () {

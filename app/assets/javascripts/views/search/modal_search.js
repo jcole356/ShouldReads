@@ -4,25 +4,15 @@ ShouldReads.Views.ModalSearch = Backbone.View.extend({
   className: "m-backdrop",
 
   events: {
-    "keydown .search_field": "clearModal"
-    // "click .search-request": "expandSearch",
-    // "click .close": "condenseSearch"
+    "keydown .search_field": "typeOrClearModal"
+    // "click": "clearModal"
   },
 
-  initialize: function(options) {
-    // window.setTimeout(function() {
-    //   this.clearModal();
-    // }.bind(this), 4000);
-  },
-
-  clearModal: function(event) {
+  clearModal: function(event, searchStr, searchRequest) {
     window.clearTimeout();
-    if (event && event.keyCode === 13) {
-      var submit = true;
-    }
-    var searchStr = $('.search_field').text();
-    // Need this to be cleared if the search has been submitted
-    $('.search_request').val(submit ? "" : searchStr);
+    searchRequest.val(searchStr);
+    // Also need to submit the search
+    // Need to trigger submit on the navbar.
     this.remove();
   },
 
@@ -34,7 +24,13 @@ ShouldReads.Views.ModalSearch = Backbone.View.extend({
     return this;
   },
 
-  toggleSearchSize: function(event) {
+  typeOrClearModal: function(event) {
+    if (event && event.keyCode === 13) {
+      var searchStr = $('.search_field').val();
+      var searchRequest = $('.search-request');
+      this.clearModal(event, searchStr, searchRequest);
 
+      return;
+    }
   },
 });
