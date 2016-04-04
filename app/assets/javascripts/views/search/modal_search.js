@@ -13,7 +13,10 @@ ShouldReads.Views.ModalSearch = Backbone.View.extend({
 
   clearModal: function(event, searchStr, searchRequest) {
     searchRequest.val(searchStr);
-    $('.search-btn').click();
+    // Don't make a call if the search is empty
+    if (searchStr) {
+      $('.search-btn').click();
+    }
 
     this.remove();
   },
