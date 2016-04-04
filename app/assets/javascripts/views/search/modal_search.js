@@ -5,6 +5,7 @@ ShouldReads.Views.ModalSearch = Backbone.View.extend({
 
   events: {
     "keydown .search_field": "typeOrClearModal"
+    // "click .m-backdrop: this.remove" registered in render
   },
 
   initialize: function(options) {
@@ -26,6 +27,12 @@ ShouldReads.Views.ModalSearch = Backbone.View.extend({
     });
     this.$el.html(content);
     this.$el.find('.search_field').val(this.searchValue);
+    // Need to make sure that we only remove the view if event.target is $el
+    this.$el.click(function(event) {
+      if (event.target === this) {
+        this.remove();
+      }
+    });
 
     return this;
   },
