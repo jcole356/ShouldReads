@@ -19,11 +19,17 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
     var modal = new ShouldReads.Views.ModalSearch({
       searchValue: searchValue
     });
+    this._child = modal;
 
     $('body').prepend(modal.render().$el);
   },
 
-  swapFocus: function() {
+  swapFocus: function(event) {
+    if (event.keyCode === 9 || event.keyCode === 27) {
+      this._child.remove();
+
+      return;
+    }
     $('.search_field')[0].focus();
   },
 
