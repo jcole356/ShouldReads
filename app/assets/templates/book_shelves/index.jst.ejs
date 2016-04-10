@@ -1,15 +1,15 @@
 <h4>Bookshelves</h3>
 
 <ul class="clear">
-  <% bookShelves.each(function(bookShelf) { %>
-    <li class="shelf" data-id="<%= bookShelf.id %>">
-      <h4 class="shelf-title"><%= bookShelf.escape('title') %></h4>
+  {{ bookShelves.each(function(bookShelf) { }}
+    <li class="shelf" data-id="{{= bookShelf.id }}">
+      <h4 class="shelf-title">{{= bookShelf.escape('title') }}</h4>
     </li>
-    <% if (bookShelf.escape('title') !== "All") { %>
-      <a data-id="<%= bookShelf.id %>"
+    {{ if (bookShelf.escape('title') !== "All") { }}
+      <a data-id="{{= bookShelf.id }}"
          class="btn btn-danger btn-xs shelf-delete">&times;</a>
-    <% } %>
-  <% }) %>
+    {{ } }}
+  {{ }) }}
 </ul>
 <div class="form-group add-shelf">
   <form>

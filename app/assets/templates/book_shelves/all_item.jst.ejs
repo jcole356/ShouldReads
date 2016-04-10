@@ -1,19 +1,19 @@
 <td class="shelf-image">
-  <a href="#/books/<%= shelving.book().id %>">
-    <img src="<%= shelving.book().escape('cover_image_url') %>"
+  <a href="#/books/{{= shelving.book().id }}">
+    <img src="{{= shelving.book().escape('cover_image_url') }}"
        alt="Book Cover"
        height="97"
        width="64">
    </a>
 </td>
 <td class="shelf-book-info shelf-book-title">
-  <%= shelving.book().escape('title') %>
+  {{= shelving.book().escape('title') }}
 </td>
 <td class="shelf-book-info">
-  by <%= shelving.book().escape('author') %>
+  by {{= shelving.book().escape('author') }}
 </td>
 <td class="shelf-book-info">
   Avg Rating: <br>
-  <%= shelving.book().escape('average_rating') %> of 5
+  {{= shelving.book().escape('average_rating') }} of 5
 </td>
-<td class="shelf-book-info"><%= shelving.escape('title') %></td>
+<td class="shelf-book-info">{{= shelving.escape('title') }}</td>

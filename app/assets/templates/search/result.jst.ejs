@@ -1,10 +1,10 @@
 <div class="search-book-info">
   <div class="result-image">
-    <img src="<%= searchBook.escape('cover_image_url') %>"
+    <img src="{{= searchBook.escape('cover_image_url') }}"
          alt="Book Cover"
          height="195"
          width="128">
   </div>
-  <h3 class="result-title"><%= searchBook.escape('title') %></h3>
-  <h4 class="result-author"><%= searchBook.escape('author') %></h4>
+  <h3 class="result-title">{{= searchBook.escape('title') }}</h3>
+  <h4 class="result-author">{{= searchBook.escape('author') }}</h4>
 </div>
