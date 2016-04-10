@@ -16,6 +16,7 @@ gem 'backbone-on-rails'
 gem 'newrelic_rpm'
 gem 'rest-client'
 gem 'figaro'
+gem 'ejs'
 
 group :development, :test do
   gem 'byebug'
