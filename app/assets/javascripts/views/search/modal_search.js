@@ -4,7 +4,8 @@ ShouldReads.Views.ModalSearch = Backbone.View.extend({
   className: "m-backdrop",
 
   events: {
-    "keydown .search_field": "typeOrClearModal"
+    "keydown .search_field": "typeOrClearModal",
+    "click .close": "clearModal"
     // "click .m-backdrop: this.remove" registered in render
   },
 
@@ -13,7 +14,10 @@ ShouldReads.Views.ModalSearch = Backbone.View.extend({
   },
 
   clearModal: function(event, searchStr, searchRequest) {
-    searchRequest.val(searchStr);
+    // May be called from clicking on the close button
+    if (searchRequest) {
+      searchRequest.val(searchStr);
+    }
     // Don't make a call if the search is empty
     if (searchStr) {
       $('.search-btn').click();
@@ -27,12 +31,14 @@ ShouldReads.Views.ModalSearch = Backbone.View.extend({
     });
     this.$el.html(content);
     this.$el.find('.search_field').val(this.searchValue);
+    /*
     // Need to make sure that we only remove the view if event.target is $el
     this.$el.click(function(event) {
       if (event.target === this) {
         this.remove();
       }
     });
+    */
 
     return this;
   },
