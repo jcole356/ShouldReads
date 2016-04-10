@@ -68,6 +68,12 @@ ul {
   background-color: #4582EC;
 }
 
+.search-icon {
+  background-image: image-url("large_library.jpg");
+  height: inherit;
+  width: 100px;
+}
+
 /* Modal formatting */
 .close {
   color: black;
