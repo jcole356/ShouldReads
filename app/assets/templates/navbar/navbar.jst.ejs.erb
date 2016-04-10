@@ -12,12 +12,16 @@
       </button>
       <a class="navbar-brand" href="#">ShouldReads</a>
     </div>
-    <div class="search-icon">
-
-    </div>
     <div class="collapse navbar-collapse"
          id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a>
+            <div class="search-icon">
+              <%= image_tag "search-icon.png" %>
+            </div>
+          </a>
+        </li>
         <li id="username">
           <a href="#">
             Hello {{= user.escape('username') }}
