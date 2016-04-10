@@ -8,28 +8,13 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
 
   events: {
     "click .sign-out": "signOut",
-    "click .search-btn": "search",
-    "click .search-request": "openModal",
-    "keydown .search-request": "swapFocus",
-    "submit": "search"
+    "click .search-request": "openModal"
   },
 
   openModal: function () {
-    var searchValue = $('.search-request').val();
-    var modal = new ShouldReads.Views.ModalSearch({
-      searchValue: searchValue
-    });
-    this._child = modal;
-
+    var modal = new ShouldReads.Views.ModalSearch();
     $('body').prepend(modal.render().$el);
-  },
-
-  swapFocus: function(event) {
-    if (event.keyCode === 9 || event.keyCode === 27) {
-      this._child.remove();
-
-      return;
-    }
+    // Allow user to type as soon as search bar pops up
     $('.search_field')[0].focus();
   },
 
@@ -41,11 +26,6 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
     this.$el.html(content);
 
     return this;
-  },
-
-  search: function (event) {
-    var query = $('.search-request').val();
-    Backbone.history.navigate("search/" + query, { trigger: true });
   },
 
   signOut: function(event) {
