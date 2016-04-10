@@ -2,33 +2,33 @@
   <h3 class="reviews-header-text">Reviews:</h3>
 </div>
 
-<% reviews.each(function(review) { %>
-  <% if(review.escape('book_id') === book.id.toString()) { %>
+{{ reviews.each(function(review) { }}
+  {{ if(review.escape('book_id') === book.id.toString()) { }}
     <div class="review-content">
       <div class="review-title-header">
-        <h4 class="review-title"><%= review.escape('title') %></h4>
+        <h4 class="review-title">{{= review.escape('title') }}</h4>
         <h4 class="review-rating">
-          Rating: <%= review.escape('rating') %> of 5
+          Rating: {{= review.escape('rating') }} of 5
         </h4>
-        <% if (review.escape('author_id') === CURRENT_USER_ID) { %>
+        {{ if (review.escape('author_id') === CURRENT_USER_ID) { }}
           <button class="btn btn-danger btn-xs delete-review"
                   type="button"
                   name="button"
-                  data-id="<%= review.id %>">Delete</button>
+                  data-id="{{= review.id }}">Delete</button>
           <button class="btn btn-primary btn-xs edit-review"
                   type="button"
                   name="button"
-                  data-id="<%= review.id %>">Edit</button>
-        <% } %>
+                  data-id="{{= review.id }}">Edit</button>
+        {{ } }}
       </div>
       <blockquote>
-        <p><%= review.escape('body') %></p>
+        <p>{{= review.escape('body') }}</p>
         <small>
           <cite title="Source Title">
-            <%= review.escape('username') %>
+            {{= review.escape('username') }}
           </cite>
         </small>
       </blockquote>
     </div>
-  <% } %>
-<% }) %>
+  {{ } }}
+{{ }) }}

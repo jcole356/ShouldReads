@@ -1,15 +1,15 @@
 <div class="feed-review-header">
-  <h4><%= review.escape('username') %> reviewed
-    <a href="#/books/<%= review.escape('book_id') %>">
-      <%= review.escape('book_title') %> by
-      <%= review.escape('author') %>
+  <h4>{{= review.escape('username') }} reviewed
+    <a href="#/books/{{= review.escape('book_id') }}">
+      {{= review.escape('book_title') }} by
+      {{= review.escape('author') }}
     </a>
   </h4>
 </div>
 <div class="feed-book-image">
-  <a href="#/books/<%= review.escape('book_id') %>">
+  <a href="#/books/{{= review.escape('book_id') }}">
     <img
-      src="<%= review.escape('cover_image_url') %>"
+      src="{{= review.escape('cover_image_url') }}"
       alt="Book Cover"
       height="97"
       width="64">
@@ -19,13 +19,13 @@
   <h4 class="feed-review-rating">
     Rating:
     <span style="font-weight:normal">
-      <%= review.escape('rating') %> of 5
+      {{= review.escape('rating') }} of 5
     </span>
   </h4>
 </div>
 <div class="feed-review-content">
-  <h4 class="feed-review-title"><%= review.escape('title') %></h4>
-  <p class="feed-review-body"><%= review.escape('body') %></p>
+  <h4 class="feed-review-title">{{= review.escape('title') }}</h4>
+  <p class="feed-review-body">{{= review.escape('body') }}</p>
 </div>
-<% var date = new Date(review.escape('updated_at')) %>
-<h5 class="feed-review-date"><%= date.toDateString() %></h5>
+{{ var date = new Date(review.escape('updated_at')) }}
+<h5 class="feed-review-date">{{= date.toDateString() }}</h5>
