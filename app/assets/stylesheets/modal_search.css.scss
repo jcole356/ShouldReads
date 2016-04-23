@@ -12,6 +12,7 @@
   padding: 10px;
   float: left;
   width: 100%;
+  height: 155px;
 }
 
 .search_field {
@@ -21,7 +22,7 @@
   font-family: "Raleway";
   color: #000000;
   border: none;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 100px 0px 20px;
   width: 100%;
 }
 
@@ -30,8 +31,17 @@
 }
 
 .modal_search .close {
-  display: block;
-  float: right;
   color: #000000;
-  font-size: 10em;
+  font-size: 8em;
+  position: relative;
+  top: -140px;
+  opacity: 1;
+  background-color: transparent;
+  height: 135px;
+  // vertical-align: middle;
+}
+
+.modal_search .close:hover {
+  color: #FFFFFF;
+  background-color: transparent;
 }
