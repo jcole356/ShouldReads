@@ -8,7 +8,14 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
 
   events: {
     "click .sign-out": "signOut",
-    "click .search-btn": "search"
+    "click .search-request": "openModal"
+  },
+
+  openModal: function () {
+    var modal = new ShouldReads.Views.ModalSearch();
+    $('body').prepend(modal.render().$el);
+    // Allow user to type as soon as search bar pops up
+    $('.search_field')[0].focus();
   },
 
   render: function () {
@@ -19,11 +26,6 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
     this.$el.html(content);
 
     return this;
-  },
-
-  search: function (event) {
-    var query = $('.search-request').val();
-    Backbone.history.navigate("search/" + query, { trigger: true });
   },
 
   signOut: function(event) {
