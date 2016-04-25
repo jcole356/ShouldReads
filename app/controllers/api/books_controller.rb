@@ -3,6 +3,7 @@ class Api::BooksController < ApplicationController
 
   def create
     title = book_params['title']
+    # This should be find by isbn
     @book = Book.find_by_title(title)
     if @book
       render :show

@@ -24,6 +24,9 @@ class Book < ActiveRecord::Base
     synopsis = volume_info['description']
     number_of_pages = volume_info['pageCount']
     cover_image_url = volume_info['imageLinks']['thumbnail']
+    # Need to add ISBN
+    isbn = volume_info['industryIdentifiers'][0]
+    debugger
     book_params = {
       "title" => title, "author" => author, "synopsis" => synopsis,
       "number_of_pages" => number_of_pages,

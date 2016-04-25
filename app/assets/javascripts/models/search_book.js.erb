@@ -3,35 +3,54 @@ ShouldReads.Models.SearchBook = Backbone.Model.extend({
   },
 
   parse: function(response) {
-    if (response.volumeInfo) {
-        if (response.volumeInfo.authors) {
-          var author = response.volumeInfo.authors[0];
+    var volumeInfo = response.volumeInfo;
+    var title = response.volumeInfo.title;
+    var author,
+        coverImage,
+        numberOfPages,
+        synopsis,
+        isbn;
+
+    if (volumeInfo) {
+        if (volumeInfo.authors) {
+          // change this to handle multiple authors
+          author = volumeInfo.authors[0];
         } else {
-          var author = "Unknown";
+          author = "Unknown";
         }
-        if (response.volumeInfo.imageLinks) {
-          var coverImage = response.volumeInfo.imageLinks.thumbnail
+        if (volumeInfo.imageLinks) {
+          coverImage = volumeInfo.imageLinks.thumbnail
             .replace("http", "https");
         } else {
-          var coverImage = "<%= asset_path("old_bible.jpg") %>";
+          coverImage = "<%= asset_path("old_bible.jpg") %>";
         }
-        if (response.volumeInfo.pageCount) {
-          var numberOfPages = response.volumeInfo.pageCount;
+        if (volumeInfo.pageCount) {
+          numberOfPages = volumeInfo.pageCount;
         } else {
-          var numberOfPages = "N/A";
+          numberOfPages = "N/A";
         }
-        if (response.volumeInfo.description) {
-          var synopsis = response.volumeInfo.description;
+        if (volumeInfo.description) {
+          synopsis = volumeInfo.description;
         } else {
-          var synopsis = "No Description Available";
+          synopsis = "No Description Available";
+        }
+        // Default will be ISBN 13.  Add ISBN 10 as backup.
+        if (volumeInfo.industryIdentifiers) {
+          _.each(volumeInfo.industryIdentifiers, function(identifier){
+            if (identifier.type === 'ISBN_13') {
+              isbn = identifier.identifier;
+            }
+          })
         }
 
       this.set({
-        title: response.volumeInfo.title,
+        // Not sure why I left this one as is
+        title: title,
         author: author,
         cover_image_url: coverImage,
         number_of_pages: numberOfPages,
         description: synopsis
+        // Need to add ISBN
       });
 
       return this;
