@@ -3,6 +3,18 @@
   margin-top: 20px;
 }
 
+.add-shelf .form-control.green:focus {
+  border-color: green;
+}
+
+.add-shelf .form-control.yellow:focus {
+  border-color: yellow;
+}
+
+.add-shelf .form-control.red:focus {
+  border-color: red;
+}
+
 .book-title {
   display: block;
   float: left;

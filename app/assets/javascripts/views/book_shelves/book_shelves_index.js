@@ -5,7 +5,8 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
 
   events: {
     "click .new-shelf": "addShelf",
-    "click .shelf-delete": "destroyShelf"
+    "click .shelf-delete": "destroyShelf",
+    "keyup .add-shelf .form-control": "validate"
   },
 
   initialize: function (options) {
@@ -46,5 +47,19 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
       shelving.destroy();
     }.bind(this));
     shelf.destroy();
+  },
+
+  validate: function() {
+    var $input = $('.add-shelf .form-control');
+    var _charCount = $input.val().length;
+    if (_charCount < 15  && _charCount > 0) {
+      $input.removeClass('yellow red').addClass('green');
+    } else if (_charCount >= 15 && _charCount < 20){
+      $input.removeClass('green red').addClass('yellow');
+    } else if (_charCount == 20) {
+      $input.removeClass('green yellow').addClass('red');
+    } else {
+      $input.removeClass('green yellow red');
+    }
   }
 });

@@ -14,17 +14,15 @@ ShouldReads.Views.SearchBook = Backbone.View.extend({
     return this;
   },
 
-  // Should refactor this
   addOrRetrieve: function(event) {
     var model = this.model;
-    // var attrs = this.model.attributes;
     var book = new ShouldReads.Models.Book({
       title: model.get('title'),
       author: model.get('author'),
       cover_image_url: model.get('cover_image_url'),
       number_of_pages: model.get('number_of_pages'),
-      synopsis: model.get('description')
-      // Add isbn
+      synopsis: model.get('description'),
+      isbn: model.get('isbn')
     });
     book.save({}, {
       success: function() {
