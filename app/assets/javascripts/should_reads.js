@@ -19,6 +19,8 @@ window.ShouldReads = {
       user: user
     });
 
+    // Add scrollbar to keep navbar from jumping
+    $('body').addClass('scroll');
     $('#nav').html(navbar.render().$el);
 
     Backbone.history.start();

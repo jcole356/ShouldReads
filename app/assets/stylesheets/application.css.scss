@@ -41,6 +41,11 @@ ul {
   display: table;
 }
 
+/* Body scroll hack */
+body.scroll {
+  overflow-y: scroll;
+}
+
 /* Log in and sign in form */
 .background {
   background-image: image-url("large_library.jpg");
