@@ -113,5 +113,16 @@
 }
 
 .shelf-validation {
-  font-family: "Raleway"
+  font-family: "Raleway";
+  width: 160px;
+  padding: 5px;
+  text-align: center;
+}
+
+.shelf-validation.yellow {
+  background-color: yellow;
+}
+
+.shelf-validation.red {
+  background-color: red;
 }

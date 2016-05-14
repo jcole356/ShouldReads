@@ -51,7 +51,7 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
   },
 
   removeMessage: function() {
-    $('.shelf-validation').text('');
+    //$('.shelf-validation').text('');
   },
 
   validate: function() {
@@ -60,12 +60,16 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
     var _charCount = $input.val().length;
     if (_charCount < 15  && _charCount > 0) {
       $input.removeClass('yellow red').addClass('green');
+      $messageField.removeClass('yellow red');
     } else if (_charCount >= 15 && _charCount < 20){
       $input.removeClass('green red').addClass('yellow');
+      $messageField.removeClass('red').addClass('yellow');
     } else if (_charCount == 20) {
       $input.removeClass('green yellow').addClass('red');
+      $messageField.removeClass('yellow').addClass('red');
     } else {
       $input.removeClass('green yellow red');
+      $messageField.removeClass('yellow red');
       $messageField.text();
     }
     $messageField.text((20 - _charCount) + ' chars remaining');
