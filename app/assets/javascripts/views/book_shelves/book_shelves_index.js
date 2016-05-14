@@ -51,7 +51,7 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
   },
 
   removeMessage: function() {
-    $('.shelf-validation').text('');
+    $('.shelf-validation').text('').removeClass('yellow red');
   },
 
   validate: function() {
