@@ -100,16 +100,18 @@ body.scroll {
   width: inherit;
 }
 
+/* Modal content */
 .m-content {
   z-index: 200;
   border: 2px solid black;
-  height: 85%;
+  height: inherit;
+  max-height: 80%;
   width: 600px;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px 60px 20px 60px;
-  overflow: scroll;
+  padding: 20px 60px 20px 60px;
+  overflow-y: auto;
 }
 
 .m-review-title {
