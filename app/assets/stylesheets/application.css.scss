@@ -81,6 +81,8 @@ body.scroll {
 .close {
   color: black;
   background-color: inherit;
+  position: relative;
+  left: 35px;
 }
 
 .close:hover {
