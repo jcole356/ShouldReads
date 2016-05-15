@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613193708) do
+ActiveRecord::Schema.define(version: 20160515002832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,9 +43,11 @@ ActiveRecord::Schema.define(version: 20150613193708) do
     t.integer  "number_of_pages"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "isbn"
   end
 
   add_index "books", ["author"], name: "index_books_on_author", using: :btree
+  add_index "books", ["isbn"], name: "index_books_on_isbn", using: :btree
   add_index "books", ["title"], name: "index_books_on_title", using: :btree
 
   create_table "reviews", force: :cascade do |t|
@@ -68,6 +70,8 @@ ActiveRecord::Schema.define(version: 20150613193708) do
     t.string   "session_token",   null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "firstname"
+    t.string   "lastname"
   end
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree

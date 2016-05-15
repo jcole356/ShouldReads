@@ -2,9 +2,8 @@ class Api::BooksController < ApplicationController
   before_action :require_signed_in!
 
   def create
-    title = book_params['title']
-    # This should be find by isbn
-    @book = Book.find_by_title(title)
+    isbn = book_params['isbn']
+    @book = Book.find_by_isbn(isbn)
     if @book
       render :show
     else
@@ -26,6 +25,6 @@ class Api::BooksController < ApplicationController
 
     def book_params
       params.require(:book).permit(:title, :author, :cover_image_url,
-        :synopsis, :number_of_pages)
+        :synopsis, :number_of_pages, :isbn)
     end
 end
