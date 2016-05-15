@@ -17,6 +17,7 @@ class Book < ActiveRecord::Base
   end
 
   # Parses data from API, why no validations of defaults here only in js?
+  # Not user facing, only used for seeding. todo
   def self.parse_response(response)
     volume_info = JSON.parse(response)['items'][0]['volumeInfo']
     title = volume_info['title']
