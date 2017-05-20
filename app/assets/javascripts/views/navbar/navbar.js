@@ -24,6 +24,14 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
       user: this.user
     });
     this.$el.html(content);
+    // once the user is fetched and the navbar is in the DOM
+    if (this.user.get('login_count') === 1 || this.user.get('username') === 'guest') {
+      $("#joyRideTipContent").joyride({
+        autoStart : true,
+        modal: true,
+        expose : true,
+      });
+    }
 
     return this;
   },
