@@ -11,9 +11,23 @@ window.ShouldReads = {
       reviews: new ShouldReads.Collections.Reviews(),
       shelvings: new ShouldReads.Collections.BookShelvings()
     });
-
     var user = new ShouldReads.Models.User({ id: CURRENT_USER_ID});
-    user.fetch();
+    user.fetch({
+        success: function(model, response, options) {
+          // add joyride here
+          if (model.get('login_count') === 1 || model.get('username') === 'guest') {
+            $(window).load(function() {
+              $("#joyRideTipContent").joyride({
+                autoStart : true,
+                modal: true,
+                expose : true,
+              });
+            });
+          }
+        }
+    });
+    // add a user on the app namespace
+    this.user = user;
     var navbar = new ShouldReads.Views.NavBar({
       router: router,
       user: user

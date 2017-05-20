@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :signed_in?, :already_reviewed?
 
   private
-
+    #TODO: move this to the user model
     def add_book_shelves
       BookShelf.create(owner_id: current_user.id, title: "All")
       BookShelf.create(owner_id: current_user.id, title: "Read")
@@ -23,6 +23,8 @@ class ApplicationController < ActionController::Base
 
     def sign_in(user)
       @current_user = user
+      # Increase the user's login count by one
+      @current_user.update({login_count: @current_user.login_count += 1})
       session[:session_token] = user.reset_session_token!
     end
 

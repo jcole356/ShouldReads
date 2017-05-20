@@ -16,10 +16,6 @@ class Api::ReviewsController < ApplicationController
     render :index
   end
 
-  # May not need this one after all.  Probs just show.
-  def edit
-  end
-
   def show
     render json: {}
   end
