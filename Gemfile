@@ -19,11 +19,12 @@ gem 'figaro'
 gem 'ejs'
 
 group :development, :test do
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-  gem 'pry-rails'
+  gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'annotate'
+  gem 'byebug'
+  gem 'pry-rails'
+  gem 'rb-readline'
+  gem 'spring'
+  gem 'web-console', '~> 2.0'
 end
