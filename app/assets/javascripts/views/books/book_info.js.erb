@@ -30,10 +30,10 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
       book_id: this.model.id
     });
     shelving.save({}, {
-      success: function() {
+      success: function () {
         $('.confirmation').html('<%= image_tag "checkmark.png" %>');
       },
-      error: function() {
+      error: function () {
         var response = $('<h4 class="confirmation">')
           .html("Already on shelf");
         $('.confirmation')
