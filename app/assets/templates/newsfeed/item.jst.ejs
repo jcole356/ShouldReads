@@ -1,9 +1,9 @@
 <div class="feed-review-header">
   <h4>{{= review.escape('username') }} reviewed
     <a href="#/books/{{= review.escape('book_id') }}">
-      {{= review.escape('book_title') }} by
-      {{= review.escape('author') }}
+      {{= review.escape('book_title') }}
     </a>
+    by {{= review.escape('author') }}
   </h4>
 </div>
 <div class="feed-book-image">
