@@ -4,7 +4,7 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
   className: "show-book-info",
 
   events: {
-    "click .add-book": "addBookToShelf"
+    "click .shelf-choice button.dropdown-item": "addBookToShelf"
   },
 
   initialize: function(options) {
@@ -22,8 +22,8 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     return this;
   },
 
-  addBookToShelf: function(event) {
-    var shelfID = $('#shelf_choice').val();
+  addBookToShelf: function (event) {
+    var shelfID = event.target.dataset.id;
     var shelving = new ShouldReads.Models.BookShelving();
     shelving.set({
       shelf_id: shelfID,
