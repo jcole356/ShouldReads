@@ -3,7 +3,7 @@ ShouldReads.Views.FeedItem = Backbone.View.extend({
 
   className: "feed-item clear",
 
-  render: function() {
+  render: function () {
     var content = this.template({
       review: this.model
     });
