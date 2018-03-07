@@ -4,7 +4,7 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
   className: "show-book-info",
 
   events: {
-    "click .add-book": "addBookToShelf"
+    "click .shelf-choice button.dropdown-item": "addBookToShelf"
   },
 
   initialize: function(options) {
@@ -19,21 +19,22 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
       bookShelves: this.bookShelves,
     });
     this.$el.html(content);
+    
     return this;
   },
 
-  addBookToShelf: function(event) {
-    var shelfID = $('#shelf_choice').val();
+  addBookToShelf: function (event) {
+    var shelfID = event.target.dataset.id;
     var shelving = new ShouldReads.Models.BookShelving();
     shelving.set({
       shelf_id: shelfID,
       book_id: this.model.id
     });
     shelving.save({}, {
-      success: function() {
+      success: function () {
         $('.confirmation').html('<%= image_tag "checkmark.png" %>');
       },
-      error: function() {
+      error: function () {
         var response = $('<h4 class="confirmation">')
           .html("Already on shelf");
         $('.confirmation')
