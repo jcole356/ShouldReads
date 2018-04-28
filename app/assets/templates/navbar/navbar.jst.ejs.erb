@@ -1,35 +1,27 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button"
-              class="navbar-toggle collapsed"
-              data-toggle="collapse"
-              data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">ShouldReads</a>
-    </div>
-    <div class="collapse navbar-collapse"
-         id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="search-request">
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">ShouldReads</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Hello {{= user.escape('username') }} <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item shelves">
+        <a class="nav-link" href="#/mybooks">My Books</a>
+      </li>
+      <li class="nav-item sign-out">
+        <a class="nav-link disabled" href="#">Log Out</a>
+      </li>
+      <li class="search-request">
           <a class="">
             <div class="">
               <%= image_tag "search-icon.png" %>
             </div>
           </a>
         </li>
-        <li id="username">
-          <a href="#">
-            Hello {{= user.escape('username') }}
-          </a>
-        </li>
-        <li id="shelves"><a href="#/mybooks">My Books</a></li>
-        <li class="sign-out"><a href="#">Log Out</a></li>
-      </ul>
-    </div>
+    </ul>
   </div>
 </nav>
