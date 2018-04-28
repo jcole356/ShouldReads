@@ -7,8 +7,19 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
   },
 
   events: {
+    "click .nav-item": "highlightActiveItem",
     "click .sign-out": "signOut",
     "click .search-request": "openModal"
+  },
+
+  highlightActiveItem: function (e) {
+    e.stopPropagation();
+    var $target = $(e.currentTarget);
+    var $siblings = $target.siblings();
+    $siblings.each(function(idx, item) {
+      $(item).removeClass('active');
+    });
+    $target.addClass('active');
   },
 
   openModal: function () {
