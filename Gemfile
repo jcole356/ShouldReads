@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 
 gem 'rails', '4.2.10'
+gem 'rails_12factor'
 gem 'pg', '~>0.21'
 gem 'bootstrap-sass'
 gem 'bootswatch-rails'
