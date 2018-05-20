@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170520061754) do
+ActiveRecord::Schema.define(version: 20180520043953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,14 +65,13 @@ ActiveRecord::Schema.define(version: 20170520061754) do
   add_index "reviews", ["rating"], name: "index_reviews_on_rating", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",                    null: false
-    t.string   "password_digest",             null: false
-    t.string   "session_token",               null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "username",        null: false
+    t.string   "password_digest", null: false
+    t.string   "session_token",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "firstname"
     t.string   "lastname"
-    t.integer  "login_count",     default: 0, null: false
   end
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
