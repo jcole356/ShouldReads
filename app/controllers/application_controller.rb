@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
     def sign_in(user)
       @current_user = user
       session[:session_token] = user.reset_session_token!
+      user.increment_login_count
     end
 
     def sign_out
