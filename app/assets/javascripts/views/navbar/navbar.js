@@ -14,7 +14,6 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
   openModal: function () {
     var modal = new ShouldReads.Views.ModalSearch();
     $('body').prepend(modal.render().$el);
-    // Allow user to type as soon as search bar pops up
     $('.search_field')[0].focus();
   },
 
@@ -24,8 +23,7 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
       user: this.user
     });
     this.$el.html(content);
-    // once the user is fetched and the navbar is in the DOM
-    if (this.user.get('loginCount') === 0 || this.user.get('username') === 'guest') {
+    if (this.user.get('loginCount') === 1 || this.user.get('username') === 'guest') {
       $("#joyRideTipContent").joyride({
         autoStart : true,
         modal: true,
