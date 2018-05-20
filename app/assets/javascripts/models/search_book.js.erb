@@ -5,6 +5,7 @@ ShouldReads.Models.SearchBook = Backbone.Model.extend({
   parse: function(response) {
     var volumeInfo = response.volumeInfo;
     var title = response.volumeInfo.title;
+    // TODO: remove this, lets not mix Backbone and Ruby universes
     var author = 'Unknown',
         coverImage = "<%= asset_path("old_bible.jpg") %>",
         numberOfPages = 'N/A',
