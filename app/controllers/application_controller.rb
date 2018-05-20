@@ -23,12 +23,6 @@ class ApplicationController < ActionController::Base
 
     def sign_in(user)
       @current_user = user
-      # Increase the user's login count by one
-      if @current_user.login_count.nil?
-        @current_user.update({login_count: 0})
-      else
-        @current_user.update({login_count: @current_user.login_count += 1})
-      end
       session[:session_token] = user.reset_session_token!
     end
 
