@@ -4,7 +4,7 @@ ShouldReads.Models.User = Backbone.Model.extend({
   parse: function(user) {
     this.set({
       id: user.id,
-      loginCount: user.login_count_b,
+      loginCount: user.login_count,
       username: user.username,
     });
 

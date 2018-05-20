@@ -24,13 +24,13 @@ class User < ActiveRecord::Base
   end
 
   def increment_login_count
-    login_count = self.login_count_b
+    login_count = self.login_count
     if login_count.nil?
       login_count = 0;
     else
       login_count += 1
     end
-    self.update(login_count_b: login_count)
+    self.update(login_count: login_count)
   end
 
   def valid_password?(password)
