@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
     class_name: "BookShelf",
     foreign_key: :owner_id,
     primary_key: :id
-    )
+  )
 
   has_many :reviews, foreign_key: :author_id
   has_many :book_shelvings, through: :book_shelves, source: :book_shelvings
