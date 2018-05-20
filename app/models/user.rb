@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
 
   attr_reader :password
-  attr_accessor :login_count
 
   after_initialize :ensure_session_token
 
@@ -22,6 +21,16 @@ class User < ActiveRecord::Base
     user = User.find_by_username(username)
     return nil unless user && user.valid_password?(password)
     user
+  end
+
+  def increment_login_count
+    login_count = self.login_count_b
+    if login_count.nil?
+      login_count = 0;
+    else
+      login_count += 1
+    end
+    self.update(login_count_b: login_count)
   end
 
   def valid_password?(password)
