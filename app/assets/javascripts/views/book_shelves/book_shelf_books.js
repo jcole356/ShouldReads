@@ -41,5 +41,5 @@ ShouldReads.Views.ShelfBooks = Backbone.CompositeView.extend({
     var bookId = $(event.currentTarget).attr('data-book-id');
     var book = this.collection.get(bookId);
     this.collection.remove(book);
-  }
+  },
 });

@@ -1,4 +1,5 @@
 ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
+  // TODO: use camelCase
   template: JST['book_shelves/library'],
 
   className: "library-content",
@@ -9,7 +10,6 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
 
   initialize: function(options) {
     this.shelvings = options.shelvings;
-    this.render();
     this.addIndex();
     this.addAllBookShelf();
   },
@@ -21,8 +21,8 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
       this.removeSubview(".shelf-books", oldView);
     }
     var view = new ShouldReads.Views.AllShelf({
+      bookShelves: this.collection,
       collection: this.shelvings,
-      bookShelves: this.collection
     });
 
     this.addSubview('.shelf-books', view);
@@ -31,7 +31,7 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
   addIndex: function () {
     var view = new ShouldReads.Views.BookShelvesIndex({
       collection: this.collection,
-      shelvings: this.shelvings
+      shelvings: this.shelvings,
     });
 
     this.addSubview('.shelf-index', view);
@@ -45,6 +45,7 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
       }
       this.addSubview('.shelf-books', view);
     } else {
+      // TODO: where are shelvings and shelfBooks coming from?
       view = new ShouldReads.Views.ShelfBooks({
         title: shelf.get('title'),
         collection: shelfBooks,
@@ -78,5 +79,5 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
 
       this.addShelfBooks(view);
     }
-  }
+  },
 });
