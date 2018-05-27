@@ -13,16 +13,6 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     this.listenTo(this.bookShelves, "sync", this.render);
   },
 
-  render: function() {
-    var content = this.template({
-      book: this.model,
-      bookShelves: this.bookShelves,
-    });
-    this.$el.html(content);
-    
-    return this;
-  },
-
   addBookToShelf: function (event) {
     var shelfID = event.target.dataset.id;
     var shelving = new ShouldReads.Models.BookShelving();
@@ -42,5 +32,15 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
           .append(response);
       }
     });
+  },
+
+  render: function() {
+    var content = this.template({
+      book: this.model,
+      bookShelves: this.bookShelves,
+    });
+    this.$el.html(content);
+
+    return this;
   }
 });

@@ -26,18 +26,6 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     this.addSubview('.book-info', view);
   },
 
-  newReview: function(event) {
-    var reviewID = $(event.currentTarget).attr('data-id');
-    var review = new ShouldReads.Models.Review();
-    var view = new ShouldReads.Views.ReviewForm({
-      model: review,
-      collection: this.reviews,
-      book: this.model
-    });
-
-    $('body').prepend(view.render().$el);
-  },
-
   addReviews: function() {
     this.reviews.fetch();
     var view = new ShouldReads.Views.BookReviews({
@@ -59,6 +47,18 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   editReview: function(event) {
     var reviewID = $(event.currentTarget).attr('data-id');
     var review = this.reviews.getOrFetch(reviewID);
+    var view = new ShouldReads.Views.ReviewForm({
+      model: review,
+      collection: this.reviews,
+      book: this.model
+    });
+
+    $('body').prepend(view.render().$el);
+  },
+
+  newReview: function(event) {
+    var reviewID = $(event.currentTarget).attr('data-id');
+    var review = new ShouldReads.Models.Review();
     var view = new ShouldReads.Views.ReviewForm({
       model: review,
       collection: this.reviews,
