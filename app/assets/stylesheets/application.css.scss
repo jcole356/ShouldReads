@@ -21,11 +21,17 @@
  *= require star-rating
  */
 
-//  @import "bootstrap-sprockets";
-//  @import "bootswatch/readable/variables";
- @import "bootstrap";
-//  @import "bootswatch/readable/bootswatch";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-size: 2.6rem;
+  font-weight: bold;
+}
 
 /* Clear default styles for lists */
 ul {
@@ -58,14 +64,19 @@ body.scroll {
 }
 
 .sign-in {
-  text-align: center;
-  position: relative;
-  top: 100px;
-  top: 24%;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.91);
-  width: 400px;
-  padding-bottom: 20px;
   border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  position: relative;
+  top: 24%;
+  text-align: center;
+  width: 400px;
+  .log-in-form {
+    width: 100%;
+  }
 }
 
 /* Navbar */
