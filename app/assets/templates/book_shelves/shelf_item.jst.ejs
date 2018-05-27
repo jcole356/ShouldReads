@@ -1,9 +1,11 @@
 <td class="shelf-image">
   <a href="#/books/{{= book.id }}">
-    <img src="{{= book.escape('cover_image_url') }}"
-       alt="Book Cover"
-       height="97"
-       width="64">
+    <img
+      alt="Book Cover"
+      height="97"
+      src="{{= book.escape('cover_image_url') }}"
+      width="64"
+    >
    </a>
 </td>
 <td class="shelf-book-info shelf-book-title">
@@ -22,8 +24,10 @@
 </td>
 <td class="shelf-book-info remove-book" data-shelf="">
   <a
-    data-shelving-id="{{= book.escape('shelving_id') }}"
+    class="btn btn-danger btn-xs shelving-delete"
     data-book-id="{{= book.id }}"
-    class="btn btn-danger btn-xs shelving-delete">&times;
+    data-shelving-id="{{= book.escape('shelving_id') }}"
+  >
+    &times;
   </a>
 </td>
