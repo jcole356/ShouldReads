@@ -29,13 +29,13 @@
           </button>
         {{ } }}
       </div>
-      <blockquote>
+      <blockquote class="blockquote">
         <p>{{= review.escape('body') }}</p>
-        <small>
+        <footer class="blockquote-footer">
           <cite title="Source Title">
             {{= review.escape('username') }}
           </cite>
-        </small>
+        </footer>
       </blockquote>
     </div>
   {{ } }}
