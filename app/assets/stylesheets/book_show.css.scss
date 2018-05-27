@@ -1,21 +1,39 @@
 /* Book Show composite view */
+blockquote {
+  border-left: 5px solid #4582EC;
+  padding: 0 22px;
+}
+
 .add-book {
   display: block;
   float: left;
 }
 
 .add-review {
+  display: block;
+  float: left;
+  margin-top: 9px;
   width: 128px;
 }
 
-.bg-success {
-  float: left;
-  display: block;
-  height: 85px;
-  border-radius: 4px;
-  padding: 20px;
-  width: inherit;
+.alert {
+  height: 65px;
+  line-height: 38px;
+  margin: 0 auto;
   text-align: center;
+  width: 400px;
+  z-index: 1000;
+}
+
+/* TODO: do not use this class */
+.bg-success {
+  border-radius: 4px;
+  display: block;
+  float: left;
+  height: 85px;
+  padding: 20px;
+  text-align: center;
+  width: inherit;
 }
 
 .book-info {
@@ -25,33 +43,21 @@
 }
 
 .book-show {
- display: block;
- float: left;
- height: 200px;
- width: 600px;
+  display: block;
+  float: left;
+  height: 200px;
+  width: 600px;
 }
 
 .book-review-content {
   width: inherit;
 }
 
-.add-review {
-  display: block;
-  float: left;
-  margin-top: 9px;
-}
-
 .book-reviews {
- display: block;
- float: left;
- width: inherit;
- border-top: 1px solid;
-}
-
-.confirmation {
-  margin-left: 12px;
+  border-top: 1px solid;
   display: block;
   float: left;
+  width: inherit;
 }
 
 .delete-review {
@@ -67,11 +73,11 @@
 }
 
 .review-body {
- display: block;
- float: left;
- width: 100%;
- padding-bottom: 20px;
- border-bottom: 1px solid;
+  border-bottom: 1px solid;
+  display: block;
+  float: left;
+  padding-bottom: 20px;
+  width: 100%;
 }
 
 .review-content {
@@ -85,15 +91,14 @@
 }
 
 .reviews-header {
-  width: inherit;
   background-color: #4582EC;
-  // background-color: silver;
+  width: inherit;
 }
 
 .reviews-header-text {
-  margin: 5px;
   display: block;
   float: left;
+  margin: 5px;
 }
 
 .review-author {
@@ -115,8 +120,8 @@
 .shelf-choice {
   display: block;
   float: left;
-  width: inherit;
   height: 50px;
+  width: inherit;
 }
 
 .shelf-delete {
@@ -127,34 +132,34 @@
 #shelf_choice {
   display: block;
   float: left;
-  width: 175px;
   margin-right: 15px;
+  width: 175px;
 }
 
 .show-book-info {
- display: block;
- float: left;
- width: inherit;
+  display: block;
+  float: left;
+  width: inherit;
 }
 
 .show-container {
+  margin: 0 auto;
+  padding: 20px 0 0 0;
   width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .show-image {
- display: block;
- float: left;
- width: 150px;
- height: 200px;
+  display: block;
+  float: left;
+  height: 200px;
+  width: 150px;
 }
 
 .show-info {
   display: block;
-  float:left;
+  float: left;
+  height: 200px;
   width: 650px;
- height: 200px;
 }
 
 .show-rating {
@@ -174,11 +179,11 @@
 }
 
 .show-author, .show-pages {
- display: block;
- float: left;
- margin-top: 8px;
- width: inherit;
- }
+  display: block;
+  float: left;
+  margin-top: 8px;
+  width: inherit;
+}
 
 .show-pages {
   display: block;
@@ -188,8 +193,8 @@
 }
 
 .synopsis {
- display: block;
- margin-top: 10px;
- float: left;
- width: inherit;
+  display: block;
+  float: left;
+  margin-top: 10px;
+  width: inherit;
 }

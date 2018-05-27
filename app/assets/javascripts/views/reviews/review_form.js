@@ -4,50 +4,60 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
   className: "m-backdrop",
 
   events: {
-    "click .submit-review": "addReview",
-    "click .close": "removeForm"
+    "click .close": "remove",
+    "click .submit-review": "submitReview",
   },
 
   initialize: function(options) {
     this.book = options.book;
-    this.listenTo(this.collection, "sync add", this.render);
+    this.listenTo(this.model, 'sync', this.render);
   },
 
-  render: function() {
+  initializeRateYo: function () {
+    var self = this;
+    var $rateYo = $('#rateYo');
+    if (!$rateYo.length) {
+      return;
+    }
+    $('#rateYo').rateYo({
+      rating: self.model.get('rating') || 0
+    });
+  },
+
+  didInsertElement: function () {
+    this.initializeRateYo();
+  },
+
+  render: function () {
     var content = this.template({
+      book: this.book,
       review: this.model,
       reviews: this.collection,
-      book: this.book
     });
     this.$el.html(content);
+    this.initializeRateYo();
 
     return this;
   },
 
-  addReview: function(event) {
+  submitReview: function(event) {
     event.preventDefault();
     var attrs = this.$el.find('form').serializeJSON();
+    var rating = $('#rateYo').rateYo('rating');
     var review = this.model;
     review.set({
-      title: attrs.review.title,
-      body: attrs.review.body,
-      rating: attrs.review.rating,
       author_id: CURRENT_USER_ID,
+      body: attrs.review.body,
       book_id: this.book.id,
-      id: review.id
+      id: review.id,
+      rating: rating,
+      title: attrs.review.title,
     });
-
     review.save({}, {
       success: function() {
         this.collection.add(review, { merge: true });
-        this.collection.fetch();
-        this.book.fetch();
         this.remove();
       }.bind(this)
     });
   },
-
-  removeForm: function() {
-    this.remove();
-  }
 });

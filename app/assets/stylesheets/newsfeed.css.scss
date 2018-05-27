@@ -18,9 +18,9 @@
 }
 
 .feed-items {
+  font-weight: bold;
+  margin: 0 auto;
   width: 960px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .feed-review-content {
@@ -29,6 +29,11 @@
 
 .feed-review-date {
   width: inherit;
+}
+
+.feed-review-header h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .feed-review-info {
@@ -41,10 +46,11 @@
 }
 
 .feed-review-title {
-  width: inherit;
   margin-top: 0;
+  width: inherit;
 }
 
 .newsfeed-header {
   border-bottom: 2px solid;
+  font-weight: bold;
 }

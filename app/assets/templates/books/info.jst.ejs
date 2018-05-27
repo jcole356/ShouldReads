@@ -1,8 +1,10 @@
 <div class="show-image">
-  <img src="{{= book.escape('cover_image_url') }}"
-       alt="Book Cover"
-       height="195"
-       width="128">
+  <img
+    alt="Book Cover"
+    height="195"
+    src="{{= book.escape('cover_image_url') }}"
+    width="128"
+  >
 </div>
 <div class="show-info">
   <h2 class ="show-title">{{= book.escape('title') }}</h2>
@@ -16,8 +18,14 @@
 </div>
 <div class="shelf-choice">
   <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-      aria-expanded="false">
+    <button
+      aria-expanded="false"
+      aria-haspopup="true"
+      class="btn btn-secondary dropdown-toggle"
+      data-toggle="dropdown"
+      id="dropdownMenu2"
+      type="button"
+    >
       Bookshelves
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -33,14 +41,15 @@
       {{ }) }}
     </div>
   </div>
-  <div class="confirmation"></div>
+  <div class="alert"></div>
 </div>
 <div class="write-review">
   {{ if (book.escape('already_reviewed?') === "false") { }}
     <button 
       class="btn btn-primary btn-sm add-review"
+      name="button"
       type="button"
-      name="button">
+    >
       Write Review
     </button>
   {{ } }}

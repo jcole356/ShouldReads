@@ -1,29 +1,34 @@
 <h4>Bookshelves</h3>
-
 <ul class="clear">
   {{ bookShelves.each(function(bookShelf) { }}
     <li class="shelf" data-id="{{= bookShelf.id }}">
-      <h4 class="shelf-title">{{= bookShelf.escape('title') }}</h4>
+      <span class="shelf-title">{{= bookShelf.escape('title') }}</span>
     </li>
     {{ if (bookShelf.escape('title') !== "All") { }}
-      <a data-id="{{= bookShelf.id }}"
-         class="btn btn-danger btn-xs shelf-delete">&times;</a>
+      <a
+        data-id="{{= bookShelf.id }}"
+        class="btn btn-danger btn-sm shelf-delete"
+      >
+        x
+      </a>
     {{ } }}
   {{ }) }}
 </ul>
 <div class="form-group add-shelf">
   <form>
-    <input class="form-control"
-           type="text"
-           name="book_shelf[title]"
-           placeholder="Create Bookshelf"
-           maxlength="20">
+    <input
+      class="form-control"
+      maxlength="20"
+      name="book_shelf[title]"
+      placeholder="Create Bookshelf"
+      type="text"
+    >
     <br>
-    <input type="submit"
-           class="new-shelf btn btn-primary btn-xs"
-           value="Add Shelf">
+    <input
+      class="new-shelf btn btn-primary btn-sm"
+      type="submit"
+      value="Add Shelf"
+    >
   </form>
 </div>
-<div class="shelf-validation">
-
-</div>
+<div class="shelf-validation" />

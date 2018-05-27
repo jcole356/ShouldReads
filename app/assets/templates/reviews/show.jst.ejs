@@ -11,23 +11,31 @@
           Rating: {{= review.escape('rating') }} of 5
         </h4>
         {{ if (review.escape('author_id') === CURRENT_USER_ID) { }}
-          <button class="btn btn-danger btn-xs delete-review"
-                  type="button"
-                  name="button"
-                  data-id="{{= review.id }}">Delete</button>
-          <button class="btn btn-primary btn-xs edit-review"
-                  type="button"
-                  name="button"
-                  data-id="{{= review.id }}">Edit</button>
+          <button
+            class="btn btn-danger btn-sm delete-review"
+            type="button"
+            name="button"
+            data-id="{{= review.id }}"
+          >
+            Delete
+          </button>
+          <button
+            class="btn btn-primary btn-sm edit-review"
+            type="button"
+            name="button"
+            data-id="{{= review.id }}"
+          >
+            Edit
+          </button>
         {{ } }}
       </div>
-      <blockquote>
+      <blockquote class="blockquote">
         <p>{{= review.escape('body') }}</p>
-        <small>
+        <footer class="blockquote-footer">
           <cite title="Source Title">
             {{= review.escape('username') }}
           </cite>
-        </small>
+        </footer>
       </blockquote>
     </div>
   {{ } }}

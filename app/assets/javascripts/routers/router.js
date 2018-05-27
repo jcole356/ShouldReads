@@ -53,6 +53,7 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
     this.bookShelves.fetch();
     var view = new ShouldReads.Views.BookShow({
       model: book,
+      // TODO: why pass the book collection here?
       collection: this.books,
       bookShelves: this.bookShelves,
       reviews: this.reviews

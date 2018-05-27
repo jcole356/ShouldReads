@@ -18,14 +18,20 @@
  *= require search_results
  *= require modal_search
  *= require joyride-2.1
- *= require star-rating
+ *= require jquery.rateyo.min
  */
 
-//  @import "bootstrap-sprockets";
-//  @import "bootswatch/readable/variables";
- @import "bootstrap";
-//  @import "bootswatch/readable/bootswatch";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-size: 2.6rem;
+  font-weight: bold;
+}
 
 /* Clear default styles for lists */
 ul {
@@ -58,14 +64,19 @@ body.scroll {
 }
 
 .sign-in {
-  text-align: center;
-  position: relative;
-  top: 100px;
-  top: 24%;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.91);
-  width: 400px;
-  padding-bottom: 20px;
   border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  position: relative;
+  top: 24%;
+  text-align: center;
+  width: 400px;
+  .log-in-form {
+    width: 100%;
+  }
 }
 
 /* Navbar */
@@ -82,7 +93,8 @@ body.scroll {
   cursor: pointer;
 }
 
-/* Modal formatting */
+/* Modal styles */
+
 .m-content .close {
   color: black;
   background-color: inherit;
@@ -107,18 +119,16 @@ body.scroll {
   width: inherit;
 }
 
-/* Modal content */
 .m-content {
-  z-index: 200;
+  background-color: white;
   border: 2px solid black;
   height: inherit;
+  margin: 50px auto 0 auto;
   max-height: 80%;
-  width: 600px;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px 60px 20px 60px;
   overflow-y: auto;
+  padding: 20px 60px;
+  width: 600px;
+  z-index: 200;
 }
 
 .m-review-title {
