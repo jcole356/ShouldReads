@@ -8,9 +8,9 @@
     {{ if (bookShelf.escape('title') !== "All") { }}
       <a
         data-id="{{= bookShelf.id }}"
-        class="btn btn-danger btn-xs shelf-delete"
+        class="btn btn-danger btn-sm shelf-delete"
       >
-        &times;
+        x
       </a>
     {{ } }}
   {{ }) }}
@@ -19,15 +19,15 @@
   <form>
     <input
       class="form-control"
-      type="text"
+      maxlength="20"
       name="book_shelf[title]"
       placeholder="Create Bookshelf"
-      maxlength="20"
+      type="text"
     >
     <br>
     <input
+    class="new-shelf btn btn-primary btn-xs"
       type="submit"
-      class="new-shelf btn btn-primary btn-xs"
       value="Add Shelf"
     >
   </form>

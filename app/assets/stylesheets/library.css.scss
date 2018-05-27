@@ -66,9 +66,13 @@
    padding-left: 12px;
  }
 
-.shelf-delete {
+.shelf-delete.btn-sm {
+  border-radius: 12px;
   display: block;
   float: left;
+  height: 24px;
+  line-height: 13px;
+  width: 24px;
 }
 
 .shelf-image {
