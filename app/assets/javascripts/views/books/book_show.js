@@ -4,14 +4,15 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   className: "show-container",
 
   events: {
+    "click .delete-review": "deleteReview",
     "click .add-review": "openReviewModal",
     "click .edit-review": "openReviewModal",
-    "click .delete-review": "deleteReview",
   },
 
   initialize: function(options) {
     this.reviews = options.reviews;
     this.bookShelves = options.bookShelves;
+    // TODO: What is the collection here?  Reviews?
     this.listenTo(this.collection, "add", this.render);
     this.addInfo();
     this.addReviews();
@@ -19,10 +20,9 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
 
   addInfo: function() {
     var view = new ShouldReads.Views.BookInfo({
+      bookShelves: this.bookShelves,
       model: this.model,
-      bookShelves: this.bookShelves
     });
-
     this.addSubview('.book-info', view);
   },
 
@@ -32,7 +32,6 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
       collection: this.reviews,
       model: this.model
     });
-
     this.addSubview('.book-reviews', view);
   },
 
