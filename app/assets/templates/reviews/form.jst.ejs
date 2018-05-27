@@ -9,15 +9,15 @@
     <div class="form-group">
         <label for="review-rating">Rating</label>
         <input
-          id="review-rating"
-          type="number"
           class="rating"
-          name="review[rating]"
-          value="{{= parseInt(review.escape('rating')) }}"
-          min=0
-          max=5
-          step=1.0
           data-size="sm"
+          id="review-rating"
+          max=5
+          min=0
+          name="review[rating]"
+          step=1.0
+          type="number"
+          value="{{= parseInt(review.escape('rating')) }}"
         >
     </div>
 
