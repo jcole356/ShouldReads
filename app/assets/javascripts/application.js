@@ -22,7 +22,6 @@
 //= require jquery.serializejson.min
 //= require jquery.joyride-2.1
 //= require jquery.rateyo.min.js
-//= require star-rating.min.js
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
