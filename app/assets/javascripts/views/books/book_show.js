@@ -12,8 +12,6 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   initialize: function(options) {
     this.reviews = options.reviews;
     this.bookShelves = options.bookShelves;
-    // TODO: What is the collection here?  Reviews?
-    this.listenTo(this.collection, "add", this.render);
     this.addInfo();
     this.addReviews();
   },
@@ -57,6 +55,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
       model: review
     });
     $('body').prepend(view.render().$el);
+    view.didInsertElement();
   },
 
   render: function() {
@@ -68,5 +67,5 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     this.attachSubviews();
     
     return this;
-  }
+  },
 });

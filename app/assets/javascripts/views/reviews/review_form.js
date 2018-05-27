@@ -13,16 +13,29 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
     this.listenTo(this.model, 'sync', this.render);
   },
 
-  render: function() {
+  initializeRateYo: function () {
+    var self = this;
+    var $rateYo = $('#rateYo');
+    if (!$rateYo.length) {
+      return;
+    }
+    $('#rateYo').rateYo({
+      rating: self.model.get('rating') || 0
+    });
+  },
+
+  didInsertElement: function () {
+    this.initializeRateYo();
+  },
+
+  render: function () {
     var content = this.template({
       book: this.book,
       review: this.model,
       reviews: this.collection,
     });
     this.$el.html(content);
-    $('#rateYo').rateYo({
-      rating: this.model.get('rating') || 0
-    }).bind(this);
+    this.initializeRateYo();
 
     return this;
   },
@@ -30,13 +43,14 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
   submitReview: function(event) {
     event.preventDefault();
     var attrs = this.$el.find('form').serializeJSON();
+    var rating = $('#rateYo').rateYo('rating');
     var review = this.model;
     review.set({
       author_id: CURRENT_USER_ID,
       body: attrs.review.body,
       book_id: this.book.id,
       id: review.id,
-      rating: attrs.review.rating,
+      rating: rating,
       title: attrs.review.title,
     });
     review.save({}, {
