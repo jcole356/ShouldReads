@@ -4,54 +4,45 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
   className: "m-backdrop",
 
   events: {
+    "click .close": "remove",
     "click .submit-review": "submitReview",
-    "click .close": "removeForm"
   },
 
   initialize: function(options) {
     this.book = options.book;
-    // why am I listening to this?
-    this.listenTo(this.collection, "sync add", this.render);
-  },
-
-  removeForm: function() {
-    this.remove();
+    this.listenTo(this.model, 'sync', this.render);
   },
 
   render: function() {
     var content = this.template({
+      book: this.book,
       review: this.model,
       reviews: this.collection,
-      book: this.book
     });
     this.$el.html(content);
-    var self = this;
     $('#rateYo').rateYo({
-      rating: self.model.get('rating') || 0
-    });
+      rating: this.model.get('rating') || 0
+    }).bind(this);
 
     return this;
   },
 
-  // TODO: why are we doing so many things here?
   submitReview: function(event) {
     event.preventDefault();
     var attrs = this.$el.find('form').serializeJSON();
     var review = this.model;
     review.set({
-      title: attrs.review.title,
-      body: attrs.review.body,
-      rating: attrs.review.rating,
       author_id: CURRENT_USER_ID,
+      body: attrs.review.body,
       book_id: this.book.id,
       id: review.id,
+      rating: attrs.review.rating,
+      title: attrs.review.title,
     });
 
     review.save({}, {
       success: function() {
         this.collection.add(review, { merge: true });
-        this.collection.fetch();
-        this.book.fetch();
         this.remove();
       }.bind(this)
     });
