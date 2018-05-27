@@ -21,7 +21,6 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
       this.removeSubview(".shelf-books", oldView);
     }
     var view = new ShouldReads.Views.AllShelf({
-      bookShelves: this.collection,
       collection: this.shelvings,
     });
 
