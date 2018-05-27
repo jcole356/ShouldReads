@@ -9,27 +9,24 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
 
   initialize: function(options) {
     this.bookShelves = options.bookShelves;
-    this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.bookShelves, "sync", this.render);
+    this.listenTo(this.model, "sync", this.render);
   },
 
   addBookToShelf: function (event) {
+    var self = this;
     var shelfID = event.target.dataset.id;
     var shelving = new ShouldReads.Models.BookShelving();
     shelving.set({
-      shelf_id: shelfID,
-      book_id: this.model.id
+      book_id: this.model.id,
+      shelf_id: shelfID
     });
     shelving.save({}, {
       success: function () {
-        $('.confirmation').html('<%= image_tag "checkmark.png" %>');
+        self.showAlert({ text: 'Book has been added to shelf', type: 'success' });
       },
       error: function () {
-        var response = $('<h4 class="confirmation">')
-          .html("Already on shelf");
-        $('.confirmation')
-          .html('<%= image_tag "error.png", class: "confirmation" %>')
-          .append(response);
+        self.showAlert({ text: 'Book is already on the shelf', type: 'danger' });
       }
     });
   },
@@ -42,5 +39,14 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     this.$el.html(content);
 
     return this;
+  },
+
+  showAlert: function (message) {
+    var $alert = $('.shelf-choice .alert');
+    var className = 'alert-' + message.type;
+    $alert.addClass(className).text(message.text);
+    setTimeout(function() {
+      $alert.removeClass(className).text('');
+    }, 3500);
   }
 });
