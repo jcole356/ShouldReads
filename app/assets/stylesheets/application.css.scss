@@ -93,7 +93,8 @@ body.scroll {
   cursor: pointer;
 }
 
-/* Modal formatting */
+/* Modal styles */
+
 .m-content .close {
   color: black;
   background-color: inherit;
@@ -118,12 +119,11 @@ body.scroll {
   width: inherit;
 }
 
-/* Modal content */
 .m-content {
   background-color: white;
   border: 2px solid black;
   height: inherit;
-  margin: 50 auto 0 auto;
+  margin: 50px auto 0 auto;
   max-height: 80%;
   overflow-y: auto;
   padding: 20px 60px;
