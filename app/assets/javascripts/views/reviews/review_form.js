@@ -4,13 +4,18 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
   className: "m-backdrop",
 
   events: {
-    "click .submit-review": "addReview",
+    "click .submit-review": "submitReview",
     "click .close": "removeForm"
   },
 
   initialize: function(options) {
     this.book = options.book;
+    // why am I listening to this?
     this.listenTo(this.collection, "sync add", this.render);
+  },
+
+  removeForm: function() {
+    this.remove();
   },
 
   render: function() {
@@ -20,11 +25,16 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
       book: this.book
     });
     this.$el.html(content);
+    var self = this;
+    $('#rateYo').rateYo({
+      rating: self.model.get('rating') || 0
+    });
 
     return this;
   },
 
-  addReview: function(event) {
+  // TODO: why are we doing so many things here?
+  submitReview: function(event) {
     event.preventDefault();
     var attrs = this.$el.find('form').serializeJSON();
     var review = this.model;
@@ -34,7 +44,7 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
       rating: attrs.review.rating,
       author_id: CURRENT_USER_ID,
       book_id: this.book.id,
-      id: review.id
+      id: review.id,
     });
 
     review.save({}, {
@@ -46,8 +56,4 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
       }.bind(this)
     });
   },
-
-  removeForm: function() {
-    this.remove();
-  }
 });

@@ -7,20 +7,8 @@
       Review {{= book.escape('title') }}
     </legend>
     <div class="form-group">
-        <label for="review-rating">Rating</label>
-        <input
-          class="rating"
-          data-size="sm"
-          id="review-rating"
-          max=5
-          min=0
-          name="review[rating]"
-          step=1.0
-          type="number"
-          value="{{= parseInt(review.escape('rating')) }}"
-        >
+      <div id="rateYo" />
     </div>
-
     <div class="form-group">
       <label for="review-title">Title</label>
       <input
@@ -51,7 +39,3 @@
     </button>
   </form>
 </div>
-
-<script type="text/javascript">
-  $('#review-rating').rating();
-</script>

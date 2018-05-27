@@ -4,8 +4,8 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   className: "show-container",
 
   events: {
-    "click .add-review": "newReview",
-    "click .edit-review": "editReview",
+    "click .add-review": "openReviewModal",
+    "click .edit-review": "openReviewModal",
     "click .delete-review": "deleteReview",
   },
 
@@ -44,27 +44,19 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     });
   },
 
-  editReview: function(event) {
-    var reviewID = $(event.currentTarget).attr('data-id');
-    var review = this.reviews.getOrFetch(reviewID);
+  openReviewModal: function(event) {
+    var reviewId = $(event.currentTarget).attr('data-id');
+    var review;
+    if (reviewId) {
+      review = this.reviews.getOrFetch(reviewId);
+    } else {
+      review = new ShouldReads.Models.Review();
+    }
     var view = new ShouldReads.Views.ReviewForm({
-      model: review,
+      book: this.model,
       collection: this.reviews,
-      book: this.model
+      model: review
     });
-
-    $('body').prepend(view.render().$el);
-  },
-
-  newReview: function(event) {
-    var reviewID = $(event.currentTarget).attr('data-id');
-    var review = new ShouldReads.Models.Review();
-    var view = new ShouldReads.Views.ReviewForm({
-      model: review,
-      collection: this.reviews,
-      book: this.model
-    });
-
     $('body').prepend(view.render().$el);
   },
 
