@@ -22,12 +22,16 @@
   <br>
   {{= book.escape('average_rating') }} of 5
 </td>
-<td class="shelf-book-info remove-book" data-shelf="">
-  <a
-    class="btn btn-danger btn-xs shelving-delete"
-    data-book-id="{{= book.id }}"
-    data-shelving-id="{{= book.escape('shelving_id') }}"
-  >
-    &times;
-  </a>
-</td>
+{{ if (title) { }}
+  <td class="shelf-book-info">{{= title }}</td>
+{{ } else { }}
+  <td class="shelf-book-info remove-book" data-shelf="">
+    <a
+      class="btn btn-danger btn-xs shelving-delete"
+      data-book-id="{{= book.id }}"
+      data-shelving-id="{{= book.escape('shelving_id') }}"
+    >
+      &times;
+    </a>
+  </td>
+{{ } }}

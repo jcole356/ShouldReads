@@ -1,5 +1,5 @@
 ShouldReads.Views.AllItem = Backbone.View.extend({
-  template: JST['bookShelves/all_item'],
+  template: JST['bookShelves/shelf_item'],
 
   tagName: 'tr',
 
@@ -11,7 +11,8 @@ ShouldReads.Views.AllItem = Backbone.View.extend({
 
   render: function () {
     var content = this.template({
-      shelving: this.model
+      book: this.model._book,
+      title: this.model.get('title'),
     });
     this.$el.html(content);
 

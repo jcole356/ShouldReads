@@ -11,7 +11,8 @@ ShouldReads.Views.ShelfItem = Backbone.View.extend({
 
   render: function () {
     var content = this.template({
-      book: this.model
+      book: this.model,
+      title: false,
     });
     this.$el.html(content);
     
