@@ -27,5 +27,5 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
     this.attachSubviews();
 
     return this;
-  }
+  },
 });
