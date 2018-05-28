@@ -1,5 +1,5 @@
 ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
-  template: JST['book_shelves/index'],
+  template: JST['bookshelves/index'],
 
   className: "shelf-list",
 
@@ -13,15 +13,6 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
   initialize: function (options) {
     this.shelvings = options.shelvings;
     this.listenTo(this.collection, "add remove", this.render);
-  },
-
-  render: function () {
-    var content = this.template({
-      bookShelves: this.collection
-    });
-    this.$el.html(content);
-
-    return this;
   },
 
   addShelf: function (event) {
@@ -39,10 +30,11 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
     });
   },
 
+  // Removes all shelvings from the collection then destroy shelf
+  // TODO: this should be done on the server
   destroyShelf: function (event) {
     var shelfID = $(event.currentTarget).attr('data-id');
     var shelf = this.collection.get(shelfID);
-    // Remove the shelvings from the collection first
     shelf.books().each(function (book) {
       var shelving = this.shelvings.get(book.get('shelving_id'));
       shelving.destroy();
@@ -50,11 +42,20 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
     shelf.destroy();
   },
 
-  removeMessage: function() {
+  removeMessage: function () {
     $('.shelf-validation').text('').removeClass('yellow red');
   },
 
-  validate: function() {
+  render: function () {
+    var content = this.template({
+      bookShelves: this.collection
+    });
+    this.$el.html(content);
+
+    return this;
+  },
+
+  validate: function () {
     var $input = $('.add-shelf .form-control');
     var $messageField = $('.shelf-validation');
     var _charCount = $input.val().length;
@@ -73,5 +74,5 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
       $messageField.text();
     }
     $messageField.text((20 - _charCount) + ' chars remaining');
-  }
+  },
 });

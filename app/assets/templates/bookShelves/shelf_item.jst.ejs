@@ -1,0 +1,37 @@
+<td class="shelf-image">
+  <a href="#/books/{{= book.id }}">
+    <img
+      alt="Book Cover"
+      height="97"
+      src="{{= book.escape('cover_image_url') }}"
+      width="64"
+    >
+   </a>
+</td>
+<td class="shelf-book-info shelf-book-title">
+  {{= book.escape('title') }}
+</td>
+<td class="shelf-book-info">
+  by {{= book.escape('author') }}
+</td>
+<td class="shelf-book-info">
+  {{= book.escape('number_of_pages') }} Pages
+</td>
+<td class="shelf-book-info">
+  Avg Rating:
+  <br>
+  {{= book.escape('average_rating') }} of 5
+</td>
+{{ if (title) { }}
+  <td class="shelf-book-info">{{= title }}</td>
+{{ } else { }}
+  <td class="shelf-book-info remove-book" data-shelf="">
+    <a
+      class="btn btn-danger btn-sm shelving-delete"
+      data-book-id="{{= book.id }}"
+      data-shelving-id="{{= book.escape('shelving_id') }}"
+    >
+      &times;
+    </a>
+  </td>
+{{ } }}

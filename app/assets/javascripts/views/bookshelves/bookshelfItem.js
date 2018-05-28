@@ -1,19 +1,22 @@
 ShouldReads.Views.ShelfItem = Backbone.View.extend({
-  template: JST['book_shelves/shelf_item'],
+  template: JST['bookshelves/shelf_item'],
 
   tagName: 'tr',
 
   className: "book-shelf-row",
 
-  initialize: function () {
+  initialize: function (options) {
+    this.all = options.all;
     this.listenTo(this.model, 'add', this.render);
   },
 
   render: function () {
     var content = this.template({
-      book: this.model
+      book: this.all ? this.model._book : this.model,
+      title: this.all ? this.model.get('title') : false,
     });
     this.$el.html(content);
+    
     return this;
-  }
+  },
 });
