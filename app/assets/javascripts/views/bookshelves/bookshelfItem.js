@@ -1,5 +1,5 @@
 ShouldReads.Views.ShelfItem = Backbone.View.extend({
-  template: JST['bookShelves/shelf_item'],
+  template: JST['bookshelves/shelf_item'],
 
   tagName: 'tr',
 

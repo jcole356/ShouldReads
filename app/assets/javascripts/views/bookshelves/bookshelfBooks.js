@@ -1,5 +1,5 @@
 ShouldReads.Views.ShelfBooks = Backbone.CompositeView.extend({
-  template: JST['bookShelves/books'],
+  template: JST['bookshelves/books'],
 
   className: "shelf-books-list",
 
