@@ -1,5 +1,5 @@
 ShouldReads.Views.ShelfBooks = Backbone.CompositeView.extend({
-  template: JST['book_shelves/books'],
+  template: JST['bookShelves/books'],
 
   className: "shelf-books-list",
 
@@ -29,6 +29,7 @@ ShouldReads.Views.ShelfBooks = Backbone.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
+
     return this;
   },
 

@@ -1,5 +1,5 @@
 ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
-  template: JST['book_shelves/index'],
+  template: JST['bookShelves/index'],
 
   className: "shelf-list",
 
@@ -13,15 +13,6 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
   initialize: function (options) {
     this.shelvings = options.shelvings;
     this.listenTo(this.collection, "add remove", this.render);
-  },
-
-  render: function () {
-    var content = this.template({
-      bookShelves: this.collection
-    });
-    this.$el.html(content);
-
-    return this;
   },
 
   addShelf: function (event) {
@@ -54,6 +45,15 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
     $('.shelf-validation').text('').removeClass('yellow red');
   },
 
+  render: function () {
+    var content = this.template({
+      bookShelves: this.collection
+    });
+    this.$el.html(content);
+
+    return this;
+  },
+
   validate: function() {
     var $input = $('.add-shelf .form-control');
     var $messageField = $('.shelf-validation');
@@ -73,5 +73,5 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
       $messageField.text();
     }
     $messageField.text((20 - _charCount) + ' chars remaining');
-  }
+  },
 });

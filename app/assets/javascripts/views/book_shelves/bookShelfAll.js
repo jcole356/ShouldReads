@@ -1,5 +1,5 @@
 ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
-  template: JST['book_shelves/all'],
+  template: JST['bookShelves/all'],
 
   className: "shelf-books-list",
 
@@ -9,6 +9,7 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "remove", this.removeBookShelvingView);
   },
 
+  // TODO: should be able to make the model still be a book and use shelf item template
   addBookShelvingView: function (shelving) {
     var view = new ShouldReads.Views.AllItem({
       model: shelving
@@ -24,7 +25,7 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
-    
+
     return this;
   }
 });

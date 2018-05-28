@@ -1,6 +1,5 @@
 ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
-  // TODO: use camelCase
-  template: JST['book_shelves/library'],
+  template: JST['bookShelves/library'],
 
   className: "library-content",
 
