@@ -3,7 +3,7 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
 
   className: "shelf-books-list",
 
-  initialize: function (options) {
+  initialize: function () {
     this.listenTo(this.collection, "add", this.addBookShelvingView);
     this.collection.each(this.addBookShelvingView.bind(this));
     this.listenTo(this.collection, "remove", this.removeBookShelvingView);
