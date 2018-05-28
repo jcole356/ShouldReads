@@ -9,7 +9,6 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "remove", this.removeBookShelvingView);
   },
 
-  // TODO: should be able to make the model still be a book and use shelf item template
   addBookShelvingView: function (shelving) {
     var view = new ShouldReads.Views.ShelfItem({
       all: true,
