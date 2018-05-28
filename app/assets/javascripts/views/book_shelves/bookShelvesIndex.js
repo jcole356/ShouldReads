@@ -30,10 +30,11 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
     });
   },
 
+  // Removes all shelvings from the collection then destroy shelf
+  // TODO: this should be done on the server
   destroyShelf: function (event) {
     var shelfID = $(event.currentTarget).attr('data-id');
     var shelf = this.collection.get(shelfID);
-    // Remove the shelvings from the collection first
     shelf.books().each(function (book) {
       var shelving = this.shelvings.get(book.get('shelving_id'));
       shelving.destroy();
