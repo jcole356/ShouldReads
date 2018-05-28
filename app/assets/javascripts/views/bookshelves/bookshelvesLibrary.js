@@ -7,13 +7,12 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     "click .shelf": "selectShelf"
   },
 
-  initialize: function(options) {
+  initialize: function (options) {
     this.shelvings = options.shelvings;
     this.addIndex();
     this.addAllBookShelf();
   },
 
-  // TODO: this should use the BookShelfIndex Class
   addAllBookShelf: function () {
     var oldView = this.subviews(".shelf-books").first();
     if (oldView) {

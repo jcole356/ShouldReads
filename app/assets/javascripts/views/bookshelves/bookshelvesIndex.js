@@ -42,7 +42,7 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
     shelf.destroy();
   },
 
-  removeMessage: function() {
+  removeMessage: function () {
     $('.shelf-validation').text('').removeClass('yellow red');
   },
 
@@ -55,7 +55,7 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
     return this;
   },
 
-  validate: function() {
+  validate: function () {
     var $input = $('.add-shelf .form-control');
     var $messageField = $('.shelf-validation');
     var _charCount = $input.val().length;
