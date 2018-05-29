@@ -26,7 +26,7 @@
 ### Views
 * BookShow (composite view, will contain ReviewShow subview)
 * BookIndex
-* BookShelvesIndex (composite view, contains BookShelfShow subview)
+* BookshelvesIndex (composite view, contains BookShelfShow subview)
 
 ## Gems/Libraries
 * composite_view
