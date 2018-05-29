@@ -19,11 +19,11 @@ ShouldReads.Views.BookshelvesIndex = Backbone.View.extend({
     event.preventDefault();
     var shelfName = this.$el.find('form').serializeJSON().book_shelf.title;
     var self = this;
-    var bookShelf = new ShouldReads.Models.BookShelf({
+    var bookshelf = new ShouldReads.Models.Bookshelf({
       title: shelfName,
       owner_id: CURRENT_USER_ID
     });
-    bookShelf.save({}, {
+    bookshelf.save({}, {
       success: function (model) {
         self.collection.add(model);
       }
