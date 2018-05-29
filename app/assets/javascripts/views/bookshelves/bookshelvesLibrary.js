@@ -9,7 +9,7 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.shelvings = options.shelvings;
-    this.addIndex();
+    this.addShelfIndex();
     this.addAllBookshelf();
   },
 
@@ -25,7 +25,7 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     this.addSubview('.shelf-books', view);
   },
 
-  addIndex: function () {
+  addShelfIndex: function () {
     var view = new ShouldReads.Views.BookshelvesIndex({
       collection: this.collection,
       shelvings: this.shelvings,
