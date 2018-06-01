@@ -4,12 +4,12 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
   className: "shelf-books-list",
 
   initialize: function () {
-    this.listenTo(this.collection, "add", this.addBookShelvingView);
-    this.collection.each(this.addBookShelvingView.bind(this));
-    this.listenTo(this.collection, "remove", this.removeBookShelvingView);
+    this.listenTo(this.collection, "add", this.addBookshelvingView);
+    this.listenTo(this.collection, "remove", this.removeBookshelvingView);
+    this.collection.each(this.addBookshelvingView.bind(this));
   },
 
-  addBookShelvingView: function (shelving) {
+  addBookshelvingView: function (shelving) {
     var view = new ShouldReads.Views.ShelfItem({
       all: true,
       model: shelving
@@ -17,7 +17,7 @@ ShouldReads.Views.AllShelf = Backbone.CompositeView.extend({
     this.addSubview('.shelf-book-info-container', view, true);
   },
 
-  removeBookShelvingView: function (shelving) {
+  removeBookshelvingView: function (shelving) {
     this.removeModelSubview('.shelf-book-info-container', shelving);
   },
 

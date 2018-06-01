@@ -4,10 +4,12 @@
     <a href="#/books/{{= book.id }}">
       <div class="index-book-info">
         <div class="index-image">
-          <img src="{{= book.escape('cover_image_url') }}"
-               alt="Book Cover"
-               height="195"
-               width="128">
+          <img
+            alt="Book Cover"
+            height="195"
+            src="{{= book.escape('cover_image_url') }}"
+            width="128"
+          >
         </div>
         <h3 class="index-title">{{= book.escape('title') }}</h3>
         <h4 class="index-author">{{= book.escape('author') }}</h4>

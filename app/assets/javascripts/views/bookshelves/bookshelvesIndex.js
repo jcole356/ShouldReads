@@ -1,13 +1,13 @@
-ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
+ShouldReads.Views.BookshelvesIndex = Backbone.View.extend({
   template: JST['bookshelves/index'],
 
   className: "shelf-list",
 
   events: {
+    "blur .add-shelf .form-control": "removeMessage",
     "click .new-shelf": "addShelf",
     "click .shelf-delete": "destroyShelf",
     "keyup .add-shelf .form-control": "validate",
-    "blur .add-shelf .form-control": "removeMessage"
   },
 
   initialize: function (options) {
@@ -19,11 +19,11 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
     event.preventDefault();
     var shelfName = this.$el.find('form').serializeJSON().book_shelf.title;
     var self = this;
-    var bookShelf = new ShouldReads.Models.BookShelf({
+    var bookshelf = new ShouldReads.Models.Bookshelf({
       title: shelfName,
       owner_id: CURRENT_USER_ID
     });
-    bookShelf.save({}, {
+    bookshelf.save({}, {
       success: function (model) {
         self.collection.add(model);
       }
@@ -48,7 +48,7 @@ ShouldReads.Views.BookShelvesIndex = Backbone.View.extend({
 
   render: function () {
     var content = this.template({
-      bookShelves: this.collection
+      bookShelves: this.collection,
     });
     this.$el.html(content);
 

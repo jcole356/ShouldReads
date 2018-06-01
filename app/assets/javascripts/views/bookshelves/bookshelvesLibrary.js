@@ -4,16 +4,16 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
   className: "library-content",
 
   events: {
-    "click .shelf": "selectShelf"
+    "click .shelf": "selectShelf",
   },
 
   initialize: function (options) {
     this.shelvings = options.shelvings;
-    this.addIndex();
-    this.addAllBookShelf();
+    this.addShelfIndex();
+    this.addAllBookshelf();
   },
 
-  addAllBookShelf: function () {
+  addAllBookshelf: function () {
     var oldView = this.subviews(".shelf-books").first();
     if (oldView) {
       this.removeSubview(".shelf-books", oldView);
@@ -21,12 +21,11 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     var view = new ShouldReads.Views.AllShelf({
       collection: this.shelvings,
     });
-
     this.addSubview('.shelf-books', view);
   },
 
-  addIndex: function () {
-    var view = new ShouldReads.Views.BookShelvesIndex({
+  addShelfIndex: function () {
+    var view = new ShouldReads.Views.BookshelvesIndex({
       collection: this.collection,
       shelvings: this.shelvings,
     });
@@ -46,6 +45,7 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
+
     return this;
   },
 
@@ -53,9 +53,9 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     var id = $(event.currentTarget).attr('data-id');
     var shelf = this.collection.get(id);
     var shelfTitle = shelf.escape('title');
-    $(".shelf-title-header").html(": " + shelfTitle);
+    $('.shelf-title-header').html(': ' + shelfTitle);
     if (shelfTitle === "All") {
-      this.addAllBookShelf();
+      this.addAllBookshelf();
     } else {
       var shelfBooks = shelf.books();
       var view = new ShouldReads.Views.ShelfBooks({
