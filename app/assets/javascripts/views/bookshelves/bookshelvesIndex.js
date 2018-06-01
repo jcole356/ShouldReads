@@ -4,10 +4,10 @@ ShouldReads.Views.BookshelvesIndex = Backbone.View.extend({
   className: "shelf-list",
 
   events: {
+    "blur .add-shelf .form-control": "removeMessage",
     "click .new-shelf": "addShelf",
     "click .shelf-delete": "destroyShelf",
     "keyup .add-shelf .form-control": "validate",
-    "blur .add-shelf .form-control": "removeMessage"
   },
 
   initialize: function (options) {
@@ -48,7 +48,7 @@ ShouldReads.Views.BookshelvesIndex = Backbone.View.extend({
 
   render: function () {
     var content = this.template({
-      bookShelves: this.collection
+      bookShelves: this.collection,
     });
     this.$el.html(content);
 
