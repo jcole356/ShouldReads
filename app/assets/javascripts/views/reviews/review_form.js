@@ -54,8 +54,8 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
       title: attrs.review.title,
     });
     review.save({}, {
-      success: function() {
-        this.collection.add(review, { merge: true });
+      success: function (model) {
+        this.collection.add(model, { merge: true });
         this.remove();
       }.bind(this)
     });
