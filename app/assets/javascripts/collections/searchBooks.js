@@ -1,13 +1,13 @@
 ShouldReads.Collections.SearchBooks = Backbone.Collection.extend({
-  initialize: function(options) {
-    this.url = options.url;
-  },
-
   url: this.url,
 
   model: ShouldReads.Models.SearchBook,
 
-  parse: function(response) {
+  initialize: function (options) {
+    this.url = options.url;
+  },
+
+  parse: function (response) {
     return response.items;
-  }
+  },
 });

@@ -16,8 +16,8 @@ class Api::ReviewsController < ApplicationController
     render :index
   end
 
-  # TODO: consider removing
   def show
+    @review = Review.find(params[:id])
     render :show
   end
 

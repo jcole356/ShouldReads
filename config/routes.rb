@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show], defaults: {format: :json}
   resource :session, only: [:new, :create, :destroy]
   namespace :api, defaults: {format: :json}  do
+    get 'book/:id/reviews', :to => 'books#reviews'
     resources :books, only: [:create, :destroy, :show]
     resources :book_shelves, only: [:create, :index, :show, :destroy]
     resources :book_shelvings, only: [:create, :index, :show, :destroy]

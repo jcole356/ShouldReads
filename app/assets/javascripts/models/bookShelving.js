@@ -16,5 +16,5 @@ ShouldReads.Models.BookShelving = Backbone.Model.extend({
     }
 
     return response;
-  }
+  },
 });

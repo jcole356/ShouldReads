@@ -26,5 +26,5 @@ ShouldReads.Collections.Books = Backbone.Collection.extend({
     }
 
     return book;
-  }
+  },
 });

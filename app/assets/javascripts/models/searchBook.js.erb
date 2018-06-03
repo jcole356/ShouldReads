@@ -1,0 +1,51 @@
+ShouldReads.Models.SearchBook = Backbone.Model.extend({
+  parse: function (response) {
+    var volumeInfo = response.volumeInfo;
+    var title = response.volumeInfo.title;
+    var author = 'Unknown';
+    // TODO: remove this, lets not mix Backbone and Ruby universes
+    var coverImage = "<%= asset_path("old_bible.jpg") %>";
+    var numberOfPages = 'N/A';
+    var synopsis = 'No Description Available';
+    var isbn;
+
+    if (volumeInfo) {
+      if (volumeInfo.authors) {
+        // TODO: change this to handle multiple authors
+        author = volumeInfo.authors[0];
+      }
+      if (volumeInfo.imageLinks) {
+        coverImage = volumeInfo.imageLinks.thumbnail
+          .replace("http", "https");
+      }
+      if (volumeInfo.pageCount) {
+        numberOfPages = volumeInfo.pageCount;
+      }
+      if (volumeInfo.description) {
+        synopsis = volumeInfo.description;
+      }
+      // Default will be ISBN 13.  Add ISBN 10 as backup.
+      if (volumeInfo.industryIdentifiers) {
+        _.each(volumeInfo.industryIdentifiers, function (identifier) {
+          if (identifier.type === 'ISBN_13') {
+            isbn = identifier.identifier;
+          }
+        })
+        if (isbn === undefined) {
+          isbn = volumeInfo.industryIdentifiers[0].identifier;
+        }
+      }
+
+      this.set({
+        title: title,
+        author: author,
+        cover_image_url: coverImage,
+        number_of_pages: numberOfPages,
+        description: synopsis,
+        isbn: isbn
+      });
+
+      return this;
+    }
+  },
+});

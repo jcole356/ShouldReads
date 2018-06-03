@@ -20,7 +20,8 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
       return;
     }
     $('#rateYo').rateYo({
-      rating: self.model.get('rating') || 0
+      fullStar: true,
+      rating: self.model.get('rating') || 0,
     });
   },
 

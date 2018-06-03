@@ -4,13 +4,13 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   className: "show-container",
 
   events: {
-    "click .delete-review": "deleteReview",
     "click .add-review": "openReviewModal",
+    "click .delete-review": "deleteReview",
     "click .edit-review": "openReviewModal",
   },
 
   initialize: function(options) {
-    this.reviews = options.reviews;
+    this.reviews = new ShouldReads.Collections.BookReviews(this.model.get('id'));
     this.bookShelves = options.bookShelves;
     this.addInfo();
     this.addReviews();
