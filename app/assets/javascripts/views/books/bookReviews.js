@@ -4,7 +4,6 @@ ShouldReads.Views.BookReviews = Backbone.View.extend({
   className: "book-review-content",
 
   initialize: function() {
-    // TODO: probably don't need to listen to sync
     this.listenTo(this.collection, 'add sync remove', this.render);
   },
 
@@ -16,5 +15,5 @@ ShouldReads.Views.BookReviews = Backbone.View.extend({
     this.$el.html(content);
 
     return this;
-  }
+  },
 });
