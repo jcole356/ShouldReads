@@ -4,8 +4,8 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   className: "show-container",
 
   events: {
-    "click .delete-review": "deleteReview",
     "click .add-review": "openReviewModal",
+    "click .delete-review": "deleteReview",
     "click .edit-review": "openReviewModal",
   },
 
@@ -25,12 +25,17 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   },
 
   addReviews: function() {
-    this.reviews.fetch();
-    var view = new ShouldReads.Views.BookReviews({
-      collection: this.reviews,
-      model: this.model
-    });
-    this.addSubview('.book-reviews', view);
+    // TODO: lets see about getting some reviews here...
+    $.get({
+      url: 'api/book/' + this.model.get('id') + '/reviews',
+    })
+
+    // this.reviews.fetch();
+    // var view = new ShouldReads.Views.BookReviews({
+    //   collection: this.reviews,
+    //   model: this.model
+    // });
+    // this.addSubview('.book-reviews', view);
   },
 
   deleteReview: function(event) {
