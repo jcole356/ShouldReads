@@ -16,7 +16,6 @@ class Api::ReviewsController < ApplicationController
     render :index
   end
 
-  # TODO: add some error handling here
   def show
     @review = Review.find(params[:id])
     render :show
