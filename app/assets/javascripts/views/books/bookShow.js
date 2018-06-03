@@ -10,7 +10,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   },
 
   initialize: function(options) {
-    this.reviews = options.reviews;
+    this.reviews = new ShouldReads.Collections.BookReviews(this.model.get('id'));
     this.bookShelves = options.bookShelves;
     this.addInfo();
     this.addReviews();
@@ -25,17 +25,12 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   },
 
   addReviews: function() {
-    // TODO: lets see about getting some reviews here...
-    $.get({
-      url: 'api/book/' + this.model.get('id') + '/reviews',
-    })
-
-    // this.reviews.fetch();
-    // var view = new ShouldReads.Views.BookReviews({
-    //   collection: this.reviews,
-    //   model: this.model
-    // });
-    // this.addSubview('.book-reviews', view);
+    this.reviews.fetch();
+    var view = new ShouldReads.Views.BookReviews({
+      collection: this.reviews,
+      model: this.model
+    });
+    this.addSubview('.book-reviews', view);
   },
 
   deleteReview: function(event) {
