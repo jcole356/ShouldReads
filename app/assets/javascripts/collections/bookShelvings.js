@@ -7,5 +7,5 @@ ShouldReads.Collections.BookShelvings = Backbone.Collection.extend({
     var dateString = shelving.get('created_at');
     var date = new Date(dateString);
     return date.getTime();
-  }
+  },
 });
