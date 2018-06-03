@@ -25,5 +25,5 @@ ShouldReads.Collections.BookShelves = Backbone.Collection.extend({
     }
 
     return bookshelf;
-  }
+  },
 });
