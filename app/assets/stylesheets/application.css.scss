@@ -85,7 +85,10 @@ body.scroll {
   border: none;
   border-radius: 0px;
   .search-icon {
+    background-image: image-url('search-icon.png');
+    height: 20px;
     padding: 7px 0;
+    width: 20px;
   }
 }
 
