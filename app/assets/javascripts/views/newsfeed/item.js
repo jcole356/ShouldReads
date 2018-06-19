@@ -1,7 +1,7 @@
 ShouldReads.Views.FeedItem = Backbone.View.extend({
   template: JST['newsfeed/item'],
 
-  className: "feed-item clear",
+  className: "feed-item row",
 
   render: function () {
     var content = this.template({
@@ -10,5 +10,5 @@ ShouldReads.Views.FeedItem = Backbone.View.extend({
     this.$el.html(content);
 
     return this;
-  }
+  },
 });

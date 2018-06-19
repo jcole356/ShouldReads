@@ -12,23 +12,17 @@
 }
 
 .feed-item {
-  border-bottom: 2px solid;
   display: block;
-  width: inherit;
 }
 
 .feed-items {
   font-weight: bold;
-  margin: 0 auto;
-  width: 960px;
 }
 
-.feed-review-content {
-  width: 680px;
-}
-
-.feed-review-date {
-  width: inherit;
+.feed-review-header {
+  display: block;
+  float: left;
+  width: 100%;
 }
 
 .feed-review-header h4 {

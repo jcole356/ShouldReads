@@ -35,9 +35,9 @@ h1 {
 
 /* Clear default styles for lists */
 ul {
- margin: 0px;
- padding: 0px;
- list-style-type: none;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
 }
 
 /* Clear fix */
@@ -45,6 +45,10 @@ ul {
   content: "";
   clear: both;
   display: table;
+}
+
+.content {
+  width: 100%;
 }
 
 /* Body scroll hack */
