@@ -3,7 +3,7 @@ window.ShouldReads = {
   Collections: {},
   Views: {},
   Routers: {},
-  initialize: function() {
+  initialize: function () {
     var router = new ShouldReads.Routers.Router({
       $rootEl: $('#content'),
       books: new ShouldReads.Collections.Books(),
@@ -15,6 +15,7 @@ window.ShouldReads = {
     user.fetch();
     // add a user on the app namespace
     this.user = user;
+    // TODO: I don't like this
     var navbar = new ShouldReads.Views.NavBar({
       router: router,
       user: user
