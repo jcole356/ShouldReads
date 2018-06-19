@@ -11,7 +11,7 @@ window.ShouldReads = {
       reviews: new ShouldReads.Collections.Reviews(),
       shelvings: new ShouldReads.Collections.BookShelvings()
     });
-    var user = new ShouldReads.Models.User({ id: CURRENT_USER_ID});
+    var user = new ShouldReads.Models.User({ id: CURRENT_USER_ID });
     user.fetch();
     // add a user on the app namespace
     this.user = user;

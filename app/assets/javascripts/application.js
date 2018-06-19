@@ -16,7 +16,7 @@
 //= require bootstrap
 //= require underscore
 //= require backbone
-//= require should_reads
+//= require shouldReads
 //= require composite_view
 //= require typed
 //= require jquery.serializejson.min

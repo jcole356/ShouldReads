@@ -1,6 +1,10 @@
 ShouldReads.Views.NavBar = Backbone.View.extend({
   template: JST['navbar/navbar'],
 
+  className: "navbar navbar-expand-md navbar-dark",
+
+  tagName: "nav",
+
   initialize: function (options) {
     this.user = options.user;
     this.listenTo(this.user, "sync", this.render);
