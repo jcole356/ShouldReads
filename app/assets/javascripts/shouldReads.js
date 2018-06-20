@@ -15,15 +15,15 @@ window.ShouldReads = {
     user.fetch();
     // add a user on the app namespace
     this.user = user;
+    var $el = $('nav');
     // TODO: I don't like this
     var navbar = new ShouldReads.Views.NavBar({
+      $el: $el,
       router: router,
       user: user
     });
 
-    // Add scrollbar to keep navbar from jumping
-    $('body').addClass('scroll');
-    $('#nav').html(navbar.render().$el);
+    $el.html(navbar.render().$el);
 
     Backbone.history.start();
   }
