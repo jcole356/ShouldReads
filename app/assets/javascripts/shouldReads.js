@@ -18,7 +18,7 @@ window.ShouldReads = {
     var $el = $('nav');
     // TODO: I don't like this
     var navbar = new ShouldReads.Views.NavBar({
-      $el: $el,
+      el: $el,
       router: router,
       user: user
     });

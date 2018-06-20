@@ -2,7 +2,7 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
   template: JST['navbar/navbar'],
 
   initialize: function (options) {
-    this.$el = options.$el;
+    this.el = options.el;
     this.user = options.user;
     this.listenTo(this.user, "sync", this.render);
   },
