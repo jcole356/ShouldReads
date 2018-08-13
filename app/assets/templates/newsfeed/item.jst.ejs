@@ -2,10 +2,8 @@
   <div class="feed-review-header row">
     <h4 class="col-12">{{= review.escape('username') }} reviewed</h4>
   </div>
-
   <div class="row">
-
-    <div class="col-2">
+    <div class="col-3 col-sm-2">
       <div class="feed-book-image">
         <a href="#/books/{{= review.escape('book_id') }}">
           <img
@@ -17,8 +15,7 @@
         </a>
       </div>
     </div>
-
-    <div class="col-5">
+    <div class="col-9 col-sm-5">
       <h4>
         <a href="#/books/{{= review.escape('book_id') }}">
           {{= review.escape('book_title') }}
@@ -26,8 +23,7 @@
         by {{= review.escape('author') }}
       </h4> 
     </div>
-
-    <div class="col-5">
+    <div class="col-12 col-sm-5">
       <div class="feed-review-info">
         <h4 class="feed-review-rating">
           Rating:
@@ -39,9 +35,7 @@
         <p class="feed-review-body">{{= review.escape('body') }}</p>
       </div>
     </div>
-
   </div>
-
   <div class="row">
     <h5 class="col-12">{{= new Date(review.escape('updated_at')).toDateString() }}</h5>
   </div>
