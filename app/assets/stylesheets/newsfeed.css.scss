@@ -7,6 +7,15 @@
   float: left;
 }
 
+.feed-review-author {
+  font-size: 1.2rem;
+}
+
+.feed-review-rating,
+.feed-review-title {
+  font-weight: bold;
+}
+
 .feed-book-image {
   margin-bottom: 5px;
   width: 70px;
@@ -14,10 +23,6 @@
 
 .feed-item {
   border-bottom: 2px solid black;
-}
-
-.feed-items {
-  font-weight: bold;
 }
 
 .feed-review-header h4 {
