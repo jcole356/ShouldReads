@@ -49,10 +49,6 @@ blockquote {
   width: 600px;
 }
 
-.book-review-content {
-  width: inherit;
-}
-
 .book-reviews {
   border-top: 1px solid;
   display: block;
@@ -85,11 +81,6 @@ blockquote {
   border-bottom: 1px solid;
 }
 
-.review-title-header {
-  height: 50px;
-  width: inherit;
-}
-
 .reviews-header {
   background-color: #4582EC;
   width: inherit;
@@ -104,17 +95,6 @@ blockquote {
 .review-author {
   display: block;
   float: left;
-}
-
-.review-rating {
-  display: block;
-  float: left;
-}
-
-.review-title {
-  display: block;
-  float: left;
-  margin-right: 20px;
 }
 
 .shelf-choice {
