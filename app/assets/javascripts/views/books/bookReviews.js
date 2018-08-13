@@ -1,7 +1,7 @@
 ShouldReads.Views.BookReviews = Backbone.View.extend({
   template: JST["reviews/show"],
 
-  className: "book-review-content",
+  className: "book-review-content row",
 
   initialize: function() {
     this.listenTo(this.collection, 'add sync remove', this.render);

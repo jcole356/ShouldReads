@@ -1,7 +1,7 @@
 ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   template: JST['books/show'],
 
-  className: "show-container",
+  className: "show-container row",
 
   events: {
     "click .add-review": "openReviewModal",
@@ -9,14 +9,14 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     "click .edit-review": "openReviewModal",
   },
 
-  initialize: function(options) {
+  initialize: function (options) {
     this.reviews = new ShouldReads.Collections.BookReviews(this.model.get('id'));
     this.bookShelves = options.bookShelves;
     this.addInfo();
     this.addReviews();
   },
 
-  addInfo: function() {
+  addInfo: function () {
     var view = new ShouldReads.Views.BookInfo({
       bookShelves: this.bookShelves,
       model: this.model,
@@ -24,7 +24,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     this.addSubview('.book-info', view);
   },
 
-  addReviews: function() {
+  addReviews: function () {
     this.reviews.fetch();
     var view = new ShouldReads.Views.BookReviews({
       collection: this.reviews,
@@ -33,7 +33,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     this.addSubview('.book-reviews', view);
   },
 
-  deleteReview: function(event) {
+  deleteReview: function (event) {
     var reviewID = $(event.currentTarget).attr('data-id');
     var review = this.reviews.get(reviewID);
     review.destroy({
@@ -41,7 +41,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     });
   },
 
-  openReviewModal: function(event) {
+  openReviewModal: function (event) {
     var reviewId = $(event.currentTarget).attr('data-id');
     var review;
     if (reviewId) {
@@ -58,7 +58,7 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     view.didInsertElement();
   },
 
-  render: function() {
+  render: function () {
     var content = this.template({
       book: this.model,
       bookShelves: this.bookShelves,

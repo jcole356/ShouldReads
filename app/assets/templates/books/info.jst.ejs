@@ -1,4 +1,4 @@
-<div class="show-image">
+<div class="show-image col-5 col-md-2">
   <img
     alt="Book Cover"
     height="195"
@@ -6,7 +6,7 @@
     width="128"
   >
 </div>
-<div class="show-info">
+<div class="show-info col-7 col-md-10">
   <h2 class ="show-title">{{= book.escape('title') }}</h2>
   <h4 class ="show-author">by {{= book.escape('author') }}</h4>
   <h4 class ="show-pages">
@@ -16,7 +16,7 @@
     Avg Rating: {{= book.escape('average_rating') }} of 5
   </h4>
 </div>
-<div class="shelf-choice">
+<div class="shelf-choice col-12">
   <div class="dropdown">
     <button
       aria-expanded="false"
@@ -44,7 +44,7 @@
   </div>
   <div class="alert"></div>
 </div>
-<div class="write-review">
+<div class="write-review col-12">
   {{ if (book.escape('already_reviewed?') === "false") { }}
     <button 
       class="btn btn-primary btn-sm add-review"
@@ -55,8 +55,7 @@
     </button>
   {{ } }}
 </div>
-
-<div class="synopsis">
+<div class="synopsis col-12">
   <h3>Synopsis</h3>
   <p class="synopsis-text">{{= book.escape('synopsis') }}</p>
 </div>

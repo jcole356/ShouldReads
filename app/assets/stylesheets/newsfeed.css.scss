@@ -1,14 +1,11 @@
 /* newsfeed */
-.feed-review-content,
-.feed-review-date,
-.feed-review-info,
-.feed-book-image {
-  display: block;
-  float: left;
-}
-
 .feed-review-author {
   font-size: 1.2rem;
+}
+
+.feed-review-header h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .feed-review-rating,
@@ -23,11 +20,6 @@
 
 .feed-item {
   border-bottom: 2px solid black;
-}
-
-.feed-review-header h4 {
-  font-size: 1.3rem;
-  font-weight: bold;
 }
 
 .newsfeed-header {
