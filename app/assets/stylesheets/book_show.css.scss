@@ -43,6 +43,10 @@ blockquote {
   width: inherit;
 }
 
+.book-review-content {
+  border-bottom: 1px solid;
+}
+
 .book-show {
   display: block;
   float: left;
@@ -75,10 +79,6 @@ blockquote {
   float: left;
   padding-bottom: 20px;
   width: 100%;
-}
-
-.review-content {
-  border-bottom: 1px solid;
 }
 
 .reviews-header {
