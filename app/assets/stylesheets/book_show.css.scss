@@ -77,13 +77,11 @@ blockquote {
 }
 
 .review-content {
-  width: inherit;
   border-bottom: 1px solid;
 }
 
 .reviews-header {
   background-color: #4582EC;
-  width: inherit;
 }
 
 .reviews-header-text {
@@ -92,81 +90,22 @@ blockquote {
   margin: 5px;
 }
 
-.review-author {
-  display: block;
-  float: left;
+.review-title-header {
+  button {
+    position: absolute;
+  }
+  button.delete-review {
+    right: 0px;
+  }
+  button.edit-review {
+    right: 62px;
+  }
 }
 
 .shelf-choice {
-  display: block;
-  float: left;
-  height: 50px;
-  width: inherit;
-}
-
-.shelf-delete {
-  display: block;
-  float: right;
-}
-
-#shelf_choice {
-  display: block;
-  float: left;
-  margin-right: 15px;
-  width: 175px;
+  height: 36px;
 }
 
 .show-container {
   padding-top: 10px;
-}
-
-.show-image {
-  display: block;
-  float: left;
-  height: 200px;
-  width: 150px;
-}
-
-.show-info {
-  display: block;
-  float: left;
-  height: 200px;
-  width: 650px;
-}
-
-.show-rating {
-  display: block;
-  float: left;
-  margin-top: 0px;
-  width: inherit;
-}
-
-.show-title {
-  display: block;
-  float: left;
-  margin: 0px;
-  width: inherit;
-  height: 77px;
-  overflow: auto;
-}
-
-.show-author, .show-pages {
-  display: block;
-  float: left;
-  margin-top: 8px;
-  width: inherit;
-}
-
-.show-pages {
-  display: block;
-  float: left;
-  margin-top: 0px;
-  width: inherit;
-}
-
-.synopsis {
-  display: block;
-  float: left;
-  margin-top: 10px;
-  width: inherit;
 }
