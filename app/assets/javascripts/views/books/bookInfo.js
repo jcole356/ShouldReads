@@ -7,7 +7,7 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     "click .shelf-choice button.dropdown-item": "addBookToShelf",
   },
 
-  initialize: function(options) {
+  initialize: function (options) {
     this.bookShelves = options.bookShelves;
     this.listenTo(this.bookShelves, "sync", this.render);
     this.listenTo(this.model, "sync", this.render);
@@ -23,15 +23,21 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     });
     shelving.save({}, {
       success: function () {
-        self.showAlert({ text: 'Book has been added to shelf', type: 'success' });
+        self.showAlert({
+          text: 'Book has been added to shelf',
+          type: 'success',
+        });
       },
       error: function () {
-        self.showAlert({ text: 'Book is already on the shelf', type: 'danger' });
+        self.showAlert({
+          text: 'Book is already on the shelf',
+          type: 'danger',
+        });
       }
     });
   },
 
-  render: function() {
+  render: function () {
     var content = this.template({
       book: this.model,
       bookShelves: this.bookShelves,
