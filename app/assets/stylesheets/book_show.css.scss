@@ -43,10 +43,6 @@ blockquote {
   width: inherit;
 }
 
-.book-review-content {
-  border-bottom: 1px solid;
-}
-
 .book-show {
   display: block;
   float: left;
@@ -59,18 +55,6 @@ blockquote {
   display: block;
   float: left;
   width: inherit;
-}
-
-.delete-review {
-  float: right;
-  margin: 10px;
-  width: 56px;
-}
-
-.edit-review {
-  float: right;
-  margin: 10px;
-  width: 56px;
 }
 
 .review-body {
@@ -91,8 +75,11 @@ blockquote {
   margin: 5px;
 }
 
-.review-title-header {
+.review-content {
+  border-bottom: 1px solid;
   button {
+    margin: 10px 10px 0 10px;
+    width: 56px;
     position: absolute;
   }
   button.delete-review {
