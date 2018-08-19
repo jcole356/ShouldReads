@@ -1,4 +1,4 @@
-<td class="shelf-image">
+<div class="shelf-image col-3 col-md-2">
   <a href="#/books/{{= book.id }}">
     <img
       alt="Book Cover"
@@ -7,25 +7,25 @@
       width="64"
     >
   </a>
-</td>
-<td class="shelf-book-info shelf-book-title">
+</div>
+<div class="shelf-book-info shelf-book-title col-9 col-md-2">
   {{= book.escape('title') }}
-</td>
-<td class="shelf-book-info">
+</div>
+<div class="shelf-book-info col-12 col-md-2">
   by {{= book.escape('author') }}
-</td>
-<td class="shelf-book-info">
+</div>
+<div class="shelf-book-info col-12 col-md-2">
   {{= book.escape('number_of_pages') }} Pages
-</td>
-<td class="shelf-book-info">
+</div>
+<div class="shelf-book-info col-12 col-md-2">
   Avg Rating:
   <br>
   {{= book.escape('average_rating') }} of 5
-</td>
+</div>
 {{ if (title) { }}
-  <td class="shelf-book-info">{{= title }}</td>
+  <div class="shelf-book-info col-12 col-md-2">{{= title }}</div>
 {{ } else { }}
-  <td class="shelf-book-info remove-book" data-shelf="">
+  <div class="shelf-book-info remove-book col-12 col-md-2" data-shelf="">
     <a
       class="btn btn-danger btn-sm shelving-delete"
       data-book-id="{{= book.id }}"
@@ -33,5 +33,5 @@
     >
       &times;
     </a>
-  </td>
+  </div>
 {{ } }}

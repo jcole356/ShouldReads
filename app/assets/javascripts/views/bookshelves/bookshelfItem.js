@@ -1,9 +1,9 @@
 ShouldReads.Views.ShelfItem = Backbone.View.extend({
   template: JST['bookshelves/shelf_item'],
 
-  tagName: 'tr',
+  tagName: 'div',
 
-  className: "book-shelf-row",
+  className: "book-shelf-row row",
 
   initialize: function (options) {
     this.all = options.all;

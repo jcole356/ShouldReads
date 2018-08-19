@@ -1,3 +1,5 @@
+@import "bootstrap";
+
 /* Libarary composite view */
 .add-shelf {
   margin-top: 20px;
@@ -15,18 +17,6 @@
   border-color: red;
 }
 
-.book-title {
-  display: block;
-  float: left;
-  width: 100%;
-}
-
-.library-content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 960px;
-}
-
 .library-header-container {
   border-bottom: 2px solid;
 }
@@ -35,17 +25,6 @@
   display: block;
   float: left;
   margin: 0px;
-}
-
-.shelf-books {
-  display: block;
-  float: left;
-  margin-left: 20px;
-  width: 730px;
-}
-
-.shelf-books-list {
-  width: inherit;
 }
 
 /* Shelf book info table */
@@ -87,14 +66,10 @@
   padding-left: 10px;
 }
 
-.shelf-index {
- display: block;
- float: left;
- width: 20%;
- border-right: 2px solid black;
- height: 100vh;
- min-width: 200px;
- padding-right: 20px;
+@include media-breakpoint-up(md) {
+  .shelf-index {
+    border-right: 2px solid black;
+  }
 }
 
 .shelf-title {
