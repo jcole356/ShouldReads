@@ -1,3 +1,5 @@
+@import "bootstrap";
+
 /* Book Show composite view */
 blockquote {
   border-left: 5px solid #4582EC;
@@ -86,6 +88,7 @@ blockquote {
   button {
     margin: 10px 10px 0 10px;
     position: absolute;
+    top: -7px;
   }
   button.delete-review {
     right: 0px;
@@ -95,11 +98,8 @@ blockquote {
   }
 }
 
-/*
- * TODO: hack to get buttons to line up on mobile
- * TODO: should use variables for width
- */
-@media (max-width: 769px) {
+/* TODO: hack to get buttons to line up on mobile */
+@include media-breakpoint-down(xs) {
   .review-content button {
     top: -40px;
   }
