@@ -85,7 +85,6 @@ blockquote {
   border-bottom: 1px solid;
   button {
     margin: 10px 10px 0 10px;
-    width: 56px;
     position: absolute;
   }
   button.delete-review {
@@ -93,6 +92,16 @@ blockquote {
   }
   button.edit-review {
     right: 62px;
+  }
+}
+
+/*
+ * TODO: hack to get buttons to line up on mobile
+ * TODO: should use variables for width
+ */
+@media (max-width: 769px) {
+  .review-content button {
+    top: -40px;
   }
 }
 

@@ -7,26 +7,28 @@
   {{ if(review.escape('book_id') === book.id.toString()) { }}
     <div class="review-content row">
       <h4 class="review-title col-12 col-md-6">{{= review.escape('title') }}</h4>
-      <h4 class="review-rating col-12 col-md-6">
+      <h4 class="review-rating col-6 col-md-3">
         Rating: {{= review.escape('rating') }} of 5
       </h4>
       {{ if (review.escape('author_id') === CURRENT_USER_ID) { }}
-        <button
-          class="btn btn-danger btn-sm delete-review"
-          data-id="{{= review.id }}"
-          name="button"
-          type="button"
-        >
-          Delete
-        </button>
-        <button
-          class="btn btn-primary btn-sm edit-review"
-          data-id="{{= review.id }}"
-          name="button"
-          type="button"
-        >
-          Edit
-        </button>
+        <div class="col-6 col-md-3">
+          <button
+            class="btn btn-danger btn-sm delete-review"
+            data-id="{{= review.id }}"
+            name="button"
+            type="button"
+          >
+            Delete
+          </button>
+          <button
+            class="btn btn-primary btn-sm edit-review"
+            data-id="{{= review.id }}"
+            name="button"
+            type="button"
+          >
+            Edit
+          </button>
+        </div>
       {{ } }}
       <blockquote class="blockquote col-12">
         <p class="col-12">{{= review.escape('body') }}</p>
