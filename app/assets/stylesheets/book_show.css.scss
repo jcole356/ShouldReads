@@ -17,16 +17,21 @@ blockquote {
 }
 
 /* Alert for adding book to shelf */
-.alert {
+.show-book-info .alert {
   height: 65px;
+  left: 0;
   line-height: 38px;
   margin: 0 auto;
   max-width: 400px;
+  position: fixed;
+  right: 0;
   text-align: center;
+  top: 70px;
   z-index: 1000;
 }
 
 /* TODO: do not use this class */
+/*
 .bg-success {
   border-radius: 4px;
   display: block;
@@ -36,6 +41,7 @@ blockquote {
   text-align: center;
   width: inherit;
 }
+*/
 
 .book-info {
   display: block;

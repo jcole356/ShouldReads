@@ -4,7 +4,7 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
   className: "show-book-info",
 
   events: {
-    "click .shelf-choice button.dropdown-item": "addBookToShelf",
+    "click .show-info button.dropdown-item": "addBookToShelf",
   },
 
   initialize: function (options) {
@@ -48,11 +48,11 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
   },
 
   showAlert: function (message) {
-    var $alert = $('.shelf-choice .alert');
+    var $alert = $('.alert');
     var className = 'alert-' + message.type;
-    $alert.addClass(className).text(message.text);
+    $alert.addClass(className).text(message.text).show();
     setTimeout(function() {
-      $alert.removeClass(className).text('');
+      $alert.removeClass(className).text('').hide();
     }, 3500);
   },
 });
