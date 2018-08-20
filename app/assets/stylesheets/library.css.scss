@@ -32,6 +32,10 @@
   vertical-align: top;
 }
 
+.book-shelf-row:hover {
+  background-color: rgba(158, 144, 144, 0.16);
+}
+
 .shelf-book-info {
   padding: 8px;
 }
@@ -40,10 +44,10 @@
   width: inherit;
  }
 
- .shelf-book-title {
-   width: 200px;
-   padding-left: 12px;
- }
+.shelf-book-title {
+  width: 200px;
+  padding-left: 12px;
+}
 
 .shelf-delete.btn-sm, .shelving-delete.btn-sm {
   border-radius: 12px;
@@ -59,11 +63,6 @@
   width: 77px;
   margin-bottom: 8px;
   padding: 10px;
-}
-
-.shelf-image:hover {
-  background-color: rgba(158, 144, 144, 0.16);
-  padding-left: 10px;
 }
 
 @include media-breakpoint-up(md) {
