@@ -1,7 +1,7 @@
 ShouldReads.Views.BookshelvesIndex = Backbone.View.extend({
   template: JST['bookshelves/index'],
 
-  className: "shelf-list",
+  className: "shelf-list row",
 
   events: {
     "blur .add-shelf .form-control": "removeMessage",

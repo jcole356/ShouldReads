@@ -72,6 +72,12 @@
   }
 }
 
+@include media-breakpoint-down(md) {
+  .shelf-index {
+    border-bottom: 2px solid black;
+  }
+}
+
 .shelf-title {
   display: block;
   float: left;

@@ -1,12 +1,12 @@
-<h4>Bookshelves</h3>
-<ul class="clear">
+<div class="col-12"><h4>Bookshelves</h4></div>
+<ul class="col-12">
   {{ bookShelves.each(function(bookShelf) { }}
-    <li class="shelf" data-id="{{= bookShelf.id }}">
+    <li class="shelf col-10" data-id="{{= bookShelf.id }}">
       <span class="shelf-title">{{= bookShelf.escape('title') }}</span>
     </li>
     {{ if (bookShelf.escape('title') !== "All") { }}
       <a
-        class="btn btn-danger btn-sm shelf-delete"
+        class="btn btn-danger btn-sm shelf-delete col-2"
         data-id="{{= bookShelf.id }}"
       >
         x
@@ -14,7 +14,7 @@
     {{ } }}
   {{ }) }}
 </ul>
-<div class="form-group add-shelf">
+<div class="form-group add-shelf col-12">
   <form>
     <input
       class="form-control"
