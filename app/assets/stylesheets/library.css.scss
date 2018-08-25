@@ -30,10 +30,13 @@
 /* Shelf book info table */
 .book-shelf-row {
   vertical-align: top;
-}
-
-.book-shelf-row:hover {
-  background-color: rgba(158, 144, 144, 0.16);
+  a.row {
+    color: black;
+    text-decoration: none;
+  }
+  a.row:hover {
+    background-color: rgba(158, 144, 144, 0.16);
+  }
 }
 
 .shelf-book-info {
