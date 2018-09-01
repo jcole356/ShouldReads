@@ -3,7 +3,7 @@ ShouldReads.Views.ShelfItem = Backbone.View.extend({
 
   tagName: 'div',
 
-  className: "book-shelf-row",
+  className: "book-shelf-row row",
 
   initialize: function (options) {
     this.all = options.all;

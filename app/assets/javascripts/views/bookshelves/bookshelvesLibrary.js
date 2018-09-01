@@ -14,13 +14,21 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
   },
 
   addAllBookshelf: function () {
-    var oldView = this.subviews(".shelf-books").first();
+    var oldView = this.subviews('.shelf-books').first();
     if (oldView) {
-      this.removeSubview(".shelf-books", oldView);
+      this.removeSubview('.shelf-books', oldView);
     }
     var view = new ShouldReads.Views.AllShelf({
       collection: this.shelvings,
     });
+    this.addSubview('.shelf-books', view);
+  },
+
+  addShelfBooks: function (view) {
+    var oldView = this.subviews('.shelf-books').first();
+    if (oldView) {
+      this.removeSubview('.shelf-books', oldView);
+    }
     this.addSubview('.shelf-books', view);
   },
 
@@ -31,14 +39,6 @@ ShouldReads.Views.BookShelvesLibrary = Backbone.CompositeView.extend({
     });
 
     this.addSubview('.shelf-index', view);
-  },
-
-  addShelfBooks: function (view) {
-    var oldView = this.subviews(".shelf-books").first();
-    if (oldView) {
-      this.removeSubview(".shelf-books", oldView);
-    }
-    this.addSubview('.shelf-books', view);
   },
 
   render: function () {

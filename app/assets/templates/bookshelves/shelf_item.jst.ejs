@@ -1,37 +1,39 @@
-<a class="row" href="#/books/{{= book.id }}">
-  <div class="shelf-image col-3 col-md-2">
-      <img
-        alt="Book Cover"
-        height="97"
-        src="{{= book.escape('cover_image_url') }}"
-        width="64"
-      >
-  </div>
-  <div class="shelf-book-info shelf-book-title col-9 col-md-2">
-    {{= book.escape('title') }}
-  </div>
-  <div class="shelf-book-info col-12 col-md-2">
-    by {{= book.escape('author') }}
-  </div>
-  <div class="shelf-book-info col-12 col-md-2">
-    {{= book.escape('number_of_pages') }} Pages
-  </div>
-  <div class="shelf-book-info col-12 col-md-2">
-    Avg Rating:
-    <br>
-    {{= book.escape('average_rating') }} of 5
-  </div>
-  {{ if (title) { }}
-    <div class="shelf-book-info col-12 col-md-2">{{= title }}</div>
-  {{ } else { }}
-    <div class="shelf-book-info remove-book col-12 col-md-2" data-shelf="">
-      <a
-        class="btn btn-danger btn-sm shelving-delete"
-        data-book-id="{{= book.id }}"
-        data-shelving-id="{{= book.escape('shelving_id') }}"
-      >
-        &times;
-      </a>
+<a class="col-10" href="#/books/{{= book.id }}">
+  <div class="row">
+    <div class="shelf-image col-2">
+        <img
+          alt="Book Cover"
+          height="97"
+          src="{{= book.escape('cover_image_url') }}"
+          width="64"
+        >
     </div>
-  {{ } }}
+    <div class="shelf-book-info shelf-book-title col-3">
+      {{= book.escape('title') }}
+    </div>
+    <div class="shelf-book-info col-2">
+      by {{= book.escape('author') }}
+    </div>
+    <div class="shelf-book-info col-2">
+      {{= book.escape('number_of_pages') }} Pages
+    </div>
+    <div class="shelf-book-info col-2">
+      Avg Rating:
+      <br>
+      {{= book.escape('average_rating') }} of 5
+    </div>
+  </div>
 </a>
+{{ if (title) { }}
+  <div class="shelf-book-info col-2">{{= title }}</div>
+{{ } else { }}
+  <div class="remove-book col-2" data-shelf="">
+    <a
+      class="btn btn-danger btn-sm shelving-delete"
+      data-book-id="{{= book.id }}"
+      data-shelving-id="{{= book.escape('shelving_id') }}"
+    >
+      &times;
+    </a>
+  </div>
+{{ } }}
