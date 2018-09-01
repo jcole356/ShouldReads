@@ -1,40 +1,11 @@
 /* Search Results Index View */
 
-.search-index {
- margin-left: auto;
- margin-right: auto;
- width: 800px;
-}
-
 .search-book-info {
- display: block;
- float: left;
- height: 195px;
- width: 800px;
- margin-left: auto;
- margin-right: auto;
- margin-bottom: 5px;
- color: #4582EC;
+  color: #4582EC;
+  padding: 10px 0;
 }
 
 .search-book-info:hover {
   background-color: rgba(158, 144, 144, 0.16);
   cursor: pointer;
-}
-
-.result-image {
- display: block;
- float: left;
- width: 150px
-}
-
-.result-title {
- display: block;
- float: left;
- width: 650px;
-}
-
-.result-author {
- display: block;
- float: left;
 }
