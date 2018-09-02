@@ -20,9 +20,7 @@
           {{= book.escape('number_of_pages') }} Pages
         </div>
         <div class="shelf-book-info col-12 order-5 col-md-2">
-          Avg Rating:
-          <br>
-          {{= book.escape('average_rating') }} of 5
+          <div class="rateYo" />
         </div>
         {{ if (title) { }}
           <div class="shelf-book-info shelf-book-shelf col-md-2 order-md-5">{{= title }}</div>
