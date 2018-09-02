@@ -1,8 +1,22 @@
+@import "bootstrap";
+
 /* Search Results Index View */
 
 .search-book-info {
   color: #4582EC;
   padding: 10px 0;
+}
+
+@include media-breakpoint-down(md) {
+  .result-title {
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .search-book-info {
+    border-bottom: 1px solid black;
+  }
 }
 
 .search-book-info:hover {
