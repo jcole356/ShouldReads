@@ -10,12 +10,12 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
   initialize: function (options) {
     this.bookShelves = options.bookShelves;
     this.listenTo(this.bookShelves, "sync", this.render);
-    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "change", this.render);
   },
 
-  addBookToShelf: function (event) {
+  addBookToShelf: function (e) {
     var self = this;
-    var shelfID = event.target.dataset.id;
+    var shelfID = e.target.dataset.id;
     var shelving = new ShouldReads.Models.BookShelving();
     shelving.set({
       book_id: this.model.id,
