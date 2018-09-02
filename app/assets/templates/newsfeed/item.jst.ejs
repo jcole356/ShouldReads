@@ -24,12 +24,7 @@
       <h4 class="feed-review-author">by {{= review.escape('author') }}</h4>
     </div>
     <div class="col-12 col-sm-5">
-      <h4 class="feed-review-rating">
-        Rating:
-        <span style="font-weight:normal">
-          {{= review.escape('rating') }} of 5
-        </span>
-      </h4>
+      <div class="rateYo" />
       <h4 class="feed-review-title">{{= review.escape('title') }}</h4>
       <p class="feed-review-body">{{= review.escape('body') }}</p>
     </div>
