@@ -16,7 +16,6 @@ window.ShouldReads = {
     // add a user on the app namespace
     this.user = user;
     var $el = $('nav');
-    // TODO: I don't like this
     var navbar = new ShouldReads.Views.NavBar({
       el: $el,
       router: router,
