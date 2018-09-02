@@ -24,7 +24,6 @@
 .library-header {
   display: block;
   float: left;
-  margin: 0px;
 }
 
 /* Shelf book info table */
@@ -82,6 +81,14 @@
   .shelf-index {
     border-bottom: 2px solid black;
   }
+
+  .shelf-title-header {
+    font-size: 1.2rem;
+  }
+
+  .library-header {
+    font-size: 1.2rem;
+  }
 }
 
 .shelf-title {
@@ -90,12 +97,6 @@
   margin: 0px;
   padding: 2px;
   width: 150px;
-}
-
-.shelf-title-header {
-  display: block;
-  float: left;
-  margin: 0px;
 }
 
 .shelf-title:hover {
