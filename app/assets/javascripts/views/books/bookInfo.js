@@ -4,18 +4,18 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
   className: "show-book-info",
 
   events: {
-    "click .shelf-choice button.dropdown-item": "addBookToShelf",
+    "click .show-info button.dropdown-item": "addBookToShelf",
   },
 
-  initialize: function(options) {
+  initialize: function (options) {
     this.bookShelves = options.bookShelves;
     this.listenTo(this.bookShelves, "sync", this.render);
-    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "change", this.render);
   },
 
-  addBookToShelf: function (event) {
+  addBookToShelf: function (e) {
     var self = this;
-    var shelfID = event.target.dataset.id;
+    var shelfID = e.target.dataset.id;
     var shelving = new ShouldReads.Models.BookShelving();
     shelving.set({
       book_id: this.model.id,
@@ -23,15 +23,21 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     });
     shelving.save({}, {
       success: function () {
-        self.showAlert({ text: 'Book has been added to shelf', type: 'success' });
+        self.showAlert({
+          text: 'Book has been added to shelf',
+          type: 'success',
+        });
       },
       error: function () {
-        self.showAlert({ text: 'Book is already on the shelf', type: 'danger' });
+        self.showAlert({
+          text: 'Book is already on the shelf',
+          type: 'danger',
+        });
       }
     });
   },
 
-  render: function() {
+  render: function () {
     var content = this.template({
       book: this.model,
       bookShelves: this.bookShelves,
@@ -42,11 +48,11 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
   },
 
   showAlert: function (message) {
-    var $alert = $('.shelf-choice .alert');
+    var $alert = $('.alert');
     var className = 'alert-' + message.type;
-    $alert.addClass(className).text(message.text);
+    $alert.addClass(className).text(message.text).show();
     setTimeout(function() {
-      $alert.removeClass(className).text('');
+      $alert.removeClass(className).text('').hide();
     }, 3500);
   },
 });

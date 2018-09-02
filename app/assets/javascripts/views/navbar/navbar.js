@@ -1,7 +1,8 @@
 ShouldReads.Views.NavBar = Backbone.View.extend({
   template: JST['navbar/navbar'],
 
-  initialize: function(options) {
+  initialize: function (options) {
+    this.el = options.el;
     this.user = options.user;
     this.listenTo(this.user, "sync", this.render);
   },
@@ -45,7 +46,7 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
     return this;
   },
 
-  signOut: function(event) {
+  signOut: function (event) {
     $.ajax({
       url: "session",
       type: "DELETE",
@@ -53,5 +54,5 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
         window.location = "/";
       }
     });
-  }
+  },
 });

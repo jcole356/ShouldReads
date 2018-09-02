@@ -25,11 +25,12 @@ ShouldReads.Views.ShelfBooks = Backbone.CompositeView.extend({
     this.removeModelSubview('.shelf-book-info-container', book);
   },
 
-  removeBook: function (event) {
-    var shelvingID = $(event.currentTarget).attr('data-shelving-id');
+  removeBook: function (e) {
+    e.preventDefault();
+    var shelvingID = $(e.currentTarget).attr('data-shelving-id');
     var shelving = this.shelvings.get({ id: shelvingID });
     shelving.destroy();
-    var bookId = $(event.currentTarget).attr('data-book-id');
+    var bookId = $(e.currentTarget).attr('data-book-id');
     var book = this.collection.get(bookId);
     this.collection.remove(book);
   },

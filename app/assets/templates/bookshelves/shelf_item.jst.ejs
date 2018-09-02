@@ -1,37 +1,41 @@
-<td class="shelf-image">
-  <a href="#/books/{{= book.id }}">
-    <img
-      alt="Book Cover"
-      height="97"
-      src="{{= book.escape('cover_image_url') }}"
-      width="64"
-    >
-  </a>
-</td>
-<td class="shelf-book-info shelf-book-title">
-  {{= book.escape('title') }}
-</td>
-<td class="shelf-book-info">
-  by {{= book.escape('author') }}
-</td>
-<td class="shelf-book-info">
-  {{= book.escape('number_of_pages') }} Pages
-</td>
-<td class="shelf-book-info">
-  Avg Rating:
-  <br>
-  {{= book.escape('average_rating') }} of 5
-</td>
-{{ if (title) { }}
-  <td class="shelf-book-info">{{= title }}</td>
-{{ } else { }}
-  <td class="shelf-book-info remove-book" data-shelf="">
-    <a
-      class="btn btn-danger btn-sm shelving-delete"
-      data-book-id="{{= book.id }}"
-      data-shelving-id="{{= book.escape('shelving_id') }}"
-    >
-      &times;
-    </a>
-  </td>
-{{ } }}
+<a class="col-12" href="#/books/{{= book.id }}">
+  <div class="row">
+    <div class="shelf-image col-3 col-md-2">
+        <img
+          alt="Book Cover"
+          height="97"
+          src="{{= book.escape('cover_image_url') }}"
+          width="64"
+        >
+    </div>
+    <div class="col-9 col-md-10">
+      <div class="row">
+        <div class="shelf-book-info shelf-book-title col-10 order-1 col-md-3">
+          {{= book.escape('title') }}
+        </div>
+        <div class="shelf-book-info col-12 order-3 col-md-3">
+          by {{= book.escape('author') }}
+        </div>
+        <div class="shelf-book-info shelf-book-pages col-12 order-4 col-md-2">
+          {{= book.escape('number_of_pages') }} Pages
+        </div>
+        <div class="shelf-book-info col-12 order-5 col-md-2">
+          <div class="rateYo" />
+        </div>
+        {{ if (title) { }}
+          <div class="shelf-book-info shelf-book-shelf col-md-2 order-md-5">{{= title }}</div>
+        {{ } else { }}
+          <div class="remove-book col-2 order-2 order-md-5" data-shelf="">
+            <button
+              class="btn btn-danger btn-sm shelving-delete"
+              data-book-id="{{= book.id }}"
+              data-shelving-id="{{= book.escape('shelving_id') }}"
+            >
+              &times;
+            </button>
+          </div>
+        {{ } }}
+      </div>
+    </div>
+  </div>
+</a>

@@ -8,7 +8,7 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
     "click .submit-review": "submitReview",
   },
 
-  initialize: function(options) {
+  initialize: function (options) {
     this.book = options.book;
     this.listenTo(this.model, 'sync', this.render);
   },
@@ -41,8 +41,8 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
     return this;
   },
 
-  submitReview: function(event) {
-    event.preventDefault();
+  submitReview: function (e) {
+    e.preventDefault();
     var attrs = this.$el.find('form').serializeJSON();
     var rating = $('#rateYo').rateYo('rating');
     var review = this.model;
@@ -57,6 +57,9 @@ ShouldReads.Views.ReviewForm = Backbone.View.extend({
     review.save({}, {
       success: function (model) {
         this.collection.add(model, { merge: true });
+        this.book.set({
+          'already_reviewed?': true,
+        });
         this.remove();
       }.bind(this)
     });

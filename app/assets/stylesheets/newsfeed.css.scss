@@ -1,9 +1,16 @@
 /* newsfeed */
-.feed-review-body, .feed-review-content, .feed-review-date,
-.feed-review-info, .feed-book-image, .feed-review-rating,
+.feed-review-author {
+  font-size: 1.2rem;
+}
+
+.feed-review-header h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.feed-review-rating,
 .feed-review-title {
-  display: block;
-  float: left;
+  font-weight: bold;
 }
 
 .feed-book-image {
@@ -12,42 +19,7 @@
 }
 
 .feed-item {
-  border-bottom: 2px solid;
-  display: block;
-  width: inherit;
-}
-
-.feed-items {
-  font-weight: bold;
-  margin: 0 auto;
-  width: 960px;
-}
-
-.feed-review-content {
-  width: 680px;
-}
-
-.feed-review-date {
-  width: inherit;
-}
-
-.feed-review-header h4 {
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-.feed-review-info {
-  margin-left: 10px;
-  width: 200px;
-}
-
-.feed-review-rating {
-  margin-top: 0;
-}
-
-.feed-review-title {
-  margin-top: 0;
-  width: inherit;
+  border-bottom: 2px solid black;
 }
 
 .newsfeed-header {

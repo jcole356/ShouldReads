@@ -1,7 +1,7 @@
 ShouldReads.Views.BookshelvesIndex = Backbone.View.extend({
   template: JST['bookshelves/index'],
 
-  className: "shelf-list",
+  className: "shelf-list row",
 
   events: {
     "blur .add-shelf .form-control": "removeMessage",
@@ -15,8 +15,8 @@ ShouldReads.Views.BookshelvesIndex = Backbone.View.extend({
     this.listenTo(this.collection, "add remove", this.render);
   },
 
-  addShelf: function (event) {
-    event.preventDefault();
+  addShelf: function (e) {
+    e.preventDefault();
     var shelfName = this.$el.find('form').serializeJSON().book_shelf.title;
     var self = this;
     var bookshelf = new ShouldReads.Models.Bookshelf({

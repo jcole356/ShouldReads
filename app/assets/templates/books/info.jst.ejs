@@ -1,62 +1,64 @@
-<div class="show-image">
-  <img
-    alt="Book Cover"
-    height="195"
-    src="{{= book.escape('cover_image_url') }}"
-    width="128"
-  >
-</div>
-<div class="show-info">
-  <h2 class ="show-title">{{= book.escape('title') }}</h2>
-  <h4 class ="show-author">by {{= book.escape('author') }}</h4>
-  <h4 class ="show-pages">
-    {{= book.escape('number_of_pages') }} Pages
-  </h4>
-  <h4 class ="show-rating">
-    Avg Rating: {{= book.escape('average_rating') }} of 5
-  </h4>
-</div>
-<div class="shelf-choice">
-  <div class="dropdown">
-    <button
-      aria-expanded="false"
-      aria-haspopup="true"
-      class="btn btn-secondary dropdown-toggle"
-      data-toggle="dropdown"
-      id="dropdownMenu2"
-      type="button"
+<div class="row">
+  <div class="show-image col-12 col-md-3 col-lg-2">
+    <img
+      alt="Book Cover"
+      height="195"
+      src="{{= book.escape('cover_image_url') }}"
+      width="128"
     >
-      Bookshelves
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-      {{ bookShelves.each(function (bookShelf) { }}
-        {{ if (bookShelf.escape('title') !== "All") { }}
-          <button
-            class="dropdown-item"
-            data-id="{{= bookShelf.id }}"
-            type="button"
-          >
-            {{= bookShelf.escape('title') }}
-          </button>
-        {{ } }}
-      {{ }) }}
+  </div>
+  <div class="show-info col-12 col-md-9 col-lg-10">
+    <h2 class ="show-title">{{= book.escape('title') }}</h2>
+    <h4 class ="show-author">by {{= book.escape('author') }}</h4>
+    <h4 class ="show-pages">
+      {{= book.escape('number_of_pages') }} Pages
+    </h4>
+    <h4 class ="show-rating">
+      Avg Rating: {{= book.escape('average_rating') }} of 5
+    </h4>
+    <div class="dropdown">
+      <button
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="btn btn-secondary dropdown-toggle"
+        data-toggle="dropdown"
+        id="dropdownMenu2"
+        type="button"
+      >
+        Bookshelves
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        {{ bookShelves.each(function (bookShelf) { }}
+          {{ if (bookShelf.escape('title') !== "All") { }}
+            <button
+              class="dropdown-item"
+              data-id="{{= bookShelf.id }}"
+              type="button"
+            >
+              {{= bookShelf.escape('title') }}
+            </button>
+          {{ } }}
+        {{ }) }}
+      </div>
     </div>
   </div>
-  <div class="alert"></div>
+  <div class="alert" style="display: none;" />
 </div>
-<div class="write-review">
-  {{ if (book.escape('already_reviewed?') === "false") { }}
-    <button 
-      class="btn btn-primary btn-sm add-review"
-      name="button"
-      type="button"
-    >
-      Write Review
-    </button>
-  {{ } }}
+<div class="row">
+  <div class="write-review col-12">
+    {{ if (book.escape('already_reviewed?') === "false") { }}
+      <button
+        class="btn btn-primary btn-sm add-review"
+        name="button"
+        type="button"
+      >
+        Write Review
+      </button>
+    {{ } }}
+  </div>
 </div>
-
-<div class="synopsis">
-  <h3>Synopsis</h3>
-  <p class="synopsis-text">{{= book.escape('synopsis') }}</p>
+<div class="row">
+  <div class="synopsis col-12">
+    <p class="synopsis-text">{{= book.escape('synopsis') }}</p>
+  </div>
 </div>

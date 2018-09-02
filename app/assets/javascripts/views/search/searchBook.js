@@ -1,8 +1,10 @@
 ShouldReads.Views.SearchBook = Backbone.View.extend({
   template: JST['search/result'],
 
+  className: "search-book-info row",
+
   events: {
-    "click .search-book-info": "addOrRetrieve"
+    "click": "addOrRetrieve"
   },
 
   render: function() {
