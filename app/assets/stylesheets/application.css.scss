@@ -11,14 +11,14 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require joyride-2.1
+ *= require jquery.rateyo.min
  *= require_self
  *= require book_show
  *= require library
  *= require newsfeed
  *= require search_results
  *= require modal_search
- *= require joyride-2.1
- *= require jquery.rateyo.min
  */
 
 @import "bootstrap";
@@ -101,6 +101,11 @@ body.scroll {
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
   cursor: pointer;
+}
+
+/* Custom styles for Joyride plugin */
+.joyride-tip-guide {
+  z-index: 1050;
 }
 
 /* Modal styles */
