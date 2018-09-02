@@ -1,3 +1,5 @@
+@import "bootstrap";
+
 /* Modal Search Bar Stlyes */
 
 .modal_search {
@@ -44,4 +46,23 @@
 .modal_search .close:hover {
   background-color: transparent;
   color: #FFFFFF;
+}
+
+@include media-breakpoint-down(md) {
+  .modal_search .close {
+    font-size: 3rem;
+    height: 50px;
+    left: -7px;
+    top: -53px;
+  }
+
+  .search_field_container {
+    height: 60px;
+    padding: 5px;
+  }
+
+  .search_field {
+    font-size: 2rem;
+    height: 50px;
+  }
 }
