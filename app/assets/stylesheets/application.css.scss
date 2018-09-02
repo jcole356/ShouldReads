@@ -73,11 +73,11 @@ body.scroll {
   border-radius: 7px;
   display: flex;
   flex-direction: column;
+  max-width: 400px;
   padding: 20px 40px;
   position: relative;
   top: 24%;
   text-align: center;
-  width: 400px;
   .log-in-form {
     width: 100%;
   }
