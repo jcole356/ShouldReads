@@ -1,17 +1,19 @@
 <div class="col-12"><h4>Bookshelves</h4></div>
 <ul class="col-12">
   {{ bookShelves.each(function(bookShelf) { }}
-    <li class="shelf col-10" data-id="{{= bookShelf.id }}">
-      <span class="shelf-title">{{= bookShelf.escape('title') }}</span>
+    <li class="shelf row" data-id="{{= bookShelf.id }}">
+      <span class="shelf-title col-10">{{= bookShelf.escape('title') }}</span>
+      {{ if (bookShelf.escape('title') !== "All") { }}
+      <div class="col-2">
+        <button
+          class="btn btn-danger btn-sm shelf-delete"
+          data-id="{{= bookShelf.id }}"
+        >
+          x
+        </button>
+      </div>
+      {{ } }}
     </li>
-    {{ if (bookShelf.escape('title') !== "All") { }}
-      <a
-        class="btn btn-danger btn-sm shelf-delete col-2"
-        data-id="{{= bookShelf.id }}"
-      >
-        x
-      </a>
-    {{ } }}
   {{ }) }}
 </ul>
 <div class="form-group add-shelf col-12">
