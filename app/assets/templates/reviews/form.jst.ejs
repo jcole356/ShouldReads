@@ -1,5 +1,5 @@
 <div class="m-content well">
-  <button type="button" class="close" aria-label="Close">
+  <button aria-label="Close" class="close" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
   <form class="form-horizontal">
@@ -7,41 +7,33 @@
       Review {{= book.escape('title') }}
     </legend>
     <div class="form-group">
-        <label for="review-rating">Rating</label>
-          <input id="review-rating"
-                 type="number"
-                 class="rating"
-                 name="review[rating]"
-                 value="{{= parseInt(review.escape('rating')) }}"
-                 min=0
-                 max=5
-                 step=1.0
-                 data-size="sm" >
-    </div>
-
-    <div class="form-group">
-        <label for="review-title">Title</label>
-          <input class="form-control"
-                 id="review-title"
-                 type="text"
-                 name="review[title]"
-                 value="{{= review.escape('title') }}">
+      <div id="rateYo" />
     </div>
     <div class="form-group">
-          <label for="review-body">Review</label>
-          <textarea class="form-control"
-                    id="review-body"
-                    name="review[body]"
-                    rows="8"
-                    cols="40">{{= review.escape('body') }}</textarea>
+      <label for="review-title">Title</label>
+      <input
+        class="form-control"
+        id="review-title"
+        name="review[title]"
+        type="text"
+        value="{{= review.escape('title') }}"
+      >
     </div>
-    <button type="submit"
-            class="btn btn-primary submit-review form-group">
+    <div class="form-group">
+      <label for="review-body">Review</label>
+      <textarea
+        class="form-control"
+        cols="40"
+        id="review-body"
+        name="review[body]"
+        rows="8"
+      >{{= review.escape('body') }}</textarea>
+    </div>
+    <button
+      class="btn btn-primary submit-review form-group"
+      type="submit"
+    >
       Submit
     </button>
   </form>
 </div>
-
-<script type="text/javascript">
-  $('#review-rating').rating();
-</script>

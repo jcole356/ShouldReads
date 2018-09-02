@@ -1,4 +1,4 @@
-ShouldReads.Models.BookShelf = Backbone.Model.extend({
+ShouldReads.Models.Bookshelf = Backbone.Model.extend({
   urlRoot: "api/book_shelves",
 
   books: function () {
@@ -16,5 +16,5 @@ ShouldReads.Models.BookShelf = Backbone.Model.extend({
     }
 
     return response;
-  }
+  },
 });

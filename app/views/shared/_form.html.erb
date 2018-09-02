@@ -1,5 +1,4 @@
 <% action_url = (action == :session_new) ? session_url : users_url %>
-<!-- Probably don't need this conditional anymore -->
 <% button_text = (action == :session_new) ? "Log In" : "Sign Up" %>
 
 <div>
@@ -13,51 +12,50 @@
 </div>
 
 <form
-  class="form-horizontal log-in-form"
   action="<%= action_url %>"
+  class="form-horizontal log-in-form"
   method="post">
   <%= auth_token_input %>
   <div class="form-group">
-    <div class="col-sm-10 col-sm-offset-1">
-      <input
-        type="text"
-        class="form-control"
-        id="inputUsername"
-        placeholder="Username"
-        name="user[username]">
-    </div>
+    <input
+      class="form-control"
+      id="inputUsername"
+      name="user[username]"
+      placeholder="Username"
+      type="text"
+    >
   </div>
   <div class="form-group">
-    <div class="col-sm-10 col-sm-offset-1">
-      <input
-        type="password"
-        class="form-control"
-        id="inputPassword"
-        placeholder="Password"
-        name="user[password]">
-    </div>
+    <input
+      type="password"
+      class="form-control"
+      id="inputPassword"
+      placeholder="Password"
+      name="user[password]"
+    >
   </div>
   <div class="form-group">
-    <div class="col-sm-10 col-sm-offset-1">
-      <% if button_text == "Log In" %>
-        <button
-          type="submit"
-          class="btn btn-primary btn-md btn-block log-in-button">
-            Log In
-        </button>
-        <button
-          type="submit"
-          class="btn btn-primary btn-md btn-block guest-button">
-            Guest Log In
-        </button>
-      <% else %>
-        <button
-          type="submit"
-          class="btn btn-primary btn-md btn-block sign-up-button">
-            Sign Up
-        </button>
-      <% end %>
-    </div>
+    <% if button_text == "Log In" %>
+      <button
+        class="btn btn-primary btn-md btn-block log-in-button"
+        type="submit"
+      >
+        Log In
+      </button>
+      <button
+        class="btn btn-primary btn-md btn-block guest-button"
+        type="submit"
+      >
+        Guest Log In
+      </button>
+    <% else %>
+      <button
+        class="btn btn-primary btn-md btn-block sign-up-button"
+        type="submit"
+      >
+        Sign Up
+      </button>
+    <% end %>
   </div>
 </form>
 

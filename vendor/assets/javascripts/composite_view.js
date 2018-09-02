@@ -45,7 +45,7 @@ Backbone.CompositeView = Backbone.View.extend({
     });
   },
 
-  eachSubview: function(callback) {
+  eachSubview: function (callback) {
     this.subviews().each(function (selectorSubviews, selector) {
       selectorSubviews.each(function (subview) {
         callback(subview, selector);
@@ -53,7 +53,7 @@ Backbone.CompositeView = Backbone.View.extend({
     });
   },
 
-  onRender: function() {
+  onRender: function () {
     this.eachSubview(function (subview) {
       subview.onRender && subview.onRender();
     });
@@ -100,5 +100,5 @@ Backbone.CompositeView = Backbone.View.extend({
 
   unshiftSubview: function (selector, subview) {
     this.addSubview(selector, subview, true);
-  }
+  },
 });

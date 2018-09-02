@@ -1,21 +1,35 @@
+@import "bootstrap";
+
 /* Book Show composite view */
+blockquote {
+  border-left: 5px solid #4582EC;
+  padding: 0 22px;
+}
+
 .add-book {
   display: block;
   float: left;
 }
 
 .add-review {
+  display: block;
+  float: left;
+  margin-top: 9px;
   width: 128px;
 }
 
-.bg-success {
-  float: left;
-  display: block;
-  height: 85px;
-  border-radius: 4px;
-  padding: 20px;
-  width: inherit;
+/* Alert for adding book to shelf */
+.show-book-info .alert {
+  height: 65px;
+  left: 0;
+  line-height: 38px;
+  margin: 0 auto;
+  max-width: 400px;
+  position: fixed;
+  right: 0;
   text-align: center;
+  top: 70px;
+  z-index: 1000;
 }
 
 .book-info {
@@ -25,171 +39,67 @@
 }
 
 .book-show {
- display: block;
- float: left;
- height: 200px;
- width: 600px;
-}
-
-.book-review-content {
-  width: inherit;
-}
-
-.add-review {
   display: block;
   float: left;
-  margin-top: 9px;
+  height: 200px;
+  width: 600px;
 }
 
 .book-reviews {
- display: block;
- float: left;
- width: inherit;
- border-top: 1px solid;
-}
-
-.confirmation {
-  margin-left: 12px;
+  border-top: 1px solid;
   display: block;
   float: left;
-}
-
-.delete-review {
-  float: right;
-  margin: 10px;
-  width: 56px;
-}
-
-.edit-review {
-  float: right;
-  margin: 10px;
-  width: 56px;
+  width: inherit;
 }
 
 .review-body {
- display: block;
- float: left;
- width: 100%;
- padding-bottom: 20px;
- border-bottom: 1px solid;
-}
-
-.review-content {
-  width: inherit;
   border-bottom: 1px solid;
-}
-
-.review-title-header {
-  height: 50px;
-  width: inherit;
+  display: block;
+  float: left;
+  padding-bottom: 20px;
+  width: 100%;
 }
 
 .reviews-header {
-  width: inherit;
   background-color: #4582EC;
-  // background-color: silver;
 }
 
 .reviews-header-text {
+  display: block;
+  float: left;
   margin: 5px;
-  display: block;
-  float: left;
 }
 
-.review-author {
-  display: block;
-  float: left;
+.review-content {
+  border-bottom: 1px solid;
+  button {
+    margin: 10px 10px 0 10px;
+    position: absolute;
+    top: -7px;
+  }
+  button.delete-review {
+    right: 0px;
+  }
+  button.edit-review {
+    right: 62px;
+  }
 }
 
-.review-rating {
-  display: block;
-  float: left;
-}
-
-.review-title {
-  display: block;
-  float: left;
-  margin-right: 20px;
+/* TODO: hack to get buttons to line up on mobile */
+@include media-breakpoint-down(xs) {
+  .review-content button {
+    top: -40px;
+  }
 }
 
 .shelf-choice {
-  display: block;
-  float: left;
-  width: inherit;
-  height: 50px;
-}
-
-.shelf-delete {
-  display: block;
-  float: right;
-}
-
-#shelf_choice {
-  display: block;
-  float: left;
-  width: 175px;
-  margin-right: 15px;
-}
-
-.show-book-info {
- display: block;
- float: left;
- width: inherit;
+  height: 36px;
 }
 
 .show-container {
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  padding-top: 10px;
 }
 
 .show-image {
- display: block;
- float: left;
- width: 150px;
- height: 200px;
-}
-
-.show-info {
-  display: block;
-  float:left;
-  width: 650px;
- height: 200px;
-}
-
-.show-rating {
-  display: block;
-  float: left;
-  margin-top: 0px;
-  width: inherit;
-}
-
-.show-title {
-  display: block;
-  float: left;
-  margin: 0px;
-  width: inherit;
-  height: 77px;
-  overflow: auto;
-}
-
-.show-author, .show-pages {
- display: block;
- float: left;
- margin-top: 8px;
- width: inherit;
- }
-
-.show-pages {
-  display: block;
-  float: left;
-  margin-top: 0px;
-  width: inherit;
-}
-
-.synopsis {
- display: block;
- margin-top: 10px;
- float: left;
- width: inherit;
+  text-align: center;
 }

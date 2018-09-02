@@ -18,20 +18,26 @@
  *= require search_results
  *= require modal_search
  *= require joyride-2.1
- *= require star-rating
+ *= require jquery.rateyo.min
  */
 
- @import "bootstrap-sprockets";
- @import "bootswatch/readable/variables";
- @import "bootstrap";
- @import "bootswatch/readable/bootswatch";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-size: 2.6rem;
+  font-weight: bold;
+}
 
 /* Clear default styles for lists */
 ul {
- margin: 0px;
- padding: 0px;
- list-style-type: none;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
 }
 
 /* Clear fix */
@@ -41,6 +47,10 @@ ul {
   display: table;
 }
 
+.content {
+  width: 100%;
+}
+
 /* Body scroll hack */
 body.scroll {
   overflow-y: scroll;
@@ -48,7 +58,7 @@ body.scroll {
 
 /* Log in and sign in form */
 .background {
-  background-image: image-url("large_library.jpg");
+  background-image: image-url('large_library.jpg');
   width: 100%;
   height: 100vh;
 }
@@ -58,26 +68,43 @@ body.scroll {
 }
 
 .sign-in {
-  text-align: center;
-  position: relative;
-  top: 100px;
-  top: 24%;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.91);
-  width: 400px;
-  padding-bottom: 20px;
   border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  padding: 20px 40px;
+  position: relative;
+  top: 24%;
+  text-align: center;
+  .log-in-form {
+    width: 100%;
+  }
 }
 
 /* Navbar */
 .navbar {
   background-color: #4582EC;
+  border: none;
+  border-radius: 0px;
+  .search-icon {
+    background-image: image-url('search-icon.png');
+    height: 20px;
+    padding: 7px 0;
+    width: 20px;
+  }
+  .search-request:hover {
+    cursor: pointer;
+  }
 }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
   cursor: pointer;
 }
 
-/* Modal formatting */
+/* Modal styles */
+
 .m-content .close {
   color: black;
   background-color: inherit;
@@ -102,18 +129,20 @@ body.scroll {
   width: inherit;
 }
 
-/* Modal content */
 .m-content {
-  z-index: 200;
+  background-color: white;
   border: 2px solid black;
   height: inherit;
+  left: 0;
+  margin: 50px auto 0 auto;
   max-height: 80%;
-  width: 600px;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px 60px 20px 60px;
+  max-width: 600px;
   overflow-y: auto;
+  padding: 20px 60px;
+  position: fixed;
+  right: 0;
+  top: 50px;
+  z-index: 200;
 }
 
 .m-review-title {

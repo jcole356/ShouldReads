@@ -1,5 +1,5 @@
 ShouldReads.Routers.Router = Backbone.Router.extend({
-  initialize: function(options) {
+  initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.books = options.books;
     this.bookShelves = options.bookShelves;
@@ -14,7 +14,7 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
     "": "newsfeed"
   },
 
-  bookShelvesLibrary: function() {
+  bookShelvesLibrary: function () {
     this.bookShelves.fetch();
     this.shelvings.fetch();
     var view = new ShouldReads.Views.BookShelvesLibrary({
@@ -25,7 +25,7 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  newsfeed: function() {
+  newsfeed: function () {
     this.reviews.fetch();
     var view = new ShouldReads.Views.Newsfeed({
       collection: this.reviews
@@ -48,11 +48,12 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  show: function(id) {
+  show: function (id) {
     var book = this.books.getOrFetch(id);
     this.bookShelves.fetch();
     var view = new ShouldReads.Views.BookShow({
       model: book,
+      // TODO: why pass the book collection here?
       collection: this.books,
       bookShelves: this.bookShelves,
       reviews: this.reviews
@@ -61,10 +62,10 @@ ShouldReads.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  _swapView: function(view) {
+  _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
     this.$rootEl.html(view.$el);
     view.render();
-  }
+  },
 });

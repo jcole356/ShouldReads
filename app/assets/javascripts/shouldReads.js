@@ -3,7 +3,7 @@ window.ShouldReads = {
   Collections: {},
   Views: {},
   Routers: {},
-  initialize: function() {
+  initialize: function () {
     var router = new ShouldReads.Routers.Router({
       $rootEl: $('#content'),
       books: new ShouldReads.Collections.Books(),
@@ -11,18 +11,18 @@ window.ShouldReads = {
       reviews: new ShouldReads.Collections.Reviews(),
       shelvings: new ShouldReads.Collections.BookShelvings()
     });
-    var user = new ShouldReads.Models.User({ id: CURRENT_USER_ID});
+    var user = new ShouldReads.Models.User({ id: CURRENT_USER_ID });
     user.fetch();
     // add a user on the app namespace
     this.user = user;
+    var $el = $('nav');
     var navbar = new ShouldReads.Views.NavBar({
+      el: $el,
       router: router,
       user: user
     });
 
-    // Add scrollbar to keep navbar from jumping
-    $('body').addClass('scroll');
-    $('#nav').html(navbar.render().$el);
+    $el.html(navbar.render().$el);
 
     Backbone.history.start();
   }

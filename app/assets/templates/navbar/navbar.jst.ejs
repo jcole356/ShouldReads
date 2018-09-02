@@ -1,0 +1,30 @@
+<a class="navbar-brand" href="#">ShouldReads</a>
+<button
+  aria-controls="should-reads-navbar"
+  aria-expanded="false"
+  aria-label="Toggle navigation"
+  class="navbar-toggler"
+  data-target="#should-reads-navbar"
+  data-toggle="collapse"
+  type="button"
+>
+  <span class="navbar-toggler-icon" />
+</button>
+<div class="collapse navbar-collapse" id="should-reads-navbar">
+  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <li class="nav-item home active">
+      <a class="nav-link" href="#">Hello {{= user.escape('username') }}</a>
+    </li>
+    <li class="nav-item shelves">
+      <a class="nav-link" href="#/mybooks">My Books</a>
+    </li>
+    <li class="nav-item sign-out">
+      <a class="nav-link" href="#">Log Out</a>
+    </li>
+    <li class="search-request">
+      <a class="nav-link">
+        <div class="search-icon" />
+      </a>
+    </li>
+  </ul>
+</div>

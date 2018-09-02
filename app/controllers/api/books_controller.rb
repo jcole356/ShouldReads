@@ -1,6 +1,11 @@
 class Api::BooksController < ApplicationController
   before_action :require_signed_in!
 
+  def reviews
+    @book = Book.find(params[:id])
+    render :reviews
+  end
+
   def create
     isbn = book_params['isbn']
     @book = Book.find_by_isbn(isbn)

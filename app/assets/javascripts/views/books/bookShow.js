@@ -1,54 +1,39 @@
 ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
   template: JST['books/show'],
 
-  className: "show-container",
+  className: "show-container row",
 
   events: {
-    "click .add-review": "newReview",
-    "click .edit-review": "editReview",
+    "click .add-review": "openReviewModal",
     "click .delete-review": "deleteReview",
+    "click .edit-review": "openReviewModal",
   },
 
-  initialize: function(options) {
-    this.reviews = options.reviews;
+  initialize: function (options) {
+    this.reviews = new ShouldReads.Collections.BookReviews(this.model.get('id'));
     this.bookShelves = options.bookShelves;
-    this.listenTo(this.collection, "add", this.render);
     this.addInfo();
     this.addReviews();
   },
 
-  addInfo: function() {
+  addInfo: function () {
     var view = new ShouldReads.Views.BookInfo({
+      bookShelves: this.bookShelves,
       model: this.model,
-      bookShelves: this.bookShelves
     });
-
     this.addSubview('.book-info', view);
   },
 
-  newReview: function(event) {
-    var reviewID = $(event.currentTarget).attr('data-id');
-    var review = new ShouldReads.Models.Review();
-    var view = new ShouldReads.Views.ReviewForm({
-      model: review,
-      collection: this.reviews,
-      book: this.model
-    });
-
-    $('body').prepend(view.render().$el);
-  },
-
-  addReviews: function() {
+  addReviews: function () {
     this.reviews.fetch();
     var view = new ShouldReads.Views.BookReviews({
       collection: this.reviews,
       model: this.model
     });
-
     this.addSubview('.book-reviews', view);
   },
 
-  deleteReview: function(event) {
+  deleteReview: function (event) {
     var reviewID = $(event.currentTarget).attr('data-id');
     var review = this.reviews.get(reviewID);
     review.destroy({
@@ -56,25 +41,31 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     });
   },
 
-  editReview: function(event) {
-    var reviewID = $(event.currentTarget).attr('data-id');
-    var review = this.reviews.getOrFetch(reviewID);
+  openReviewModal: function (event) {
+    var reviewId = $(event.currentTarget).attr('data-id');
+    var review;
+    if (reviewId) {
+      review = this.reviews.getOrFetch(reviewId);
+    } else {
+      review = new ShouldReads.Models.Review();
+    }
     var view = new ShouldReads.Views.ReviewForm({
-      model: review,
+      book: this.model,
       collection: this.reviews,
-      book: this.model
+      model: review
     });
-
     $('body').prepend(view.render().$el);
+    view.didInsertElement();
   },
 
-  render: function() {
+  render: function () {
     var content = this.template({
       book: this.model,
       bookShelves: this.bookShelves,
     });
     this.$el.html(content);
     this.attachSubviews();
+    
     return this;
-  }
+  },
 });
