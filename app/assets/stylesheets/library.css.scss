@@ -78,15 +78,20 @@
 }
 
 @include media-breakpoint-down(md) {
+  .library-header {
+    font-size: 1.2rem;
+  }
+
+  .shelf-book-pages,
+  .shelf-book-shelf {
+    display: none;
+  }
+
   .shelf-index {
     border-bottom: 2px solid black;
   }
 
   .shelf-title-header {
-    font-size: 1.2rem;
-  }
-
-  .library-header {
     font-size: 1.2rem;
   }
 }
