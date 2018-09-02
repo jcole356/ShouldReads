@@ -2,9 +2,9 @@
 <ul class="col-12">
   {{ bookShelves.each(function(bookShelf) { }}
     <li class="shelf row" data-id="{{= bookShelf.id }}">
-      <span class="shelf-title col-10">{{= bookShelf.escape('title') }}</span>
+      <span class="shelf-title col-10 col-md-9">{{= bookShelf.escape('title') }}</span>
       {{ if (bookShelf.escape('title') !== "All") { }}
-      <div class="col-2">
+      <div class="col-2 col-md-3">
         <button
           class="btn btn-danger btn-sm shelf-delete"
           data-id="{{= bookShelf.id }}"
