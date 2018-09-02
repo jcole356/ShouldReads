@@ -10,7 +10,7 @@
     </div>
     <div class="col-9 col-md-10">
       <div class="row">
-        <div class="shelf-book-info shelf-book-title col-10 order-1 col-md-3">
+        <div class="shelf-book-info shelf-book-title col-9 order-1 col-md-3">
           {{= book.escape('title') }}
         </div>
         <div class="shelf-book-info col-12 order-3 col-md-3">
@@ -25,13 +25,13 @@
         {{ if (title) { }}
           <div class="shelf-book-info shelf-book-shelf col-md-2 order-md-5">{{= title }}</div>
         {{ } else { }}
-          <div class="remove-book col-2 order-2 order-md-5" data-shelf="">
+          <div class="remove-book col-3 order-2 col-md-2 order-md-5" data-shelf="">
             <button
               class="btn btn-danger btn-sm shelving-delete"
               data-book-id="{{= book.id }}"
               data-shelving-id="{{= book.escape('shelving_id') }}"
             >
-              &times;
+              <span>x</span>
             </button>
           </div>
         {{ } }}
