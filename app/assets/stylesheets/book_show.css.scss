@@ -36,6 +36,10 @@ blockquote {
   display: block;
   float: left;
   width: inherit;
+  .rateYo.jq-ry-container {
+    padding: 0;
+    margin-bottom: 5px;
+  }
 }
 
 .book-show {
