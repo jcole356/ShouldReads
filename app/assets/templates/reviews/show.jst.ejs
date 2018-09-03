@@ -6,12 +6,19 @@
 {{ reviews.each(function(review) { }}
   {{ if(review.escape('book_id') === book.id.toString()) { }}
     <div class="review-content row">
-      <h4 class="review-title col-12 col-md-6">{{= review.escape('title') }}</h4>
-      <h4 class="review-rating col-6 col-md-3">
-        Rating: {{= review.escape('rating') }} of 5
+      <h4
+        class="review-title {{= review.escape('author_id') === CURRENT_USER_ID ? 'col-6' : 'col-12' }} order-1 col-md-6"
+      >
+        {{= review.escape('title') }}
       </h4>
+      <div class="col-6 order-3 col-md-3 order-md-2">
+        <div
+          class="rateYo"
+          data-rating="{{= review.escape('rating') }}"
+        />
+      </div>
       {{ if (review.escape('author_id') === CURRENT_USER_ID) { }}
-        <div class="col-6 col-md-3">
+        <div class="col-6 order-2 col-md-3 order-md-3">
           <button
             class="btn btn-danger btn-sm delete-review"
             data-id="{{= review.id }}"
@@ -30,7 +37,7 @@
           </button>
         </div>
       {{ } }}
-      <blockquote class="blockquote col-12">
+      <blockquote class="blockquote col-12 order-4">
         <p class="col-12">{{= review.escape('body') }}</p>
         <footer class="blockquote-footer">
           <cite title="Source Title">

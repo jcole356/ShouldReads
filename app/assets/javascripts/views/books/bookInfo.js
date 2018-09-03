@@ -37,12 +37,27 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     });
   },
 
+  initializeRateYo: function () {
+    var $rateYo = this.$('.rateYo');
+    if (!$rateYo.length) {
+      return;
+    }
+    $rateYo.rateYo({
+      fullStar: true,
+      rating: this.model.get('average_rating'),
+      readOnly: true,
+      starWidth: '25px',
+    });
+  },
+
+
   render: function () {
     var content = this.template({
       book: this.model,
       bookShelves: this.bookShelves,
     });
     this.$el.html(content);
+    this.initializeRateYo();
 
     return this;
   },

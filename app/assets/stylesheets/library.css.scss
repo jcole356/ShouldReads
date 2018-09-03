@@ -82,6 +82,12 @@
 }
 
 @include media-breakpoint-down(md) {
+  .book-shelf-row {
+    .rateYo.jq-ry-container {
+      padding: 0;
+    }
+  }
+
   .library-header {
     font-size: 1.2rem;
   }
