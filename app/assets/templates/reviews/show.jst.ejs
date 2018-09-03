@@ -7,9 +7,12 @@
   {{ if(review.escape('book_id') === book.id.toString()) { }}
     <div class="review-content row">
       <h4 class="review-title col-12 col-md-6">{{= review.escape('title') }}</h4>
-      <h4 class="review-rating col-6 col-md-3">
-        Rating: {{= review.escape('rating') }} of 5
-      </h4>
+      <div class="col-6 col-md-3">
+        <div
+          class="rateYo"
+          data-rating="{{= review.escape('rating') }}"
+        />
+      </div>
       {{ if (review.escape('author_id') === CURRENT_USER_ID) { }}
         <div class="col-6 col-md-3">
           <button
