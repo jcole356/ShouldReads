@@ -75,11 +75,6 @@ blockquote {
 
 @include media-breakpoint-down(xs) {
   .review-content {
-    /* TODO: hack to get buttons to line up on mobile */
-    button {
-     top: -40px;
-    }
-
     .rateYo.jq-ry-container {
       padding: 0;
       margin-bottom: 5px;
