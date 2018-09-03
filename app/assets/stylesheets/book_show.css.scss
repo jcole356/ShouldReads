@@ -6,14 +6,7 @@ blockquote {
   padding: 0 22px;
 }
 
-.add-book {
-  display: block;
-  float: left;
-}
-
 .add-review {
-  display: block;
-  float: left;
   margin-top: 9px;
   width: 128px;
 }
@@ -33,9 +26,6 @@ blockquote {
 }
 
 .book-info {
-  display: block;
-  float: left;
-  width: inherit;
   .rateYo.jq-ry-container {
     padding: 0;
     margin-bottom: 5px;
@@ -43,23 +33,16 @@ blockquote {
 }
 
 .book-show {
-  display: block;
-  float: left;
   height: 200px;
-  width: 600px;
 }
 
 .book-reviews {
   border-top: 1px solid;
-  display: block;
-  float: left;
   width: inherit;
 }
 
 .review-body {
   border-bottom: 1px solid;
-  display: block;
-  float: left;
   padding-bottom: 20px;
   width: 100%;
 }
@@ -69,30 +52,38 @@ blockquote {
 }
 
 .reviews-header-text {
-  display: block;
-  float: left;
   margin: 5px;
 }
 
 .review-content {
   border-bottom: 1px solid;
+
   button {
     margin: 10px 10px 0 10px;
     position: absolute;
     top: -7px;
   }
+
   button.delete-review {
     right: 0px;
   }
+
   button.edit-review {
     right: 62px;
   }
 }
 
-/* TODO: hack to get buttons to line up on mobile */
 @include media-breakpoint-down(xs) {
-  .review-content button {
-    top: -40px;
+  .review-content {
+    /* TODO: hack to get buttons to line up on mobile */
+    button {
+     top: -40px;
+    }
+
+    .rateYo.jq-ry-container {
+      padding: 0;
+      margin-bottom: 5px;
+    }
   }
 }
 
