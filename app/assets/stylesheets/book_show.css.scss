@@ -87,14 +87,16 @@ blockquote {
   }
 }
 
+@include media-breakpoint-down(sm) {
+  .show-image {
+    text-align: center;
+  }
+}
+
 .shelf-choice {
   height: 36px;
 }
 
 .show-container {
   padding-top: 10px;
-}
-
-.show-image {
-  text-align: center;
 }
