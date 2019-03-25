@@ -28,5 +28,5 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rb-readline'
   gem 'spring'
-  # gem 'web-console', '~> 3.7'
+  gem 'web-console'
 end
