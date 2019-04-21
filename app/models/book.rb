@@ -4,9 +4,6 @@ class Book < ActiveRecord::Base
   has_many :reviews
   has_many :book_shelvings
 
-  scope :with_shelving_id,
-    lambda { select("books.*, book_shelvings.id AS shelving_id") }
-
   # Use this for seeding
   def self.get_book_from_api(title)
     query_string = title.scan(/\w+/).join('+')
