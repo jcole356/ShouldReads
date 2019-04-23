@@ -11,7 +11,7 @@ class Api::BookShelvingsController < ApplicationController
   end
 
   def index
-    @book_shelvings = current_user.book_shelvings
+    @book_shelvings = current_user.book_shelvings.includes(:book_shelf, book: [:reviews])
     render :index
   end
 
