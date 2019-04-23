@@ -25,15 +25,14 @@ class Book < ActiveRecord::Base
     # Need to add ISBN.  Should we check 10 vs 13?
     identifier = volume_info['industryIdentifiers'].select { |id| id.type === "ISBN_13" }
     isbn = isbn.empty? ? volume_info['industryIdentifiers'][0].identifier : isbn
-    debugger
-    book_params = {
-      "title" => title, "author" => author, "synopsis" => synopsis,
+    {
+      "title" => title,
+      "author" => author,
+      "synopsis" => synopsis,
       "number_of_pages" => number_of_pages,
       "cover_image_url" => cover_image_url,
       "isbn" => isbn
-      }
-
-    book_params
+    }
   end
 
   # For generating seed data
