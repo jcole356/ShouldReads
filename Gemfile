@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.9'
+ruby '2.5.7'
 
 gem 'backbone-on-rails'
 gem 'bcrypt', '~> 3.1.7'
