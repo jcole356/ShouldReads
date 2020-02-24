@@ -13,8 +13,9 @@ class Book < ActiveRecord::Base
     self.parse_response(response)
   end
 
-  # Parses data from API, why no validations of defaults here only in js?
-  # Not user facing, only used for seeding. todo
+  # Parses data from API
+  # Not user facing, only used for seeding.
+  # TODO: why no validations of defaults, here only in js?
   def self.parse_response(response)
     volume_info = JSON.parse(response)['items'][0]['volumeInfo']
     title = volume_info['title']
@@ -22,9 +23,10 @@ class Book < ActiveRecord::Base
     synopsis = volume_info['description']
     number_of_pages = volume_info['pageCount']
     cover_image_url = volume_info['imageLinks']['thumbnail']
-    # Need to add ISBN.  Should we check 10 vs 13?
-    identifier = volume_info['industryIdentifiers'].select { |id| id.type === "ISBN_13" }
-    isbn = isbn.empty? ? volume_info['industryIdentifiers'][0].identifier : isbn
+    # Need to add ISBN.  Should we check 10 vs 13? Yes
+    identifiers = volume_info['industryIdentifiers']
+    id = identifiers.select { |id| id['type'] === "ISBN_13" }
+    isbn = id.empty? ? identifiers[0]['identifier'] : id[0]['identifier']
     {
       "title" => title,
       "author" => author,
