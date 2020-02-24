@@ -33,3 +33,19 @@ By accessing the Google Books API, users can access a huge library of
 book for use on the site.  In addition to accessing the API, this
 required writing a custom Backbone.js Model#parse method to parse the
 JSON response from the API.
+
+## Deployment
+
+Push code to trigger deploy
+
+`git push heroku master`
+
+### Setting up a new app instance on a new remote also requires
+
+Set env vars from [Figaro](https://github.com/laserlemon/figaro):
+
+`figaro heroku:set -e production`
+
+Setup and seed the db:
+
+`heroku run rake db:setup`
