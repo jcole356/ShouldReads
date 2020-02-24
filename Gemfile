@@ -15,7 +15,7 @@ gem 'pg', '~>0.21'
 gem 'rails', '4.2.11'
 gem 'rails_12factor'
 gem 'rest-client'
-gem 'sass-rails', '~> 5.0'
+gem 'sassc-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'uglifier', '>= 1.3.0'
