@@ -20,6 +20,7 @@ gem 'sassc-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'uglifier', '>= 1.3.0'
+gem 'web-console', group: :development
 
 group :development, :test do
   gem 'annotate', '~> 2.7'
@@ -30,5 +31,4 @@ group :development, :test do
   gem 'rb-readline'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'spring'
-  gem 'web-console'
 end
