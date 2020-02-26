@@ -34,8 +34,6 @@ RSpec.describe Book, :type => :model do
     ]
   }.to_json
 
-  puts book_json
-  
   describe "parse_response" do
     it "returns the correctly formatted book params" do
       expect(Book.parse_response(book_json)).to eq(
