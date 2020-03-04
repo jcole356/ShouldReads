@@ -1,12 +1,5 @@
 # Should Reads
-
-[Live link][project]
-
-[project]: http://shouldreads.net/
-
-![screenshot]
-
-[screenshot]: app/assets/images/shouldreads_demo.gif
+[Live link](https://www.shouldreads.net)
 
 ## Description
 ShouldReads is an app inspired by Goodreads built on Rails and Backbone.
@@ -30,9 +23,7 @@ or currently reading.
 * View newsfeed to see what other users are saying about books
 
 By accessing the Google Books API, users can access a huge library of
-book for use on the site.  In addition to accessing the API, this
-required writing a custom Backbone.js Model#parse method to parse the
-JSON response from the API.
+books for use on the site.
 
 ## Deployment
 
@@ -49,3 +40,9 @@ Set env vars from [Figaro](https://github.com/laserlemon/figaro):
 Setup and seed the db:
 
 `heroku run rake db:setup`
+
+## Local Development
+
+To start rails server using SSL
+
+`rails s -b 'ssl://localhost:3000?key={path_to_key}&cert={path_to_cert}`
