@@ -1,5 +1,5 @@
 # Should Reads
-[Live link](http://shouldreads.net)
+[Live link](https://www.shouldreads.net)
 
 ## Description
 ShouldReads is an app inspired by Goodreads built on Rails and Backbone.
@@ -40,3 +40,9 @@ Set env vars from [Figaro](https://github.com/laserlemon/figaro):
 Setup and seed the db:
 
 `heroku run rake db:setup`
+
+## Local Development
+
+To start rails server using SSL
+
+`rails s -b 'ssl://localhost:3000?key={path_to_key}&cert=.{path_to_cert}`
