@@ -45,4 +45,4 @@ Setup and seed the db:
 
 To start rails server using SSL
 
-`rails s -b 'ssl://localhost:3000?key={path_to_key}&cert=.{path_to_cert}`
+`rails s -b 'ssl://localhost:3000?key={path_to_key}&cert={path_to_cert}`
