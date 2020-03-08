@@ -12,7 +12,6 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
     this.reviews = options.reviews;
     this.listenTo(this.bookShelves, "sync", this.render);
     this.listenTo(this.model, "change sync", this.render);
-    this.listenTo(this.reviews, "change", this.fetchBook);
   },
 
   addBookToShelf: function (e) {
@@ -37,10 +36,6 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
         });
       }
     });
-  },
-
-  fetchBook: function () {
-    this.model.fetch();
   },
 
   initializeRateYo: function () {
