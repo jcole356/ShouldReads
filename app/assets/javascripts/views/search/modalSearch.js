@@ -26,6 +26,7 @@ ShouldReads.Views.ModalSearch = Backbone.View.extend({
   search: function (event) {
     var query = $('.search_field').val();
     Backbone.history.navigate("search/" + query, { trigger: true });
+    $('.collapse').collapse('toggle');
   },
 
   searchOrClearModal: function(event) {
