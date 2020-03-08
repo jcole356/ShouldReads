@@ -86,7 +86,7 @@
   }
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(sm) {
   .book-shelf-row {
     .rateYo.jq-ry-container {
       padding: 0;
