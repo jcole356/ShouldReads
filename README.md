@@ -45,4 +45,10 @@ Setup and seed the db:
 
 To start rails server using SSL
 
-`rails s -b 'ssl://localhost:3000?key={path_to_key}&cert={path_to_cert}`
+Install foreman
+
+`gem install foreman`
+
+Start server using foreman and development Procfile
+
+`foreman start -f Procfile.dev`
