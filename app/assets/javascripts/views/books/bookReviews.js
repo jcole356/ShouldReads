@@ -31,6 +31,12 @@ ShouldReads.Views.BookReviews = Backbone.View.extend({
     });
     this.$el.html(content);
     this.initializeRateYos();
+    var $reviews = $('.book-reviews');
+    if (this.collection.length) {
+      $reviews.show();
+    } else {
+      $reviews.hide();
+    }
 
     return this;
   },

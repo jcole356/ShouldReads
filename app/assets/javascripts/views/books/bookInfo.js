@@ -10,7 +10,7 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
   initialize: function (options) {
     this.bookShelves = options.bookShelves;
     this.listenTo(this.bookShelves, "sync", this.render);
-    this.listenTo(this.model, "change", this.render);
+    this.listenTo(this.model, "change sync", this.render);
   },
 
   addBookToShelf: function (e) {
