@@ -21,6 +21,7 @@ ShouldReads.Views.NavBar = Backbone.View.extend({
       $(item).removeClass('active');
     });
     $target.addClass('active');
+    $('.collapse').collapse('toggle');
   },
 
   openModal: function () {
