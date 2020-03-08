@@ -45,7 +45,7 @@ Setup and seed the db:
 
 To start rails server using SSL
 
-Install `foreman`
+Install foreman
 
 `gem install foreman`
 
