@@ -9,7 +9,6 @@ ShouldReads.Views.BookInfo = Backbone.View.extend({
 
   initialize: function (options) {
     this.bookShelves = options.bookShelves;
-    this.reviews = options.reviews;
     this.listenTo(this.bookShelves, "sync", this.render);
     this.listenTo(this.model, "change sync", this.render);
   },

@@ -20,7 +20,6 @@ ShouldReads.Views.BookShow = Backbone.CompositeView.extend({
     var view = new ShouldReads.Views.BookInfo({
       bookShelves: this.bookShelves,
       model: this.model,
-      reviews: this.reviews
     });
     this.addSubview('.book-info', view);
   },
