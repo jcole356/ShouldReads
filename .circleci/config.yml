@@ -68,8 +68,7 @@ jobs: # a collection of steps
       - run:
           name: Run rspec in parallel
           command: |
-            RAILS_ENV=test bundle exec rspec --profile 10 \
-                              -r rspec_junit_formatter \
+            bundle exec rspec --profile 10 \
                               --format RspecJunitFormatter \
                               --out test_results/rspec.xml \
                               --format progress \

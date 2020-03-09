@@ -29,6 +29,10 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'rb-readline'
-  gem 'rspec-rails', '~> 3.6'
   gem 'spring'
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.6'
+  gem "rspec_junit_formatter"
 end
