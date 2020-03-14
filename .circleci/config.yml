@@ -3,7 +3,6 @@
 version: 2
 jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
-    parallelism: 3 # run three instances of this job in parallel
     docker:
       - image: circleci/ruby:2.5.7-node
         environment:
